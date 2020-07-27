@@ -110,7 +110,7 @@ layer_t nuklear_layer_init(window_t window)
     s_window = window;
 
     layer_t layer;
-    layer_init(&layer, "Nuklear");
+    layer = layer_init("Nuklear");
     layer.attach = &nuklear_layer_on_attach;
     layer.detach = &nuklear_layer_on_detach;
     layer.update = &nuklear_layer_on_update;
