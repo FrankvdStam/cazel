@@ -10,5 +10,7 @@ typedef struct
 
 } application_t;
 
+void application_run(application_t* application);
+
 
 #endif //SANDBOX_APPLICATION_H

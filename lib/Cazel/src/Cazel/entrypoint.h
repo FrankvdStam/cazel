@@ -12,5 +12,7 @@ int main()
     printf("Init from lib.\n");
 
     application_t* application = create_application();
+    application_run(application);
+
     return 0;
 }
