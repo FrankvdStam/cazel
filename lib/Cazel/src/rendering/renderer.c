@@ -1,7 +1,6 @@
 //
 // Created by Frank on 03/05/2020.
 //
-#define WINDOWS
 #include "../common.h"
 #include "renderer.h"
 #include "shapes.h"

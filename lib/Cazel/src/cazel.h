@@ -7,6 +7,8 @@
 
 #include "cazel/core.h"
 #include "cazel/application.h"
-#include "cazel/entrypoint.h"
+#include "cazel/main.h"
+
+
 
 #endif //SANDBOX_CAZEL_H

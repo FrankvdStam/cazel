@@ -3,6 +3,8 @@ project(Cazel C)
 
 set(CMAKE_C_STANDARD 11)
 
+add_compile_definitions(WINDOWS)
+
 add_library(Cazel
         src/common.h
 
@@ -22,7 +24,7 @@ add_library(Cazel
         src/cazel/application.h
 
         src/cazel.h
-        src/cazel/entrypoint.h
+        src/cazel/main.h
         src/cazel/core.h
 
         src/cazel/window.h

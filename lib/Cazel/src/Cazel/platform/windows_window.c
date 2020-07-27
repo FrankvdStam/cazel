@@ -32,7 +32,7 @@ void windows_window_init(window_t window)
     glDebugMessageCallback(proc, NULL);
 }
 
-void windows_window_destroy(window_t window)
+void windows_window_close(window_t window)
 {
     glfwDestroyWindow(window.handle);
 }

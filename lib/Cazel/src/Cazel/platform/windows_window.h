@@ -7,11 +7,12 @@
 
 #include "../window.h"
 
+
 //Initialize a windows specific window using glfw
 void windows_window_init(window_t window);
 
 //Destroy windows specific window using glfw
-void windows_window_destroy(window_t window);
+void windows_window_close(window_t window);
 
 
 

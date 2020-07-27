@@ -5,4 +5,10 @@
 #ifndef SANDBOX_CORE_H
 #define SANDBOX_CORE_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#define EXIT_ERROR(...) fprintf(stderr, __VA_ARGS__); exit(1);
+
+
 #endif //SANDBOX_CORE_H
