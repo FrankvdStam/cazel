@@ -36,15 +36,8 @@ application_t application_init(platform_t platform)
 void application_update(application_t* application)
 {
     for(size_t i = 0; i < application->layer_stack.add_index; i++)
-    {
-        printf("layer: %s\n", application->layer_stack.layers[i].name);
-        if(application->layer_stack.layers[i].update == NULL)
-        {
-            EXIT_ERROR("update is null for %s.\n", application->layer_stack.layers[i].name);
-        } else{
+    {application->layer_stack.layers[i].update();
 
-            application->layer_stack.layers[i].update();
-        }
     }
 }
 
