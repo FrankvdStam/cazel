@@ -23,8 +23,8 @@ typedef struct
     on_update update;
 } layer_t;
 
-layer_t layer_init(char* name);
-void layer_free(layer_t layer);
+void layer_init(layer_t* layer, char* name);
+void layer_free(layer_t* layer);
 
 
 
@@ -36,10 +36,10 @@ typedef struct
     size_t add_index;
 } layer_stack_t;
 
-layer_stack_t layer_stack_init(size_t size);
-void layer_stack_free(layer_stack_t stack);
-void layer_stack_add(layer_stack_t stack, layer_t layer);
-
+void layer_stack_init(layer_stack_t* stack, size_t size);
+void layer_stack_free(layer_stack_t* stack);
+void layer_stack_add(layer_stack_t* stack, const layer_t layer);
+void layer_stack_print_names(layer_stack_t* stack);
 
 
 

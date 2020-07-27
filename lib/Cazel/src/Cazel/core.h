@@ -12,8 +12,14 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+typedef enum
+{
+    windows,
+    linux,
+} platform_t;
 
-#define EXIT_ERROR(...) fprintf(stderr, __VA_ARGS__); exit(1);
+
+#define EXIT_ERROR(...) fprintf(stderr, __VA_ARGS__); exit(1)
 
 
 #endif //SANDBOX_CORE_H

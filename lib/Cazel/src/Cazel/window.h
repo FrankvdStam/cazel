@@ -5,9 +5,7 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include <stdint.h>
-#include <stdbool.h>
-#include "application.h"
+#include "core.h"
 
 typedef struct
 {
@@ -27,13 +25,11 @@ typedef struct
 void window_platform_init(platform_t platform);
 
 
-
-
 //Initializes a platform specific window using the parameters of the window struct
-void(*window_init)(window_t window);
+void(*window_init)(window_t* window);
 
 //Closes a initialized window
-void(*window_close)(window_t window);
+void(*window_close)(window_t* window);
 
 
 #endif //WINDOW_H

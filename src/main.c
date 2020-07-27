@@ -3,8 +3,6 @@
 
 application_t create_application()
 {
-    application_t application;
-    application.platform = windows;
+    application_t application = application_init(windows);
     return application;
-
 }

@@ -14,25 +14,25 @@ void glDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLs
     printf("%s\n", message);
 };
 
-void windows_window_init(window_t window)
+void windows_window_init(window_t* window)
 {
     if(!glfwInit())
     {
-        fprintf(stderr, "Failed to initialize glfw\n");
+        EXIT_ERROR("Failed to initialize glfw\n");
     }
 
-    window.handle = glfwCreateWindow(window.width, window.height, window.title, NULL, NULL);
-    glfwMakeContextCurrent(window.handle);
+    window->handle = glfwCreateWindow(window->width, window->height, window->title, NULL, NULL);
+    glfwMakeContextCurrent(window->handle);
     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
-        fprintf(stderr, "Failed to initialize glad\n");
+        EXIT_ERROR("Failed to initialize glad\n");
     }
     glEnable(GL_DEBUG_OUTPUT);
     GLDEBUGPROC proc = glDebugCallback;
     glDebugMessageCallback(proc, NULL);
 }
 
-void windows_window_close(window_t window)
+void windows_window_close(window_t* window)
 {
-    glfwDestroyWindow(window.handle);
+    glfwDestroyWindow(window->handle);
 }
