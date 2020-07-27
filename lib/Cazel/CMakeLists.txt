@@ -30,7 +30,10 @@ add_library(Cazel
         src/cazel/window.h
         src/cazel/platform/windows_window.c
         src/cazel/platform/windows_window.h
-        src/cazel/window.c)
+        src/cazel/window.c
+
+        src/cazel/events/event.c
+        src/cazel/events/event.h src/cazel/layers/layer.c src/cazel/layers/layer.h src/cazel/nuklear/nuklear_layer.c src/cazel/nuklear/nuklear_layer.h)
 
 add_subdirectory (lib/glfw)
 add_subdirectory (lib/glad)

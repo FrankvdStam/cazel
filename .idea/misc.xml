@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
+  <component name="CidrRootsConfiguration">
+    <sourceRoots>
+      <file path="$PROJECT_DIR$/lib/cazel/src" />
+      <file path="$PROJECT_DIR$/lib/cazel/src/cazel" />
+      <file path="$PROJECT_DIR$/lib/cazel/src/cazel/events" />
+      <file path="$PROJECT_DIR$/lib/cazel/src/cazel/imgui" />
+      <file path="$PROJECT_DIR$/lib/cazel/src/cazel/platform" />
+    </sourceRoots>
+    <libraryRoots>
+      <file path="$PROJECT_DIR$/lib/cazel/lib" />
+    </libraryRoots>
+  </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
