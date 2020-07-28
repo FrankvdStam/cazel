@@ -18,6 +18,9 @@ void(*context_bind_index_buffer)(index_buffer_t index_buffer);
 void(*context_free_vertex_buffer)(vertex_buffer_t vertex_buffer);
 void(*context_free_index_buffer)(index_buffer_t index_buffer);
 
+void(*context_set_vertex_buffer_layout)(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout);
+
+
 void context_platform_init(platform_t platform)
 {
 #ifdef WINDOWS
@@ -32,6 +35,9 @@ void context_platform_init(platform_t platform)
 
     context_free_vertex_buffer = opengl_context_free_vertex_buffer;
     context_free_index_buffer = opengl_context_free_index_buffer;
+
+    context_set_vertex_buffer_layout = opengl_context_set_vertex_buffer_layout;
+
 #else
     EXIT_ERROR("Linux not supported");
 #endif

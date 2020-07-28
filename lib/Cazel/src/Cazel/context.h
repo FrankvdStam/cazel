@@ -7,6 +7,7 @@
 
 #include "core.h"
 #include "window.h"
+#include "renderer/buffers/buffers.h"
 
 void context_platform_init(platform_t platform);
 
@@ -25,5 +26,7 @@ void(*context_bind_index_buffer)(index_buffer_t index_buffer);
 
 void(*context_free_vertex_buffer)(vertex_buffer_t vertex_buffer);
 void(*context_free_index_buffer)(index_buffer_t index_buffer);
+
+void(*context_set_vertex_buffer_layout)(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout);
 
 #endif //SANDBOX_CONTEXT_H

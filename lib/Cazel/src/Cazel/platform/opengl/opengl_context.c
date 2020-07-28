@@ -13,6 +13,28 @@ GLuint s_vertex_buffer;
 GLuint s_index_buffer;
 GLuint s_shader_program;
 
+GLenum shader_data_type_to_gl_enum(shader_data_type_t type)
+{
+    switch(type)
+    {
+        default: EXIT_ERROR("Unknown shader data type.\n");
+
+        case shader_data_type_float  :
+        case shader_data_type_float2 :
+        case shader_data_type_float3 :
+        case shader_data_type_float4 :
+        case shader_data_type_mat3   :
+        case shader_data_type_mat4   : return GL_FLOAT;
+
+        case shader_data_type_int    :
+        case shader_data_type_int2   :
+        case shader_data_type_int3   :
+        case shader_data_type_int4   : return GL_INT;
+
+        case shader_data_type_bool   : return GL_BOOL;
+    }
+}
+
 void glDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
 {
     if(severity == GL_DEBUG_SEVERITY_NOTIFICATION)
@@ -34,56 +56,65 @@ void opengl_context_init(window_t* window)
     glDebugMessageCallback(proc, NULL);
 
 
-    glUseProgram(s_shader_program);
-
-    float vertices[3*3] = {
-            -0.5f, -0.5f, 0.0f,
-            0.5f, -0.5f, 0.0f,
-            0.0f,  0.5f, 0.0f,
-    };
-
     glGenVertexArrays(1, &s_vertex_array);
     glBindVertexArray(s_vertex_array);
 
-    s_vertex_array = context_create_vertex_buffer(vertices, 3*3);
-
-
-
-    //glGenBuffers(1, &s_vertex_buffer);
-    //glBindBuffer(GL_ARRAY_BUFFER, s_vertex_buffer);
-    //glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), NULL);
-
-
-    uint32_t indices[3] = {0, 1, 2};
-    s_index_buffer = context_create_index_buffer(indices, 3);
-
-    //glGenBuffers(1, &s_index_buffer);
-    //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, s_index_buffer);
-    //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-
-
     const char* vertex_shader_source = "#version 330 core\n"
-                                       "layout (location = 0) in vec3 aPos;\n"
+                                       "\n"
+                                       "layout (location = 0) in vec3 a_Position;\n"
+                                       "layout (location = 1) in vec4 a_Color;\n"
+                                       "\n"
+                                       "out vec3 v_Position;\n"
+                                       "out vec4 v_Color;\n"
                                        "\n"
                                        "void main()\n"
                                        "{\n"
-                                       "    gl_Position = vec4(aPos, 1.0);\n"
+                                       "    v_Position = a_Position;\n"
+                                       "    v_Color = a_Color;\n"
+                                       "    gl_Position = vec4(a_Position, 1.0);\n"
                                        "}\0";
 
 
     const char* fragment_shader_source = "#version 330 core\n"
+                                         "\n"
                                          "layout (location = 0) out vec4 color;\n"
+                                         "\n"
+                                         "in vec3 v_Position;\n"
+                                         "in vec4 v_Color;\n"
+                                         "\n"
                                          "void main()\n"
                                          "{\n"
-                                         "    color = vec4(1.0f, 0.0f, 0.0f, 1.0f);\n"
+                                         "    color = v_Color;\n"
                                          "}\0";
 
     s_shader_program = opengl_create_shader(vertex_shader_source, fragment_shader_source);
 
+
+    glUseProgram(s_shader_program);
+
+
+    float vertices[] = {
+            -0.5f, -0.5f, 0.0f, 0.5f, 1.0f, 1.1f, 1.1f,
+             0.5f, -0.5f, 0.0f, 05.f, 0.0f, 1.1f, 1.1f,
+             0.0f,  0.5f, 0.0f, 1.0f, 1.0f, 0.1f, 1.1f,
+    };
+    s_vertex_array = context_create_vertex_buffer(vertices, 21);
+
+
+    buffer_element_t elements[] =
+    {
+            buffers_create_buffer_element(shader_data_type_float3),
+            buffers_create_buffer_element(shader_data_type_float4),
+    };
+
+    buffer_layout_t layout;
+    buffers_create_buffer_layout(&layout, elements, 2);
+    buffers_print_layout(&layout);
+
+    context_set_vertex_buffer_layout(s_vertex_buffer, &layout);
+
+    uint32_t indices[3] = {0, 1, 2};
+    s_index_buffer = context_create_index_buffer(indices, 3);
 }
 
 void opengl_context_swap_buffers(window_t* window)
@@ -181,3 +212,53 @@ void opengl_context_free_index_buffer(index_buffer_t index_buffer)
     glDeleteBuffers(GL_ELEMENT_ARRAY_BUFFER, &index_buffer);
 }
 
+
+
+
+void opengl_context_set_vertex_buffer_layout(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout)
+{
+    //glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+
+    //glEnableVertexAttribArray(0);
+    //glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), NULL);
+
+    for(unsigned int i = 0; i < buffer_layout->size; i++)
+    {
+
+       //GLint size = shader_data_type_component_count(buffer_layout.elements[i].data_type);
+       //GLenum type = shader_data_type_to_gl_enum(buffer_layout.elements[i].data_type);
+       //GLboolean normalized = buffer_layout.elements[i].normalized ? GL_TRUE : GL_FALSE;
+       //GLsizei stride = buffer_layout.stride;
+       ////const void* pointer = (const void*)buffer_layout.elements[i].offset;
+
+        glEnableVertexAttribArray(i);
+        glVertexAttribPointer(
+                i,
+                shader_data_type_component_count(buffer_layout->elements[i].data_type),
+                shader_data_type_to_gl_enum(buffer_layout->elements[i].data_type),
+                buffer_layout->elements[i].normalized ? GL_TRUE : GL_FALSE,
+                buffer_layout->stride,
+                (const void*)buffer_layout->elements[i].offset);
+
+
+        //glVertexAttribPointer
+        //(
+        //    i,
+        //    shader_data_type_component_count(buffer_layout.elements[i].data_type),
+        //    shader_data_type_to_gl_enum(buffer_layout.elements[i].data_type),
+        //    buffer_layout.elements[i].normalized ? GL_TRUE : GL_FALSE,
+        //    buffer_layout.stride,
+        //    (const void*)buffer_layout.elements[i].offset
+        //);
+
+        //glVertexAttribPointer
+        //(
+        //        i,
+        //        size,
+        //        type,
+        //        normalized,
+        //        stride,
+        //        NULL
+        //);
+    }
+}

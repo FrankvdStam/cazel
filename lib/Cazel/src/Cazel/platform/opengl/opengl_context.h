@@ -27,7 +27,7 @@ void opengl_context_bind_index_buffer(index_buffer_t index_buffer);
 void opengl_context_free_vertex_buffer(vertex_buffer_t vertex_buffer);
 void opengl_context_free_index_buffer(index_buffer_t index_buffer);
 
-
+void opengl_context_set_vertex_buffer_layout(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout);
 
 
 
