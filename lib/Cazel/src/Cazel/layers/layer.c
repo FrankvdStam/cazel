@@ -46,6 +46,6 @@ void layer_stack_print_names(layer_stack_t* stack)
     printf("Layer names:\n");
     for(size_t i = 0; i < stack->add_index; i++)
     {
-        printf("%s\n", stack->layers[i]);
+        printf("%s\n", stack->layers[i].name);
     }
 }

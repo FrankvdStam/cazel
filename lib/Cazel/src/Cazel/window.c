@@ -3,11 +3,7 @@
 //
 
 #include "core.h"
-#include "platform/windows_window.h"
-
-#ifdef WINDOWS
-    //fun_window_init
-#endif
+#include "platform/windows/windows_window.h"
 
 void(*window_init)(window_t* window);
 void(*window_close)(window_t* window);

@@ -2,14 +2,11 @@
 // Created by Frank on 27/07/2020.
 //
 
-
-
 #include "application.h"
 #include "nuklear/nuklear_layer.h"
+#include "input.h"
 
-
-
-application_t application_init(platform_t platform)
+application_t application_create(platform_t platform)
 {
     window_t window;
     window.title = "cavel";
@@ -24,6 +21,7 @@ application_t application_init(platform_t platform)
     app.window = window;
     app.platform = platform;
     app.layer_stack = layer_stack_init(4);
+    app.exiting = false;
 
     layer_t nuklear_layer = nuklear_layer_init(app.window);
     application_add_layer(&app, nuklear_layer);
@@ -36,16 +34,20 @@ application_t application_init(platform_t platform)
 void application_update(application_t* application)
 {
     for(size_t i = 0; i < application->layer_stack.add_index; i++)
-    {application->layer_stack.layers[i].update();
-
+    {
+        application->layer_stack.layers[i].update();
     }
 }
 
 
 void application_run(application_t* application)
 {
-    while (true)
+    while (!application->exiting)
     {
+        if(input_mouse_button_pressed(&application->window, MOUSE_BUTTON_LEFT))
+        {
+            printf("left button pressed\n");
+        }
         application_update(application);
     }
 }

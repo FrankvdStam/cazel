@@ -5,8 +5,7 @@
 #ifndef WINDOWS_WINDOW_H
 #define WINDOWS_WINDOW_H
 
-#include "../window.h"
-
+#include "../../window.h"
 
 //Initialize a windows specific window using glfw
 void windows_window_init(window_t* window);

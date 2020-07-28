@@ -7,7 +7,7 @@
 
 #include "cazel/core.h"
 #include "cazel/application.h"
-#include "cazel/main.h"
+#include "cazel/main.c"
 
 
 

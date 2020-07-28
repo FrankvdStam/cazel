@@ -7,6 +7,7 @@
 
 #include "core.h"
 
+
 typedef struct
 {
     char* title;
@@ -18,7 +19,7 @@ typedef struct
 } window_t;
 
 #ifdef WINDOWS
-    #include "platform/windows_window.h"
+    #include "platform/windows/windows_window.h"
 #endif
 
 //Resolve platform api's, called automatically during initialization

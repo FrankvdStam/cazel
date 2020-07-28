@@ -3,6 +3,6 @@
 
 application_t create_application()
 {
-    application_t application = application_init(windows);
+    application_t application = application_create(windows);
     return application;
 }
