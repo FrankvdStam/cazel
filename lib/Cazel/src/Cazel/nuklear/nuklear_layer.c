@@ -10,6 +10,8 @@
 #include "../../../lib/glfw/include/GLFW/glfw3.h"
 #include "../../../lib/glad/include/glad/glad.h"
 
+#include "../context.h"
+
 #define NK_INCLUDE_FIXED_TYPES
 #define NK_INCLUDE_STANDARD_IO
 #define NK_INCLUDE_STANDARD_VARARGS
@@ -23,6 +25,7 @@
 
 #include "../../../lib/Nuklear/nuklear.h"
 #include "../../../lib/Nuklear/demo/glfw_opengl3/nuklear_glfw_gl3.h"
+
 
 #define MAX_VERTEX_BUFFER 512 * 1024
 #define MAX_ELEMENT_BUFFER 128 * 1024
@@ -96,7 +99,8 @@ void nuklear_layer_on_update()
     glClearColor(bg.r, bg.g, bg.b, bg.a);
 
     nk_glfw3_render(&glfw, NK_ANTI_ALIASING_ON, MAX_VERTEX_BUFFER, MAX_ELEMENT_BUFFER);
-    glfwSwapBuffers(s_window.handle);
+    context_swap_buffers(&s_window);
+    //glfwSwapBuffers(s_window.handle);
 }
 
 

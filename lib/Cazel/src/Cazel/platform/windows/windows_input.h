@@ -11,7 +11,6 @@
 #include "../../core.h"
 #include "../../input.h"
 
-static GLFWwindow* static_windows_glfw_window;
 bool windows_mouse_button_pressed(window_t* window, int button);
 
 #endif //SANDBOX_WINDOWS_INPUT_H

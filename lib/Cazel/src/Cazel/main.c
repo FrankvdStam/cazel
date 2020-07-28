@@ -5,6 +5,7 @@
 #include "application.h"
 #include "window.h"
 #include "input.h"
+#include "context.h"
 
 extern application_t application_create();
 
@@ -14,6 +15,7 @@ void initialize_platform(platform_t platform)
 {
     window_platform_init(platform);
     input_platform_init(platform);
+    context_platform_init(platform);
 }
 
 
