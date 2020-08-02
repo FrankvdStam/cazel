@@ -27,10 +27,10 @@ void window_platform_init(platform_t platform);
 
 
 //Initializes a platform specific window using the parameters of the window struct
-void(*window_init)(window_t* window);
+extern void(*window_init)(window_t* window);
 
 //Closes a initialized window
-void(*window_close)(window_t* window);
+extern void(*window_close)(window_t* window);
 
 
 #endif //WINDOW_H

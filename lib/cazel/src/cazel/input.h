@@ -18,6 +18,6 @@ void input_platform_init(platform_t platform);
 #define MOUSE_BUTTON_RIGHT  1
 #define MOUSE_BUTTON_MIDDLE 2
 
-bool(*input_mouse_button_pressed)(window_t* window, int button);
+extern bool(*input_mouse_button_pressed)(window_t* window, int button);
 
 #endif //SANDBOX_INPUT_H

@@ -9,3 +9,10 @@ add_executable(Sandbox src/main.c)
 
 
 target_link_libraries (Sandbox LINK_PUBLIC cazel)
+
+
+target_compile_options(Sandbox PUBLIC
+        -pedantic-errors
+        -ansi
+        -pedantic
+        )

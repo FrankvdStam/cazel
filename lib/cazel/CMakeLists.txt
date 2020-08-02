@@ -25,9 +25,35 @@ add_library(cazel
         src/cazel/layers/layer.h
 
         src/cazel/nuklear/nuklear_layer.c
-        src/cazel/nuklear/nuklear_layer.h src/cazel/input.h src/cazel/input.c src/cazel/platform/windows/windows_input.c src/cazel/platform/windows/windows_input.h src/cazel/renderer/buffers/buffers.c src/cazel/renderer/buffers/buffers.h src/cazel/platform/opengl/opengl_context.c src/cazel/platform/opengl/opengl_context.h src/cazel/context.c src/cazel/context.h)
+        src/cazel/nuklear/nuklear_layer.h
 
-target_compile_options(cazel PRIVATE -Wall -Wextra -pedantic -Werror -Wno-sign-compare -Wno-unused-parameter -Wno-unused-but-set-variable)
+        src/cazel/input.h
+        src/cazel/input.c
+        src/cazel/platform/windows/windows_input.c
+        src/cazel/platform/windows/windows_input.h
+
+        src/cazel/renderer/buffers/buffers.c
+        src/cazel/renderer/buffers/buffers.h
+
+        src/cazel/platform/opengl/opengl_context.c
+        src/cazel/platform/opengl/opengl_context.h
+        src/cazel/context.c
+        src/cazel/context.h)
+
+target_compile_options(cazel PUBLIC
+
+        -pedantic-errors
+        -ansi
+        -pedantic
+        -Wall
+        -Wextra
+        -pedantic
+        -Werror
+        -Wno-sign-compare
+        -Wno-unused-parameter
+        -Wno-unused-but-set-variable
+        -fno-common
+        )
 
 
 add_subdirectory (lib/glfw)
