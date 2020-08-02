@@ -23,7 +23,7 @@ void(*context_set_vertex_buffer_layout)(vertex_buffer_t vertex_buffer, buffer_la
 
 void context_platform_init(platform_t platform)
 {
-#ifdef WINDOWS
+#ifdef CAZEL_WINDOWS
     context_init = &opengl_context_init;
     context_swap_buffers = &opengl_context_swap_buffers;
 
@@ -38,8 +38,20 @@ void context_platform_init(platform_t platform)
 
     context_set_vertex_buffer_layout = opengl_context_set_vertex_buffer_layout;
 
-#else
-    EXIT_ERROR("Linux not supported");
+#elif CAZEL_LINUX
+    context_init = &opengl_context_init;
+    context_swap_buffers = &opengl_context_swap_buffers;
+
+    context_create_vertex_buffer = opengl_context_create_vertex_buffer;
+    context_create_index_buffer = opengl_context_create_index_buffer;
+
+    context_bind_vertex_buffer = opengl_context_bind_vertex_buffer;
+    context_bind_index_buffer = opengl_context_bind_index_buffer;
+
+    context_free_vertex_buffer = opengl_context_free_vertex_buffer;
+    context_free_index_buffer = opengl_context_free_index_buffer;
+
+    context_set_vertex_buffer_layout = opengl_context_set_vertex_buffer_layout;
 #endif
 }
 

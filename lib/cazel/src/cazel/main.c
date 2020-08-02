@@ -21,7 +21,7 @@ void initialize_platform(platform_t platform)
 
 int main()
 {
-    initialize_platform(windows);
+    initialize_platform(platform_windows);
     application_t application = application_create();
     application_run(&application);
     return 0;

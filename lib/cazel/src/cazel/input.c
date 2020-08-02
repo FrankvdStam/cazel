@@ -9,10 +9,10 @@ bool(*input_mouse_button_pressed)(window_t* window, int button);
 
 void input_platform_init(platform_t platform)
 {
-#ifdef WINDOWS
+#ifdef CAZEL_WINDOWS
     input_mouse_button_pressed = &windows_mouse_button_pressed;
-#else
-    EXIT_ERROR("Linux not supported.\n");
+#elif CAZEL_LINUX
+    input_mouse_button_pressed = &windows_mouse_button_pressed;
 #endif
 
 }

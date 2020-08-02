@@ -14,8 +14,8 @@
 
 typedef enum
 {
-    windows,
-    linux,
+    platform_windows,
+    platform_linux,
 } platform_t;
 
 

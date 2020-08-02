@@ -2,7 +2,15 @@ cmake_minimum_required(VERSION 3.13)
 project(cazel C)
 
 set(CMAKE_C_STANDARD 11)
-add_compile_definitions(WINDOWS)
+
+
+if (WIN32)
+    add_compile_definitions(CAZEL_WINDOWS)
+endif (WIN32)
+
+if(LINUX)
+    add_compile_definitions(CAZEL_LINUX)
+endif (LINUX)
 
 add_library(cazel
 
@@ -38,7 +46,7 @@ add_library(cazel
         src/cazel/platform/opengl/opengl_context.c
         src/cazel/platform/opengl/opengl_context.h
         src/cazel/context.c
-        src/cazel/context.h)
+        src/cazel/context.h src/cazel/platform/linux/linux_window.c src/cazel/platform/linux/linux_window.h)
 
 target_compile_options(cazel PUBLIC
 
