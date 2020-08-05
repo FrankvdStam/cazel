@@ -14,10 +14,13 @@ void input_platform_init(platform_t platform);
 //=====================================================================================================================
 //Mouse
 
-#define MOUSE_BUTTON_LEFT   0
-#define MOUSE_BUTTON_RIGHT  1
-#define MOUSE_BUTTON_MIDDLE 2
+typedef enum
+{
+    mouse_button_left,
+    mouse_button_right,
+    mouse_button_middle,
+} mouse_button_t;
 
-extern bool(*input_mouse_button_pressed)(window_t* window, int button);
+extern bool(*input_mouse_button_pressed)(window_t* window, mouse_button_t button);
 
 #endif //SANDBOX_INPUT_H

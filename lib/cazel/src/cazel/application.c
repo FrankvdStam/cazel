@@ -44,7 +44,7 @@ void application_run(application_t* application)
 {
     while (!application->exiting)
     {
-        if(input_mouse_button_pressed(&application->window, MOUSE_BUTTON_LEFT))
+        if(input_mouse_button_pressed(&application->window, mouse_button_left))
         {
             printf("left button pressed\n");
         }

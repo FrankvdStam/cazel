@@ -5,12 +5,9 @@
 #ifndef SANDBOX_WINDOWS_INPUT_H
 #define SANDBOX_WINDOWS_INPUT_H
 
-#define GLFW_INCLUDE_NONE
-#include "GLFW/glfw3.h"
-
 #include "../../core.h"
 #include "../../input.h"
 
-bool windows_mouse_button_pressed(window_t* window, int button);
+bool windows_mouse_button_pressed(window_t* window, mouse_button_t button);
 
 #endif //SANDBOX_WINDOWS_INPUT_H

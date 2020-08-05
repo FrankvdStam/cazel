@@ -5,7 +5,7 @@
 #include "core.h"
 #include "platform/windows/windows_input.h"
 
-bool(*input_mouse_button_pressed)(window_t* window, int button);
+bool(*input_mouse_button_pressed)(window_t* window, mouse_button_t button);
 
 void input_platform_init(platform_t platform)
 {
