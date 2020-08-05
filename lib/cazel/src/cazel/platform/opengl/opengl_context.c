@@ -9,92 +9,10 @@
 #include "../../../../lib/glad/include/glad/glad.h"
 #include "../../application.h"
 #include "../../input.h"
+#include "../glfw/glfw_input.h"
 
 
-key_t glfw_key_to_key_t(int key)
-{
-    switch(key)
-    {
-        case GLFW_KEY_A: return key_a;
-        case GLFW_KEY_B: return key_b;
-        case GLFW_KEY_C: return key_c;
-        case GLFW_KEY_D: return key_d;
-        case GLFW_KEY_E: return key_e;
-        case GLFW_KEY_F: return key_f;
-        case GLFW_KEY_G: return key_g;
-        case GLFW_KEY_H: return key_h;
-        case GLFW_KEY_I: return key_i;
-        case GLFW_KEY_J: return key_j;
-        case GLFW_KEY_K: return key_k;
-        case GLFW_KEY_L: return key_l;
-        case GLFW_KEY_M: return key_m;
-        case GLFW_KEY_N: return key_n;
-        case GLFW_KEY_O: return key_o;
-        case GLFW_KEY_P: return key_p;
-        case GLFW_KEY_Q: return key_q;
-        case GLFW_KEY_R: return key_r;
-        case GLFW_KEY_S: return key_s;
-        case GLFW_KEY_T: return key_t_;
-        case GLFW_KEY_U: return key_u;
-        case GLFW_KEY_V: return key_v;
-        case GLFW_KEY_W: return key_w;
-        case GLFW_KEY_X: return key_x;
-        case GLFW_KEY_Y: return key_y;
-        case GLFW_KEY_Z: return key_z;
 
-        case GLFW_KEY_0: return key_0;
-        case GLFW_KEY_1: return key_1;
-        case GLFW_KEY_2: return key_2;
-        case GLFW_KEY_3: return key_3;
-        case GLFW_KEY_4: return key_4;
-        case GLFW_KEY_5: return key_5;
-        case GLFW_KEY_6: return key_6;
-        case GLFW_KEY_7: return key_7;
-        case GLFW_KEY_8: return key_8;
-        case GLFW_KEY_9: return key_9;
-
-        case GLFW_KEY_F1 : return key_f1;
-        case GLFW_KEY_F2 : return key_f2;
-        case GLFW_KEY_F3 : return key_f3;
-        case GLFW_KEY_F4 : return key_f4;
-        case GLFW_KEY_F5 : return key_f5;
-        case GLFW_KEY_F6 : return key_f6;
-        case GLFW_KEY_F7 : return key_f7;
-        case GLFW_KEY_F8 : return key_f8;
-        case GLFW_KEY_F9 : return key_f9;
-        case GLFW_KEY_F10: return key_f10;
-        case GLFW_KEY_F11: return key_f11;
-        case GLFW_KEY_F12: return key_f12;
-
-        case GLFW_KEY_LEFT_CONTROL  : return key_left_control;
-        case GLFW_KEY_RIGHT_CONTROL : return key_right_control;
-        case GLFW_KEY_LEFT_SHIFT    : return key_left_shift;
-        case GLFW_KEY_RIGHT_SHIFT   : return key_right_shift;
-        case GLFW_KEY_LEFT_ALT      : return key_left_alt;
-        case GLFW_KEY_RIGHT_ALT     : return key_right_alt;
-        case GLFW_KEY_CAPS_LOCK     : return key_caps;
-        case GLFW_KEY_TAB           : return key_tab;
-        case GLFW_KEY_GRAVE_ACCENT  : return key_tilde;
-        case GLFW_KEY_ESCAPE        : return key_escape;
-        case GLFW_KEY_ENTER         : return key_enter;
-
-        case GLFW_KEY_INSERT    : return key_insert;
-        case GLFW_KEY_HOME      : return key_home;
-        case GLFW_KEY_END       : return key_end;
-        case GLFW_KEY_DELETE    : return key_delete;
-        case GLFW_KEY_PAGE_UP   : return key_pageup;
-        case GLFW_KEY_PAGE_DOWN : return key_pagedown;
-
-        case GLFW_KEY_LEFT  : return key_left;
-        case GLFW_KEY_RIGHT : return key_right;
-        case GLFW_KEY_UP    : return key_up;
-        case GLFW_KEY_DOWN  : return key_down;
-
-        default:
-            printf("Unsupported key: %i\n", key);
-            return key_none;
-    }
-}
 
 GLenum shader_data_type_to_gl_enum(shader_data_type_t type)
 {

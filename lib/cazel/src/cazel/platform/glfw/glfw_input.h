@@ -8,6 +8,10 @@
 #include "../../core.h"
 #include "../../input.h"
 
+key_t glfw_key_to_key_t(int key);
+int key_t_to_glfw(key_t key);
+
+
 bool glfw_mouse_button_pressed(window_t* window, mouse_button_t button);
 bool glfw_key_pressed(window_t* window, key_t key);
 
