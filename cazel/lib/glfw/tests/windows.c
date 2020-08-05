@@ -23,7 +23,7 @@
 //
 //========================================================================
 //
-// This test creates four windows and clears each in a different color
+// This test creates four glfw and clears each in a different color
 //
 //========================================================================
 
@@ -56,9 +56,9 @@ static const struct
 
 static void usage(void)
 {
-    printf("Usage: windows [-h] [-b] [-f] \n");
+    printf("Usage: glfw [-h] [-b] [-f] \n");
     printf("Options:\n");
-    printf("  -b create decorated windows\n");
+    printf("  -b create decorated glfw\n");
     printf("  -f set focus on show off for all but first window\n");
     printf("  -h show this help\n");
 }

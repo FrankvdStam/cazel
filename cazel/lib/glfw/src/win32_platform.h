@@ -40,7 +40,7 @@
 
 // This is a workaround for the fact that glfw3.h needs to export APIENTRY (for
 // example to allow applications to correctly declare a GL_ARB_debug_output
-// callback) but windows.h assumes no one will define APIENTRY before it does
+// callback) but glfw.h assumes no one will define APIENTRY before it does
 #undef APIENTRY
 
 // GLFW on Windows is Unicode only and does not work in MBCS mode
@@ -70,7 +70,7 @@
 #include <xinput.h>
 #include <dbt.h>
 
-// HACK: Define macros that some windows.h variants don't
+// HACK: Define macros that some glfw.h variants don't
 #ifndef WM_MOUSEHWHEEL
  #define WM_MOUSEHWHEEL 0x020E
 #endif

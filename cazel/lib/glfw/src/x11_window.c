@@ -312,7 +312,7 @@ static void updateWindowMode(_GLFWwindow* window)
             // This is the butcher's way of removing window decorations
             // Setting the override-redirect attribute on a window makes the
             // window manager ignore the window completely (ICCCM, section 4)
-            // The good thing is that this makes undecorated full screen windows
+            // The good thing is that this makes undecorated full screen glfw
             // easy to do; the bad thing is that we have to do everything
             // manually and some things (like iconify/restore) won't work at
             // all, as those are tasks usually performed by the window manager
@@ -1766,7 +1766,7 @@ static void processEvent(XEvent *event)
             if (event->xfocus.mode == NotifyGrab ||
                 event->xfocus.mode == NotifyUngrab)
             {
-                // Ignore focus events from popup indicator windows, window menu
+                // Ignore focus events from popup indicator glfw, window menu
                 // key chords and window dragging
                 return;
             }
@@ -1786,7 +1786,7 @@ static void processEvent(XEvent *event)
             if (event->xfocus.mode == NotifyGrab ||
                 event->xfocus.mode == NotifyUngrab)
             {
-                // Ignore focus events from popup indicator windows, window menu
+                // Ignore focus events from popup indicator glfw, window menu
                 // key chords and window dragging
                 return;
             }
@@ -2144,7 +2144,7 @@ void _glfwPlatformGetWindowPos(_GLFWwindow* window, int* xpos, int* ypos)
 void _glfwPlatformSetWindowPos(_GLFWwindow* window, int xpos, int ypos)
 {
     // HACK: Explicitly setting PPosition to any value causes some WMs, notably
-    //       Compiz and Metacity, to honor the position of unmapped windows
+    //       Compiz and Metacity, to honor the position of unmapped glfw
     if (!_glfwPlatformWindowVisible(window))
     {
         long supplied;
@@ -2291,10 +2291,10 @@ void _glfwPlatformIconifyWindow(_GLFWwindow* window)
 {
     if (window->x11.overrideRedirect)
     {
-        // Override-redirect windows cannot be iconified or restored, as those
+        // Override-redirect glfw cannot be iconified or restored, as those
         // tasks are performed by the window manager
         _glfwInputError(GLFW_PLATFORM_ERROR,
-                        "X11: Iconification of full screen windows requires a WM that supports EWMH full screen");
+                        "X11: Iconification of full screen glfw requires a WM that supports EWMH full screen");
         return;
     }
 
@@ -2306,10 +2306,10 @@ void _glfwPlatformRestoreWindow(_GLFWwindow* window)
 {
     if (window->x11.overrideRedirect)
     {
-        // Override-redirect windows cannot be iconified or restored, as those
+        // Override-redirect glfw cannot be iconified or restored, as those
         // tasks are performed by the window manager
         _glfwInputError(GLFW_PLATFORM_ERROR,
-                        "X11: Iconification of full screen windows requires a WM that supports EWMH full screen");
+                        "X11: Iconification of full screen glfw requires a WM that supports EWMH full screen");
         return;
     }
 

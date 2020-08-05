@@ -9,11 +9,11 @@
 #define tests_common_h
 
 #ifndef _USE_MATH_DEFINES
-#  define _USE_MATH_DEFINES       /* for windows */
+#  define _USE_MATH_DEFINES       /* for glfw */
 #endif
 
 #ifndef _CRT_SECURE_NO_WARNINGS
-#  define _CRT_SECURE_NO_WARNINGS /* for windows */
+#  define _CRT_SECURE_NO_WARNINGS /* for glfw */
 #endif
 
 #include <stdlib.h>

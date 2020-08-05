@@ -78,7 +78,7 @@ extern "C" {
  *  For more task-oriented information, see the @ref monitor_guide.
  */
 /*! @defgroup window Window reference
- *  @brief Functions and types related to windows.
+ *  @brief Functions and types related to glfw.
  *
  *  This is the reference documentation for window related functions and types,
  *  including creation, deletion and event polling.  For more task-oriented
@@ -1678,7 +1678,7 @@ GLFWAPI int glfwInit(void);
 
 /*! @brief Terminates the GLFW library.
  *
- *  This function destroys all remaining windows and cursors, restores any
+ *  This function destroys all remaining glfw and cursors, restores any
  *  modified gamma ramps and frees any other allocated resources.  Once this
  *  function is called, you must again call @ref glfwInit successfully before
  *  you will be able to use most GLFW functions.
@@ -1692,7 +1692,7 @@ GLFWAPI int glfwInit(void);
  *
  *  @remark This function may be called before @ref glfwInit.
  *
- *  @warning The contexts of any remaining windows must not be current on any
+ *  @warning The contexts of any remaining glfw must not be current on any
  *  other thread when this function is called.
  *
  *  @reentrancy This function must not be called from a callback.
@@ -2413,7 +2413,7 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  The created window, framebuffer and context may differ from what you
  *  requested, as not all parameters and hints are
  *  [hard constraints](@ref window_hints_hard).  This includes the size of the
- *  window, especially for full screen windows.  To query the actual attributes
+ *  window, especially for full screen glfw.  To query the actual attributes
  *  of the created window, framebuffer and context, see @ref
  *  glfwGetWindowAttrib, @ref glfwGetWindowSize and @ref glfwGetFramebufferSize.
  *
@@ -2423,18 +2423,18 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  recommended that you pick the primary monitor.  For more information on how
  *  to query connected monitors, see @ref monitor_monitors.
  *
- *  For full screen windows, the specified size becomes the resolution of the
+ *  For full screen glfw, the specified size becomes the resolution of the
  *  window's _desired video mode_.  As long as a full screen window is not
  *  iconified, the supported video mode most closely matching the desired video
  *  mode is set for the specified monitor.  For more information about full
- *  screen windows, including the creation of so called _windowed full screen_
- *  or _borderless full screen_ windows, see @ref window_windowed_full_screen.
+ *  screen glfw, including the creation of so called _windowed full screen_
+ *  or _borderless full screen_ glfw, see @ref window_windowed_full_screen.
  *
  *  Once you have created the window, you can switch it between windowed and
  *  full screen mode with @ref glfwSetWindowMonitor.  This will not affect its
  *  OpenGL or OpenGL ES context.
  *
- *  By default, newly created windows use the placement recommended by the
+ *  By default, newly created glfw use the placement recommended by the
  *  window system.  To create the window at a specific position, make it
  *  initially invisible using the [GLFW_VISIBLE](@ref GLFW_VISIBLE_hint) window
  *  hint, set its [position](@ref window_pos) and then [show](@ref window_hide)
@@ -2513,7 +2513,7 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  window size and position may be overriden by previously saved values.
  *
  *  @remark @x11 Some window managers will not respect the placement of
- *  initially hidden windows.
+ *  initially hidden glfw.
  *
  *  @remark @x11 Due to the asynchronous nature of X11, it may take a moment for
  *  a window to reach its requested state.  This means you may not be able to
@@ -2714,7 +2714,7 @@ GLFWAPI void glfwSetWindowIcon(GLFWwindow* window, int count, const GLFWimage* i
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland There is no way for an application to retrieve the global
- *  position of its windows, this function will always emit @ref
+ *  position of its glfw, this function will always emit @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -2748,7 +2748,7 @@ GLFWAPI void glfwGetWindowPos(GLFWwindow* window, int* xpos, int* ypos);
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland There is no way for an application to set the global
- *  position of its windows, this function will always emit @ref
+ *  position of its glfw, this function will always emit @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -2884,7 +2884,7 @@ GLFWAPI void glfwSetWindowAspectRatio(GLFWwindow* window, int numer, int denom);
  *  This function sets the size, in screen coordinates, of the content area of
  *  the specified window.
  *
- *  For full screen windows, this function updates the resolution of its desired
+ *  For full screen glfw, this function updates the resolution of its desired
  *  video mode and switches to the video mode closest to it, without affecting
  *  the window's context.  As the context is unaffected, the bit depths of the
  *  framebuffer remain unchanged.
@@ -3027,7 +3027,7 @@ GLFWAPI void glfwGetWindowContentScale(GLFWwindow* window, float* xscale, float*
  *  one, where zero is fully transparent and one is fully opaque.  If the system
  *  does not support whole window transparency, this function always returns one.
  *
- *  The initial opacity value for newly created windows is one.
+ *  The initial opacity value for newly created glfw is one.
  *
  *  @param[in] window The window to query.
  *  @return The opacity value of the specified window.
@@ -3053,7 +3053,7 @@ GLFWAPI float glfwGetWindowOpacity(GLFWwindow* window);
  *  The opacity (or alpha) value is a positive finite number between zero and
  *  one, where zero is fully transparent and one is fully opaque.
  *
- *  The initial opacity value for newly created windows is one.
+ *  The initial opacity value for newly created glfw is one.
  *
  *  A window created with framebuffer transparency may not use whole window
  *  transparency.  The results of doing this are undefined.
@@ -3164,9 +3164,9 @@ GLFWAPI void glfwMaximizeWindow(GLFWwindow* window);
  *  hidden.  If the window is already visible or is in full screen mode, this
  *  function does nothing.
  *
- *  By default, windowed mode windows are focused when shown
+ *  By default, windowed mode glfw are focused when shown
  *  Set the [GLFW_FOCUS_ON_SHOW](@ref GLFW_FOCUS_ON_SHOW_hint) window hint
- *  to change this behavior for all newly created windows, or change the
+ *  to change this behavior for all newly created glfw, or change the
  *  behavior for an existing window with @ref glfwSetWindowAttrib.
  *
  *  @param[in] window The window to make visible.
@@ -3212,11 +3212,11 @@ GLFWAPI void glfwHideWindow(GLFWwindow* window);
  *  This function brings the specified window to front and sets input focus.
  *  The window should already be visible and not iconified.
  *
- *  By default, both windowed and full screen mode windows are focused when
+ *  By default, both windowed and full screen mode glfw are focused when
  *  initially created.  Set the [GLFW_FOCUSED](@ref GLFW_FOCUSED_hint) to
  *  disable this behavior.
  *
- *  Also by default, windowed mode windows are focused when shown
+ *  Also by default, windowed mode glfw are focused when shown
  *  with @ref glfwShowWindow. Set the
  *  [GLFW_FOCUS_ON_SHOW](@ref GLFW_FOCUS_ON_SHOW_hint) to disable this behavior.
  *
@@ -3232,7 +3232,7 @@ GLFWAPI void glfwHideWindow(GLFWwindow* window);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
- *  @remark @wayland It is not possible for an application to bring its windows
+ *  @remark @wayland It is not possible for an application to bring its glfw
  *  to front, this function will always emit @ref GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3398,10 +3398,10 @@ GLFWAPI int glfwGetWindowAttrib(GLFWwindow* window, int attrib);
  *  [GLFW_AUTO_ICONIFY](@ref GLFW_AUTO_ICONIFY_attrib) and
  *  [GLFW_FOCUS_ON_SHOW](@ref GLFW_FOCUS_ON_SHOW_attrib).
  *
- *  Some of these attributes are ignored for full screen windows.  The new
+ *  Some of these attributes are ignored for full screen glfw.  The new
  *  value will take effect if the window is later made windowed.
  *
- *  Some of these attributes are ignored for windowed mode windows.  The new
+ *  Some of these attributes are ignored for windowed mode glfw.  The new
  *  value will take effect if the window is later made full screen.
  *
  *  @param[in] window The window to set the attribute for.
@@ -3542,7 +3542,7 @@ GLFWAPI GLFWwindowsizefun glfwSetWindowSizeCallback(GLFWwindow* window, GLFWwind
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
  *
  *  @remark @macos Selecting Quit from the application menu will trigger the
- *  close callback for all windows.
+ *  close callback for all glfw.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -5415,7 +5415,7 @@ GLFWAPI int glfwVulkanSupported(void);
 /*! @brief Returns the Vulkan instance extensions required by GLFW.
  *
  *  This function returns an array of names of Vulkan instance extensions required
- *  by GLFW for creating Vulkan surfaces for GLFW windows.  If successful, the
+ *  by GLFW for creating Vulkan surfaces for GLFW glfw.  If successful, the
  *  list will always contains `VK_KHR_surface`, so if you don't require any
  *  additional extensions you can pass this list directly to the
  *  `VkInstanceCreateInfo` struct.

@@ -24,7 +24,7 @@
 //========================================================================
 //
 // This program is used to test the iconify/restore functionality for
-// both full screen and windowed mode windows
+// both full screen and windowed mode glfw
 //
 //========================================================================
 
@@ -42,7 +42,7 @@ static void usage(void)
 {
     printf("Usage: iconify [-h] [-f [-a] [-n]]\n");
     printf("Options:\n");
-    printf("  -a create windows for all monitors\n");
+    printf("  -a create glfw for all monitors\n");
     printf("  -f create full screen window(s)\n");
     printf("  -h show this help\n");
 }

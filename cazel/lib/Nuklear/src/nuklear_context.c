@@ -127,14 +127,14 @@ nk_clear(struct nk_context *ctx)
     /* garbage collector */
     iter = ctx->begin;
     while (iter) {
-        /* make sure valid minimized windows do not get removed */
+        /* make sure valid minimized glfw do not get removed */
         if ((iter->flags & NK_WINDOW_MINIMIZED) &&
             !(iter->flags & NK_WINDOW_CLOSED) &&
             iter->seq == ctx->seq) {
             iter = iter->next;
             continue;
         }
-        /* remove hotness from hidden or closed windows*/
+        /* remove hotness from hidden or closed glfw*/
         if (((iter->flags & NK_WINDOW_HIDDEN) ||
             (iter->flags & NK_WINDOW_CLOSED)) &&
             iter == ctx->active) {
@@ -145,7 +145,7 @@ nk_clear(struct nk_context *ctx)
             if (ctx->active)
                 ctx->active->flags &= ~(unsigned)NK_WINDOW_ROM;
         }
-        /* free unused popup windows */
+        /* free unused popup glfw */
         if (iter->popup.win && iter->popup.win->seq != ctx->seq) {
             nk_free_window(ctx, iter->popup.win);
             iter->popup.win = 0;

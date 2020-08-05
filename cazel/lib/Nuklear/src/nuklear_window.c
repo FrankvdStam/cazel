@@ -18,7 +18,7 @@ nk_create_window(struct nk_context *ctx)
 NK_LIB void
 nk_free_window(struct nk_context *ctx, struct nk_window *win)
 {
-    /* unlink windows from list */
+    /* unlink glfw from list */
     struct nk_table *it = win->tables;
     if (win->popup.win) {
         nk_free_window(ctx, win->popup.win);
@@ -37,7 +37,7 @@ nk_free_window(struct nk_context *ctx, struct nk_window *win)
         it = n;
     }
 
-    /* link windows into freelist */
+    /* link glfw into freelist */
     {union nk_page_data *pd = NK_CONTAINER_OF(win, union nk_page_data, win);
     struct nk_page_element *pe = NK_CONTAINER_OF(pd, struct nk_page_element, data);
     nk_free_page_element(ctx, pe);}

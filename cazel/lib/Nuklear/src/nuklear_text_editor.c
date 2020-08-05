@@ -524,7 +524,7 @@ retry:
         int i, sel = shift_mod;
 
         if (state->single_line) {
-            /* on windows, up&down in single-line behave like left&right */
+            /* on glfw, up&down in single-line behave like left&right */
             key = NK_KEY_RIGHT;
             goto retry;
         }
@@ -572,7 +572,7 @@ retry:
         int i, sel = shift_mod;
 
         if (state->single_line) {
-            /* on windows, up&down become left&right */
+            /* on glfw, up&down become left&right */
             key = NK_KEY_LEFT;
             goto retry;
         }

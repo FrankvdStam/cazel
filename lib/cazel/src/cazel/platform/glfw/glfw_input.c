@@ -2,12 +2,12 @@
 // Created by Frank on 28/07/2020.
 //
 
-#include "windows_input.h"
+#include "glfw_input.h"
 
 #define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
 
-bool windows_mouse_button_pressed(window_t* window, mouse_button_t button)
+bool glfw_mouse_button_pressed(window_t* window, mouse_button_t button)
 {
     switch (button)
     {
@@ -23,7 +23,7 @@ bool windows_mouse_button_pressed(window_t* window, mouse_button_t button)
     }
 }
 
-bool windows_key_pressed(window_t* window, key_t key)
+bool glfw_key_pressed(window_t* window, key_t key)
 {
     switch(key)
     {

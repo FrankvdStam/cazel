@@ -84,12 +84,12 @@ extern "C" {
 #if defined(GLFW_EXPOSE_NATIVE_WIN32) || defined(GLFW_EXPOSE_NATIVE_WGL)
  // This is a workaround for the fact that glfw3.h needs to export APIENTRY (for
  // example to allow applications to correctly declare a GL_ARB_debug_output
- // callback) but windows.h assumes no one will define APIENTRY before it does
+ // callback) but glfw.h assumes no one will define APIENTRY before it does
  #if defined(GLFW_APIENTRY_DEFINED)
   #undef APIENTRY
   #undef GLFW_APIENTRY_DEFINED
  #endif
- #include <windows.h>
+ #include <glfw.h>
 #elif defined(GLFW_EXPOSE_NATIVE_COCOA) || defined(GLFW_EXPOSE_NATIVE_NSGL)
  #if defined(__OBJC__)
   #import <Cocoa/Cocoa.h>
@@ -105,7 +105,7 @@ extern "C" {
 #endif
 
 #if defined(GLFW_EXPOSE_NATIVE_WGL)
- /* WGL is declared by windows.h */
+ /* WGL is declared by glfw.h */
 #endif
 #if defined(GLFW_EXPOSE_NATIVE_NSGL)
  /* NSGL is declared by Cocoa.h */

@@ -8,10 +8,10 @@
 #include "../../window.h"
 
 //Initialize a glfw specific window using glfw
-void windows_window_init(window_t* window);
+void glfw_window_init(window_t* window);
 
 //Destroy glfw specific window using glfw
-void windows_window_close(window_t* window);
+void glfw_window_close(window_t* window);
 
 
 

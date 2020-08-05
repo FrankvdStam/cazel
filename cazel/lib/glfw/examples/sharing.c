@@ -97,7 +97,7 @@ int main(int argc, char** argv)
 
     glfwMakeContextCurrent(windows[0]);
 
-    // Only enable vsync for the first of the windows to be swapped to
+    // Only enable vsync for the first of the glfw to be swapped to
     // avoid waiting out the interval for each window
     glfwSwapInterval(1);
 

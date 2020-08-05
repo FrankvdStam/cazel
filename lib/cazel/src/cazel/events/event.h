@@ -18,18 +18,18 @@ typedef enum
     event_window_lost_focus,
     event_window_moved,
 
-    event_app_tick,
-    event_app_update,
-    event_app_render,
+    //event_app_tick,
+    //event_app_update,
+    //event_app_render,
 
-    event_key_pressed,
-    event_key_released,
-    event_key_typed,
+    //event_key_pressed,
+    //event_key_released,
+    //event_key_typed,
 
-    event_mouse_button_pressed,
-    event_mouse_button_released,
-    event_mouse_moved,
-    event_mouse_scolled
+    //event_mouse_button_pressed,
+    //event_mouse_button_released,
+    //event_mouse_moved,
+    //event_mouse_scolled
 } event_type_t;
 
 typedef struct

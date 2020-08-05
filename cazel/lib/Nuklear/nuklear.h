@@ -609,7 +609,7 @@ NK_API int nk_init(struct nk_context*, struct nk_allocator*, const struct nk_use
 /*/// #### nk_init_custom
 /// Initializes a `nk_context` struct from two different either fixed or growing
 /// buffers. The first buffer is for allocating draw commands while the second buffer is
-/// used for allocating windows, panels and state tables.
+/// used for allocating glfw, panels and state tables.
 ///
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
 /// int nk_init_custom(struct nk_context *ctx, struct nk_buffer *cmds, struct nk_buffer *pool, const struct nk_user_font *font);
@@ -619,7 +619,7 @@ NK_API int nk_init(struct nk_context*, struct nk_allocator*, const struct nk_use
 /// ------------|---------------------------------------------------------------
 /// __ctx__     | Must point to an either stack or heap allocated `nk_context` struct
 /// __cmds__    | Must point to a previously initialized memory buffer either fixed or dynamic to store draw commands into
-/// __pool__    | Must point to a previously initialized memory buffer either fixed or dynamic to store windows, panels and tables
+/// __pool__    | Must point to a previously initialized memory buffer either fixed or dynamic to store glfw, panels and tables
 /// __font__    | Must point to a previously initialized font handle for more info look at font documentation
 ///
 /// Returns either `false(0)` on failure or `true(1)` on success.
@@ -627,7 +627,7 @@ NK_API int nk_init(struct nk_context*, struct nk_allocator*, const struct nk_use
 NK_API int nk_init_custom(struct nk_context*, struct nk_buffer *cmds, struct nk_buffer *pool, const struct nk_user_font*);
 /*/// #### nk_clear
 /// Resets the context state at the end of the frame. This includes mostly
-/// garbage collector tasks like removing windows or table not called and therefore
+/// garbage collector tasks like removing glfw or table not called and therefore
 /// used anymore.
 ///
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
@@ -951,7 +951,7 @@ NK_API void nk_input_end(struct nk_context*);
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ///
 /// In program flow context draw commands need to be executed after input has been
-/// gathered and the complete UI with windows and their contained widgets have
+/// gathered and the complete UI with glfw and their contained widgets have
 /// been executed and before calling `nk_clear` which frees all previously
 /// allocated draw commands.
 ///
@@ -1321,7 +1321,7 @@ NK_API const struct nk_draw_command* nk__draw_next(const struct nk_draw_command*
 /// To change window position inside the stack occurs either automatically by
 /// user input by being clicked on or programmatically by calling `nk_window_focus`.
 /// Windows by default are visible unless explicitly being defined with flag
-/// `NK_WINDOW_HIDDEN`, the user clicked the close button on windows with flag
+/// `NK_WINDOW_HIDDEN`, the user clicked the close button on glfw with flag
 /// `NK_WINDOW_CLOSABLE` or if a window was explicitly hidden by calling
 /// `nk_window_show`. To explicitly close and destroy a window call `nk_window_close`.<br /><br />
 ///
@@ -1388,7 +1388,7 @@ NK_API const struct nk_draw_command* nk__draw_next(const struct nk_draw_command*
 /// Function                            | Description
 /// ------------------------------------|----------------------------------------
 /// nk_begin                            | Starts a new window; needs to be called every frame for every window (unless hidden) or otherwise the window gets removed
-/// nk_begin_titled                     | Extended window start with separated title and identifier to allow multiple windows with same name but not title
+/// nk_begin_titled                     | Extended window start with separated title and identifier to allow multiple glfw with same name but not title
 /// nk_end                              | Needs to be called at the end of the window building process to process scaling, scrollbars and general cleanup
 //
 /// nk_window_find                      | Finds and returns the window with give name
@@ -1482,7 +1482,7 @@ enum nk_panel_flags {
 NK_API int nk_begin(struct nk_context *ctx, const char *title, struct nk_rect bounds, nk_flags flags);
 /*/// #### nk_begin_titled
 /// Extended window start with separated title and identifier to allow multiple
-/// windows with same title but not name
+/// glfw with same title but not name
 ///
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
 /// int nk_begin_titled(struct nk_context *ctx, const char *name, const char *title, struct nk_rect bounds, nk_flags flags);
@@ -2565,10 +2565,10 @@ NK_API struct nk_rect nk_layout_space_rect_to_local(struct nk_context*, struct n
  *
  * =============================================================================
 /// ### Groups
-/// Groups are basically windows inside windows. They allow to subdivide space
+/// Groups are basically glfw inside glfw. They allow to subdivide space
 /// in a window to layout widgets as a group. Almost all more complex widget
 /// layouting requirements can be solved using groups and basic layouting
-/// fuctionality. Groups just like windows are identified by an unique name and
+/// fuctionality. Groups just like glfw are identified by an unique name and
 /// internally keep track of scrollbar offsets by default. However additional
 /// versions are provided to directly manage the scrollbar.
 ///
@@ -2578,7 +2578,7 @@ NK_API struct nk_rect nk_layout_space_rect_to_local(struct nk_context*, struct n
 /// is required to check the return value of `nk_group_begin_xxx` and only process
 /// widgets inside the window if the value is not 0.
 /// Nesting groups is possible and even encouraged since many layouting schemes
-/// can only be achieved by nesting. Groups, unlike windows, need `nk_group_end`
+/// can only be achieved by nesting. Groups, unlike glfw, need `nk_group_end`
 /// to be only called if the corosponding `nk_group_begin_xxx` call does not return 0:
 ///
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
@@ -5593,12 +5593,12 @@ struct nk_context {
     /* text editor objects are quite big because of an internal
      * undo/redo stack. Therefore it does not make sense to have one for
      * each window for temporary use cases, so I only provide *one* instance
-     * for all windows. This works because the content is cleared anyway */
+     * for all glfw. This works because the content is cleared anyway */
     struct nk_text_edit text_edit;
     /* draw buffer used for overlay drawing operation like cursor */
     struct nk_command_buffer overlay;
 
-    /* windows */
+    /* glfw */
     int build;
     int use_pool;
     struct nk_pool pool;
@@ -11479,7 +11479,7 @@ GLuint ftex;
 
 void my_stbtt_initfont(void)
 {
-   fread(ttf_buffer, 1, 1<<20, fopen("c:/windows/fonts/times.ttf", "rb"));
+   fread(ttf_buffer, 1, 1<<20, fopen("c:/glfw/fonts/times.ttf", "rb"));
    stbtt_BakeFontBitmap(ttf_buffer,0, 32.0, temp_bitmap,512,512, 32,96, cdata); /*  no guarantee this fits! */
    /*  can free ttf_buffer at this point */
    glGenTextures(1, &ftex);
@@ -11528,7 +11528,7 @@ int main(int argc, char **argv)
    unsigned char *bitmap;
    int w,h,i,j,c = (argc > 1 ? atoi(argv[1]) : 'a'), s = (argc > 2 ? atoi(argv[2]) : 20);
 
-   fread(ttf_buffer, 1, 1<<25, fopen(argc > 3 ? argv[3] : "c:/windows/fonts/arialbd.ttf", "rb"));
+   fread(ttf_buffer, 1, 1<<25, fopen(argc > 3 ? argv[3] : "c:/glfw/fonts/arialbd.ttf", "rb"));
 
    stbtt_InitFont(&font, ttf_buffer, stbtt_GetFontOffsetForIndex(ttf_buffer,0));
    bitmap = stbtt_GetCodepointBitmap(&font, 0,stbtt_ScaleForPixelHeight(&font, s), c, &w, &h, 0,0);
@@ -11570,7 +11570,7 @@ int main(int arg, char **argv)
    float scale, xpos=2; /*  leave a little padding in case the character extends left */
    char *text = "Heljo World!"; /*  intentionally misspelled to show 'lj' brokenness */
 
-   fread(buffer, 1, 1000000, fopen("c:/windows/fonts/arialbd.ttf", "rb"));
+   fread(buffer, 1, 1000000, fopen("c:/glfw/fonts/arialbd.ttf", "rb"));
    stbtt_InitFont(&font, buffer, 0);
 
    scale = stbtt_ScaleForPixelHeight(&font, 15);
@@ -12703,7 +12703,7 @@ STBTT_DEF int stbtt_FindGlyphIndex(const stbtt_fontinfo *info, int unicode_codep
    } else if (format == 2) {
       STBTT_assert(0); /*  @TODO: high-byte mapping for japanese/chinese/korean */
       return 0;
-   } else if (format == 4) { /*  standard mapping for windows fonts: binary search collection of ranges */
+   } else if (format == 4) { /*  standard mapping for glfw fonts: binary search collection of ranges */
       stbtt_uint16 segcount = ttUSHORT(data+index_map+6) >> 1;
       stbtt_uint16 searchRange = ttUSHORT(data+index_map+8) >> 1;
       stbtt_uint16 entrySelector = ttUSHORT(data+index_map+10);
@@ -18727,14 +18727,14 @@ nk_clear(struct nk_context *ctx)
     /* garbage collector */
     iter = ctx->begin;
     while (iter) {
-        /* make sure valid minimized windows do not get removed */
+        /* make sure valid minimized glfw do not get removed */
         if ((iter->flags & NK_WINDOW_MINIMIZED) &&
             !(iter->flags & NK_WINDOW_CLOSED) &&
             iter->seq == ctx->seq) {
             iter = iter->next;
             continue;
         }
-        /* remove hotness from hidden or closed windows*/
+        /* remove hotness from hidden or closed glfw*/
         if (((iter->flags & NK_WINDOW_HIDDEN) ||
             (iter->flags & NK_WINDOW_CLOSED)) &&
             iter == ctx->active) {
@@ -18745,7 +18745,7 @@ nk_clear(struct nk_context *ctx)
             if (ctx->active)
                 ctx->active->flags &= ~(unsigned)NK_WINDOW_ROM;
         }
-        /* free unused popup windows */
+        /* free unused popup glfw */
         if (iter->popup.win && iter->popup.win->seq != ctx->seq) {
             nk_free_window(ctx, iter->popup.win);
             iter->popup.win = 0;
@@ -19789,7 +19789,7 @@ nk_create_window(struct nk_context *ctx)
 NK_LIB void
 nk_free_window(struct nk_context *ctx, struct nk_window *win)
 {
-    /* unlink windows from list */
+    /* unlink glfw from list */
     struct nk_table *it = win->tables;
     if (win->popup.win) {
         nk_free_window(ctx, win->popup.win);
@@ -19808,7 +19808,7 @@ nk_free_window(struct nk_context *ctx, struct nk_window *win)
         it = n;
     }
 
-    /* link windows into freelist */
+    /* link glfw into freelist */
     {union nk_page_data *pd = NK_CONTAINER_OF(win, union nk_page_data, win);
     struct nk_page_element *pe = NK_CONTAINER_OF(pd, struct nk_page_element, data);
     nk_free_page_element(ctx, pe);}
@@ -25836,7 +25836,7 @@ retry:
         int i, sel = shift_mod;
 
         if (state->single_line) {
-            /* on windows, up&down in single-line behave like left&right */
+            /* on glfw, up&down in single-line behave like left&right */
             key = NK_KEY_RIGHT;
             goto retry;
         }
@@ -25884,7 +25884,7 @@ retry:
         int i, sel = shift_mod;
 
         if (state->single_line) {
-            /* on windows, up&down become left&right */
+            /* on glfw, up&down become left&right */
             key = NK_KEY_LEFT;
             goto retry;
         }
@@ -29155,7 +29155,7 @@ nk_tooltipfv(struct nk_context *ctx, const char *fmt, va_list args)
 /// - 2019/09/08 (4.01.1) - Fixed a bug wherein re-baking of fonts caused a segmentation
 ///                        fault due to dst_font->glyph_count not being zeroed on subsequent
 ///                        bakes of the same set of fonts.
-/// - 2019/06/23 (4.01.0) - Added nk_***_get_scroll and nk_***_set_scroll for groups, windows, and popups.
+/// - 2019/06/23 (4.01.0) - Added nk_***_get_scroll and nk_***_set_scroll for groups, glfw, and popups.
 /// - 2019/06/12 (4.00.3) - Fix panel background drawing bug.
 /// - 2018/10/31 (4.00.2) - Added NK_KEYSTATE_BASED_INPUT to "fix" state based backends
 ///                        like GLFW without breaking key repeat behavior on event based.
@@ -29188,13 +29188,13 @@ nk_tooltipfv(struct nk_context *ctx, const char *fmt, va_list args)
 ///                        require the name of the window and must happen outside the window
 ///                        building process (between function call nk_begin and nk_end).
 /// - 2017/09/11 (1.40.9) - Fixed window background flag if background window is declared last.
-/// - 2017/08/27 (1.40.8) - Fixed `nk_item_is_any_active` for hidden windows.
+/// - 2017/08/27 (1.40.8) - Fixed `nk_item_is_any_active` for hidden glfw.
 /// - 2017/08/27 (1.40.7) - Fixed window background flag.
 /// - 2017/07/07 (1.40.6) - Fixed missing clipping rect check for hovering/clicked
 ///                        query for widgets.
 /// - 2017/07/07 (1.40.5) - Fixed drawing bug for vertex output for lines and stroked
 ///                        and filled rectangles.
-/// - 2017/07/07 (1.40.4) - Fixed bug in nk_convert trying to add windows that are in
+/// - 2017/07/07 (1.40.4) - Fixed bug in nk_convert trying to add glfw that are in
 ///                        process of being destroyed.
 /// - 2017/07/07 (1.40.3) - Fixed table internal bug caused by storing table size in
 ///                        window instead of directly in table.
@@ -29221,22 +29221,22 @@ nk_tooltipfv(struct nk_context *ctx, const char *fmt, va_list args)
 /// - 2017/04/09 (1.36.1) - Fixed #403 with another widget float error.
 /// - 2017/04/09 (1.36.0) - Added window `NK_WINDOW_NO_INPUT` and `NK_WINDOW_NOT_INTERACTIVE` flags.
 /// - 2017/04/09 (1.35.3) - Fixed buffer heap corruption.
-/// - 2017/03/25 (1.35.2) - Fixed popup overlapping for `NK_WINDOW_BACKGROUND` windows.
-/// - 2017/03/25 (1.35.1) - Fixed windows closing behavior.
+/// - 2017/03/25 (1.35.2) - Fixed popup overlapping for `NK_WINDOW_BACKGROUND` glfw.
+/// - 2017/03/25 (1.35.1) - Fixed glfw closing behavior.
 /// - 2017/03/18 (1.35.0) - Added horizontal scroll requested in #377.
 /// - 2017/03/18 (1.34.3) - Fixed long window header titles.
 /// - 2017/03/04 (1.34.2) - Fixed text edit filtering.
 /// - 2017/03/04 (1.34.1) - Fixed group closable flag.
 /// - 2017/02/25 (1.34.0) - Added custom draw command for better language binding support.
 /// - 2017/01/24 (1.33.0) - Added programatic way of remove edit focus.
-/// - 2017/01/24 (1.32.3) - Fixed wrong define for basic type definitions for windows.
-/// - 2017/01/21 (1.32.2) - Fixed input capture from hidden or closed windows.
+/// - 2017/01/24 (1.32.3) - Fixed wrong define for basic type definitions for glfw.
+/// - 2017/01/21 (1.32.2) - Fixed input capture from hidden or closed glfw.
 /// - 2017/01/21 (1.32.1) - Fixed slider behavior and drawing.
 /// - 2017/01/13 (1.32.0) - Added flag to put scaler into the bottom left corner.
 /// - 2017/01/13 (1.31.0) - Added additional row layouting method to combine both
 ///                        dynamic and static widgets.
 /// - 2016/12/31 (1.30.0) - Extended scrollbar offset from 16-bit to 32-bit.
-/// - 2016/12/31 (1.29.2) - Fixed closing window bug of minimized windows.
+/// - 2016/12/31 (1.29.2) - Fixed closing window bug of minimized glfw.
 /// - 2016/12/03 (1.29.1) - Fixed wrapped text with no seperator and C89 error.
 /// - 2016/12/03 (1.29.0) - Changed text wrapping to process words not characters.
 /// - 2016/11/22 (1.28.6) - Fixed window minimized closing bug.
@@ -29304,7 +29304,7 @@ nk_tooltipfv(struct nk_context *ctx, const char *fmt, va_list args)
 ///                        inside the command buffer retrieved by calls `nk__draw_begin`
 ///                        and `nk__draw_end` and macro `nk_draw_foreach_bounded`.
 /// - 2016/09/08 (1.19.0) - Added additional asserts to make sure every `nk_xxx_begin` call
-///                        for windows, popups, combobox, menu and contextual is guarded by
+///                        for glfw, popups, combobox, menu and contextual is guarded by
 ///                        `if` condition and does not produce false drawing output.
 /// - 2016/09/08 (1.18.0) - Changed confusing name for `NK_SYMBOL_RECT_FILLED`, `NK_SYMBOL_RECT`
 ///                        to hopefully easier to understand `NK_SYMBOL_RECT_FILLED` and
@@ -29350,7 +29350,7 @@ nk_tooltipfv(struct nk_context *ctx, const char *fmt, va_list args)
 ///                        to account for key press and release happening in one frame.
 /// - 2016/08/25 (1.10.0) - Added additional nk_edit flag to directly jump to the end on activate.
 /// - 2016/08/17 (1.09.6) - Removed invalid check for value zero in `nk_propertyx`.
-/// - 2016/08/16 (1.09.5) - Fixed ROM mode for deeper levels of popup windows parents.
+/// - 2016/08/16 (1.09.5) - Fixed ROM mode for deeper levels of popup glfw parents.
 /// - 2016/08/15 (1.09.4) - Editbox are now still active if enter was pressed with flag
 ///                        `NK_EDIT_SIG_ENTER`. Main reasoning is to be able to keep
 ///                        typing after commiting.
@@ -29381,7 +29381,7 @@ nk_tooltipfv(struct nk_context *ctx, const char *fmt, va_list args)
 ///                        closing a window (NK_WINDOW_CLOSED). A window can be hidden/shown
 ///                        by using `nk_window_show` and closed by either clicking the close
 ///                        icon in a window or by calling `nk_window_close`. Only closed
-///                        windows get removed at the end of the frame while hidden windows
+///                        glfw get removed at the end of the frame while hidden glfw
 ///                        remain.
 /// - 2016/08/08 (1.06.0) - Added `nk_edit_string_zero_terminated` as a second option to
 ///                        `nk_edit_string` which takes, edits and outputs a '\0' terminated string.
@@ -29404,7 +29404,7 @@ nk_tooltipfv(struct nk_context *ctx, const char *fmt, va_list args)
 /// - 2016/08/03 (1.04.1) - Fixed `NK_WINDOW_BACKGROUND` behavior.
 /// - 2016/08/03 (1.04.0) - Added color parameter to `nk_draw_image`.
 /// - 2016/08/03 (1.04.0) - Added additional window padding style attributes for
-///                        sub windows (combo, menu, ...).
+///                        sub glfw (combo, menu, ...).
 /// - 2016/08/03 (1.04.0) - Added functions to show/hide software cursor.
 /// - 2016/08/03 (1.04.0) - Added `NK_WINDOW_BACKGROUND` flag to force a window
 ///                        to be always in the background of the screen.

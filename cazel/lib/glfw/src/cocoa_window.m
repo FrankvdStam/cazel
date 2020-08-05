@@ -760,7 +760,7 @@ static const NSRange kEmptyRange = { NSNotFound, 0 };
 
 - (BOOL)canBecomeKeyWindow
 {
-    // Required for NSWindowStyleMaskBorderless windows
+    // Required for NSWindowStyleMaskBorderless glfw
     return YES;
 }
 
@@ -979,7 +979,7 @@ void _glfwPlatformSetWindowTitle(_GLFWwindow* window, const char *title)
 void _glfwPlatformSetWindowIcon(_GLFWwindow* window,
                                 int count, const GLFWimage* images)
 {
-    // Regular windows do not have icons
+    // Regular glfw do not have icons
 }
 
 void _glfwPlatformGetWindowPos(_GLFWwindow* window, int* xpos, int* ypos)
@@ -1171,7 +1171,7 @@ void _glfwPlatformFocusWindow(_GLFWwindow* window)
 {
     @autoreleasepool {
     // Make us the active application
-    // HACK: This is here to prevent applications using only hidden windows from
+    // HACK: This is here to prevent applications using only hidden glfw from
     //       being activated, but should probably not be done every time any
     //       window is shown
     [NSApp activateIgnoringOtherApps:YES];

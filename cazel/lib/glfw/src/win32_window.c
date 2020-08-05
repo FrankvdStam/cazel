@@ -392,7 +392,7 @@ static void updateFramebufferTransparency(const _GLFWwindow* window)
 
         if (SUCCEEDED(DwmEnableBlurBehindWindow(window->win32.handle, &bb)))
         {
-            // Decorated windows don't repaint the transparent background
+            // Decorated glfw don't repaint the transparent background
             // leaving a trail behind animations
             // HACK: Making the window layered with a transparency color key
             //       seems to fix this.  Normally, when specifying
@@ -1902,7 +1902,7 @@ void _glfwPlatformPollEvents(void)
         {
             // NOTE: While GLFW does not itself post WM_QUIT, other processes
             //       may post it to this one, for example Task Manager
-            // HACK: Treat WM_QUIT as a close on all windows
+            // HACK: Treat WM_QUIT as a close on all glfw
 
             window = _glfw.windowListHead;
             while (window)

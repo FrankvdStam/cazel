@@ -390,7 +390,7 @@ NK_API int nk_init(struct nk_context*, struct nk_allocator*, const struct nk_use
 /*/// #### nk_init_custom
 /// Initializes a `nk_context` struct from two different either fixed or growing
 /// buffers. The first buffer is for allocating draw commands while the second buffer is
-/// used for allocating windows, panels and state tables.
+/// used for allocating glfw, panels and state tables.
 ///
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
 /// int nk_init_custom(struct nk_context *ctx, struct nk_buffer *cmds, struct nk_buffer *pool, const struct nk_user_font *font);
@@ -400,7 +400,7 @@ NK_API int nk_init(struct nk_context*, struct nk_allocator*, const struct nk_use
 /// ------------|---------------------------------------------------------------
 /// __ctx__     | Must point to an either stack or heap allocated `nk_context` struct
 /// __cmds__    | Must point to a previously initialized memory buffer either fixed or dynamic to store draw commands into
-/// __pool__    | Must point to a previously initialized memory buffer either fixed or dynamic to store windows, panels and tables
+/// __pool__    | Must point to a previously initialized memory buffer either fixed or dynamic to store glfw, panels and tables
 /// __font__    | Must point to a previously initialized font handle for more info look at font documentation
 ///
 /// Returns either `false(0)` on failure or `true(1)` on success.
@@ -408,7 +408,7 @@ NK_API int nk_init(struct nk_context*, struct nk_allocator*, const struct nk_use
 NK_API int nk_init_custom(struct nk_context*, struct nk_buffer *cmds, struct nk_buffer *pool, const struct nk_user_font*);
 /*/// #### nk_clear
 /// Resets the context state at the end of the frame. This includes mostly
-/// garbage collector tasks like removing windows or table not called and therefore
+/// garbage collector tasks like removing glfw or table not called and therefore
 /// used anymore.
 ///
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
@@ -732,7 +732,7 @@ NK_API void nk_input_end(struct nk_context*);
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ///
 /// In program flow context draw commands need to be executed after input has been
-/// gathered and the complete UI with windows and their contained widgets have
+/// gathered and the complete UI with glfw and their contained widgets have
 /// been executed and before calling `nk_clear` which frees all previously
 /// allocated draw commands.
 ///
@@ -1102,7 +1102,7 @@ NK_API const struct nk_draw_command* nk__draw_next(const struct nk_draw_command*
 /// To change window position inside the stack occurs either automatically by
 /// user input by being clicked on or programmatically by calling `nk_window_focus`.
 /// Windows by default are visible unless explicitly being defined with flag
-/// `NK_WINDOW_HIDDEN`, the user clicked the close button on windows with flag
+/// `NK_WINDOW_HIDDEN`, the user clicked the close button on glfw with flag
 /// `NK_WINDOW_CLOSABLE` or if a window was explicitly hidden by calling
 /// `nk_window_show`. To explicitly close and destroy a window call `nk_window_close`.<br /><br />
 ///
@@ -1169,7 +1169,7 @@ NK_API const struct nk_draw_command* nk__draw_next(const struct nk_draw_command*
 /// Function                            | Description
 /// ------------------------------------|----------------------------------------
 /// nk_begin                            | Starts a new window; needs to be called every frame for every window (unless hidden) or otherwise the window gets removed
-/// nk_begin_titled                     | Extended window start with separated title and identifier to allow multiple windows with same name but not title
+/// nk_begin_titled                     | Extended window start with separated title and identifier to allow multiple glfw with same name but not title
 /// nk_end                              | Needs to be called at the end of the window building process to process scaling, scrollbars and general cleanup
 //
 /// nk_window_find                      | Finds and returns the window with give name
@@ -1263,7 +1263,7 @@ enum nk_panel_flags {
 NK_API int nk_begin(struct nk_context *ctx, const char *title, struct nk_rect bounds, nk_flags flags);
 /*/// #### nk_begin_titled
 /// Extended window start with separated title and identifier to allow multiple
-/// windows with same title but not name
+/// glfw with same title but not name
 ///
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
 /// int nk_begin_titled(struct nk_context *ctx, const char *name, const char *title, struct nk_rect bounds, nk_flags flags);
@@ -2346,10 +2346,10 @@ NK_API struct nk_rect nk_layout_space_rect_to_local(struct nk_context*, struct n
  *
  * =============================================================================
 /// ### Groups
-/// Groups are basically windows inside windows. They allow to subdivide space
+/// Groups are basically glfw inside glfw. They allow to subdivide space
 /// in a window to layout widgets as a group. Almost all more complex widget
 /// layouting requirements can be solved using groups and basic layouting
-/// fuctionality. Groups just like windows are identified by an unique name and
+/// fuctionality. Groups just like glfw are identified by an unique name and
 /// internally keep track of scrollbar offsets by default. However additional
 /// versions are provided to directly manage the scrollbar.
 ///
@@ -2359,7 +2359,7 @@ NK_API struct nk_rect nk_layout_space_rect_to_local(struct nk_context*, struct n
 /// is required to check the return value of `nk_group_begin_xxx` and only process
 /// widgets inside the window if the value is not 0.
 /// Nesting groups is possible and even encouraged since many layouting schemes
-/// can only be achieved by nesting. Groups, unlike windows, need `nk_group_end`
+/// can only be achieved by nesting. Groups, unlike glfw, need `nk_group_end`
 /// to be only called if the corosponding `nk_group_begin_xxx` call does not return 0:
 ///
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~c
@@ -5374,12 +5374,12 @@ struct nk_context {
     /* text editor objects are quite big because of an internal
      * undo/redo stack. Therefore it does not make sense to have one for
      * each window for temporary use cases, so I only provide *one* instance
-     * for all windows. This works because the content is cleared anyway */
+     * for all glfw. This works because the content is cleared anyway */
     struct nk_text_edit text_edit;
     /* draw buffer used for overlay drawing operation like cursor */
     struct nk_command_buffer overlay;
 
-    /* windows */
+    /* glfw */
     int build;
     int use_pool;
     struct nk_pool pool;

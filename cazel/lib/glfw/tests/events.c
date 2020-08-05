@@ -58,7 +58,7 @@ static void usage(void)
     printf("Options:\n");
     printf("  -f use full screen\n");
     printf("  -h show this help\n");
-    printf("  -n the number of windows to create\n");
+    printf("  -n the number of glfw to create\n");
 }
 
 static const char* get_key_name(int key)
