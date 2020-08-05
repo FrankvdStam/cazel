@@ -10,7 +10,21 @@
 #include "renderer/buffers/buffers.h"
 
 typedef unsigned int vertex_buffer_t;
+typedef unsigned int shader_t;
 typedef unsigned int index_buffer_t;
+typedef unsigned int vertex_array_t;
+
+//Abstraction idea:
+//typedef struct
+//{
+//    vertex_buffer_t vertex_buffer;
+//    buffer_layout_t buffer_layout;
+//    index_buffer_t index_buffer;
+//    shader_t shader;
+//}
+//vertex_array_struct_t;
+
+
 
 //Resolve platform specific functions
 void context_platform_init(platform_t platform);
@@ -21,25 +35,60 @@ extern void(*context_init)(window_t*window);
 //Swap buffers
 extern void(*context_swap_buffers)(window_t* window);
 
+
+
+//========================================================================================================================================================================================================================
+//Vertex buffers
+
 //Creates a vertex buffer on the graphics card, fills it with data and returns a handle to it
 extern vertex_buffer_t(*context_create_vertex_buffer)(float* vertices, size_t count);
-
-//Creates an index buffer on the graphics card, fills it with data and returns a handle to it
-extern index_buffer_t(*context_create_index_buffer)(uint32_t* indices, size_t count);
 
 //Binds a vertex buffer
 extern void(*context_bind_vertex_buffer)(vertex_buffer_t vertex_buffer);
 
-//Binds an index buffer
-extern void(*context_bind_index_buffer)(index_buffer_t index_buffer);
-
 //Frees a given vertex buffer from the graphics card
 extern void(*context_free_vertex_buffer)(vertex_buffer_t vertex_buffer);
+
+//Sets the layout for the a given vertex buffer to the provided buffer layout
+extern void(*context_set_vertex_buffer_layout)(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout);
+
+
+//========================================================================================================================================================================================================================
+//index buffers
+
+//Creates an index buffer on the graphics card, fills it with data and returns a handle to it
+extern index_buffer_t(*context_create_index_buffer)(uint32_t* indices, size_t count);
+
+//Binds an index buffer
+extern void(*context_bind_index_buffer)(index_buffer_t index_buffer);
 
 //Frees a given index buffer from the graphics card
 extern void(*context_free_index_buffer)(index_buffer_t index_buffer);
 
-//Sets the layout for the a given vertex buffer to the provided buffer layout
-extern void(*context_set_vertex_buffer_layout)(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout);
+//========================================================================================================================================================================================================================
+//Shaders
+
+//Creates a shader from the given source
+extern shader_t(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
+
+//Bind the given shader
+extern void(*context_bind_shader)(shader_t shader);
+
+//Free the given shader
+extern void(*context_free_shader)(shader_t shader);
+
+
+//========================================================================================================================================================================================================================
+//Vertex array
+
+//Generate a vertex array
+extern vertex_array_t(*context_create_vertex_array)();
+
+//Bind a given vertex array
+extern void(*context_bind_vertex_array)(vertex_array_t vertex_array);
+
+//Free a given vertex array
+extern void(*context_free_vertex_array)(vertex_array_t vertex_array);
+
 
 #endif //SANDBOX_CONTEXT_H

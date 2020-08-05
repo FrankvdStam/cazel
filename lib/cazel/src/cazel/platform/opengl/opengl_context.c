@@ -8,10 +8,11 @@
 #include "GLFW/glfw3.h"
 #include "../../../../lib/glad/include/glad/glad.h"
 
-GLuint s_vertex_array;
-GLuint s_vertex_buffer;
-GLuint s_index_buffer;
-GLuint s_shader_program;
+vertex_array_t  s_vertex_array;
+vertex_buffer_t s_vertex_buffer;
+index_buffer_t  s_index_buffer;
+shader_t        s_shader_program;
+
 
 GLenum shader_data_type_to_gl_enum(shader_data_type_t type)
 {
@@ -55,9 +56,10 @@ void opengl_context_init(window_t* window)
     GLDEBUGPROC proc = glDebugCallback;
     glDebugMessageCallback(proc, NULL);
 
-
-    glGenVertexArrays(1, &s_vertex_array);
-    glBindVertexArray(s_vertex_array);
+    s_vertex_array = context_create_vertex_array();
+    context_bind_vertex_array(s_vertex_array);
+    //glGenVertexArrays(1, &s_vertex_array);
+    //glBindVertexArray(s_vertex_array);
 
     const char* vertex_shader_source = "#version 330 core\n"
                                        "\n"
@@ -87,10 +89,10 @@ void opengl_context_init(window_t* window)
                                          "    color = v_Color;\n"
                                          "}\0";
 
-    s_shader_program = opengl_create_shader(vertex_shader_source, fragment_shader_source);
+    s_shader_program = context_create_shader(vertex_shader_source, fragment_shader_source);
 
-
-    glUseProgram(s_shader_program);
+    context_bind_shader(s_shader_program);
+    //glUseProgram(s_shader_program);
 
 
     float vertices[] = {
@@ -126,10 +128,89 @@ void opengl_context_swap_buffers(window_t* window)
     glfwSwapBuffers(window->handle);
 }
 
+//========================================================================================================================================================================================================================
+//Vertex buffers
+
+vertex_buffer_t opengl_context_create_vertex_buffer(float* vertices, size_t count)
+{
+    vertex_buffer_t vertex_buffer;
+    glGenBuffers(1, &vertex_buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * count, vertices, GL_STATIC_DRAW);
+    return vertex_buffer;
+}
+
+void opengl_context_bind_vertex_buffer(vertex_buffer_t vertex_buffer)
+{
+    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+}
+
+void opengl_context_free_vertex_buffer(vertex_buffer_t vertex_buffer)
+{
+    glDeleteBuffers(GL_ARRAY_BUFFER, &vertex_buffer);
+}
+
+void opengl_context_set_vertex_buffer_layout(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout)
+{
+    for(unsigned int i = 0; i < buffer_layout->size; i++)
+    {
+        glEnableVertexAttribArray(i);
+        glVertexAttribPointer(
+                i,
+                shader_data_type_component_count(buffer_layout->elements[i].data_type),
+                shader_data_type_to_gl_enum(buffer_layout->elements[i].data_type),
+                buffer_layout->elements[i].normalized ? GL_TRUE : GL_FALSE,
+                buffer_layout->stride,
+                (const void*)buffer_layout->elements[i].offset);
+    }
+}
 
 
+//========================================================================================================================================================================================================================
+//index buffers
+index_buffer_t opengl_context_create_index_buffer(uint32_t* indices, size_t count)
+{
+    index_buffer_t index_buffer;
+    glGenBuffers(1, &index_buffer);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint32_t) * count, indices, GL_STATIC_DRAW);
+    return index_buffer;
+}
 
-GLuint opengl_create_shader(const char* vertex_shader_source, const char* fragment_shader_source)
+void opengl_context_bind_index_buffer(index_buffer_t index_buffer)
+{
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer);
+}
+
+void opengl_context_free_index_buffer(index_buffer_t index_buffer)
+{
+    glDeleteBuffers(GL_ELEMENT_ARRAY_BUFFER, &index_buffer);
+}
+
+//========================================================================================================================================================================================================================
+//Vertex array
+vertex_array_t opengl_context_create_vertex_array()
+{
+    vertex_array_t vertex_array;
+    glGenVertexArrays(1, &vertex_array);
+    return vertex_array;
+}
+
+void opengl_context_bind_vertex_array(vertex_array_t vertex_array)
+{
+    glBindVertexArray(vertex_array);
+}
+
+void opengl_context_free_vertex_array(vertex_array_t vertex_array)
+{
+    glDeleteVertexArrays(1, &vertex_array);
+}
+
+
+//========================================================================================================================================================================================================================
+//Shaders
+
+shader_t opengl_context_create_shader(const char* vertex_shader_source, const char* fragment_shader_source)
 {
     int  success;
     char buffer[512];
@@ -157,7 +238,7 @@ GLuint opengl_create_shader(const char* vertex_shader_source, const char* fragme
         printf("Fragment shader failed to compile: %s\n", buffer);
     }
 
-    GLuint shader = glCreateProgram();
+    shader_t shader = glCreateProgram();
     glAttachShader(shader, vertex_shader);
     glAttachShader(shader, fragment_shader);
     glLinkProgram(shader);
@@ -174,55 +255,13 @@ GLuint opengl_create_shader(const char* vertex_shader_source, const char* fragme
     return shader;
 }
 
-vertex_buffer_t opengl_context_create_vertex_buffer(float* vertices, size_t count)
+
+void opengl_context_bind_shader(shader_t shader)
 {
-    vertex_buffer_t vertex_buffer;
-    glGenBuffers(1, &vertex_buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * count, vertices, GL_STATIC_DRAW);
-    return vertex_buffer;
+    glUseProgram(shader);
 }
 
-
-index_buffer_t opengl_context_create_index_buffer(uint32_t* indices, size_t count)
+void opengl_context_free_shader(shader_t shader)
 {
-    index_buffer_t index_buffer;
-    glGenBuffers(1, &index_buffer);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint32_t) * count, indices, GL_STATIC_DRAW);
-    return index_buffer;
-}
-
-void opengl_context_bind_vertex_buffer(vertex_buffer_t vertex_buffer)
-{
-    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
-}
-
-void opengl_context_bind_index_buffer(index_buffer_t index_buffer)
-{
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer);
-}
-
-void opengl_context_free_vertex_buffer(vertex_buffer_t vertex_buffer)
-{
-    glDeleteBuffers(GL_ARRAY_BUFFER, &vertex_buffer);
-}
-void opengl_context_free_index_buffer(index_buffer_t index_buffer)
-{
-    glDeleteBuffers(GL_ELEMENT_ARRAY_BUFFER, &index_buffer);
-}
-
-void opengl_context_set_vertex_buffer_layout(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout)
-{
-    for(unsigned int i = 0; i < buffer_layout->size; i++)
-    {
-        glEnableVertexAttribArray(i);
-        glVertexAttribPointer(
-                i,
-                shader_data_type_component_count(buffer_layout->elements[i].data_type),
-                shader_data_type_to_gl_enum(buffer_layout->elements[i].data_type),
-                buffer_layout->elements[i].normalized ? GL_TRUE : GL_FALSE,
-                buffer_layout->stride,
-                (const void*)buffer_layout->elements[i].offset);
-    }
+    glDeleteProgram(shader);
 }
