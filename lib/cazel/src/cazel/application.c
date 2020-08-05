@@ -33,8 +33,6 @@ void application_create(platform_t platform)
     layer_init(&user_layer, "user layer");
     init_user_layer(&user_layer);
     application_add_layer(user_layer);
-
-    layer_stack_print_names(&s_application.layer_stack);
 }
 
 void application_update()
@@ -79,7 +77,6 @@ void application_run()
 
 void application_add_layer(layer_t layer)
 {
-    printf("Add layer name: %s\n", layer.name);
     layer_stack_add(&s_application.layer_stack, layer);
     layer.attach();
 }

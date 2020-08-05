@@ -9,8 +9,6 @@
 #include "../../../../lib/glad/include/glad/glad.h"
 #include "../../application.h"
 
-
-
 GLenum shader_data_type_to_gl_enum(shader_data_type_t type)
 {
     switch(type)
@@ -64,10 +62,6 @@ void opengl_context_init(window_t* window)
 
 void opengl_context_swap_buffers(window_t* window)
 {
-    //glBindVertexArray(s_vertex_array);
-    //glUseProgram(s_shader_program);
-    //glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, NULL);
-
     glfwSwapBuffers(window->handle);
 }
 
@@ -100,19 +94,19 @@ void opengl_context_create_vertex_buffer(vertex_array_t* vertex_array, float* ve
 {
     vertex_array->vertex_total_floats = total_floats;
     vertex_array->vertex_count = count;
-    glGenBuffers(1, &vertex_array->index_buffer_id);
-    glBindBuffer(GL_ARRAY_BUFFER, vertex_array->index_buffer_id);
+    glGenBuffers(1, &vertex_array->vertex_buffer_id);
+    glBindBuffer(GL_ARRAY_BUFFER, vertex_array->vertex_buffer_id);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * total_floats, vertices, GL_STATIC_DRAW);
 }
 
 void opengl_context_bind_vertex_buffer(vertex_array_t* vertex_array)
 {
-    glBindBuffer(GL_ARRAY_BUFFER, vertex_array->index_buffer_id);
+    glBindBuffer(GL_ARRAY_BUFFER, vertex_array->vertex_buffer_id);
 }
 
 void opengl_context_free_vertex_buffer(vertex_array_t* vertex_array)
 {
-    glDeleteBuffers(GL_ARRAY_BUFFER, &vertex_array->index_buffer_id);
+    glDeleteBuffers(GL_ARRAY_BUFFER, &vertex_array->vertex_buffer_id);
 }
 
 void opengl_context_set_vertex_buffer_layout(vertex_array_t* vertex_array)
