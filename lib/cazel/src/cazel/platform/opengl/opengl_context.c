@@ -212,25 +212,10 @@ void opengl_context_free_index_buffer(index_buffer_t index_buffer)
     glDeleteBuffers(GL_ELEMENT_ARRAY_BUFFER, &index_buffer);
 }
 
-
-
-
 void opengl_context_set_vertex_buffer_layout(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout)
 {
-    //glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
-
-    //glEnableVertexAttribArray(0);
-    //glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), NULL);
-
     for(unsigned int i = 0; i < buffer_layout->size; i++)
     {
-
-       //GLint size = shader_data_type_component_count(buffer_layout.elements[i].data_type);
-       //GLenum type = shader_data_type_to_gl_enum(buffer_layout.elements[i].data_type);
-       //GLboolean normalized = buffer_layout.elements[i].normalized ? GL_TRUE : GL_FALSE;
-       //GLsizei stride = buffer_layout.stride;
-       ////const void* pointer = (const void*)buffer_layout.elements[i].offset;
-
         glEnableVertexAttribArray(i);
         glVertexAttribPointer(
                 i,
@@ -239,26 +224,5 @@ void opengl_context_set_vertex_buffer_layout(vertex_buffer_t vertex_buffer, buff
                 buffer_layout->elements[i].normalized ? GL_TRUE : GL_FALSE,
                 buffer_layout->stride,
                 (const void*)buffer_layout->elements[i].offset);
-
-
-        //glVertexAttribPointer
-        //(
-        //    i,
-        //    shader_data_type_component_count(buffer_layout.elements[i].data_type),
-        //    shader_data_type_to_gl_enum(buffer_layout.elements[i].data_type),
-        //    buffer_layout.elements[i].normalized ? GL_TRUE : GL_FALSE,
-        //    buffer_layout.stride,
-        //    (const void*)buffer_layout.elements[i].offset
-        //);
-
-        //glVertexAttribPointer
-        //(
-        //        i,
-        //        size,
-        //        type,
-        //        normalized,
-        //        stride,
-        //        NULL
-        //);
     }
 }

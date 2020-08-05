@@ -3,12 +3,10 @@
 //
 
 #include "layer.h"
-layer_t layer_init(char* name)
+void layer_init(layer_t* layer, char* name)
 {
-    layer_t layer;
-    layer.name = malloc(sizeof(char) * (strlen(name)+1));
-    strcpy(layer.name, name);
-    return layer;
+    layer->name = malloc(sizeof(char) * (strlen(name)+1));
+    strcpy(layer->name, name);
 }
 
 void layer_free(layer_t* layer)
@@ -16,13 +14,11 @@ void layer_free(layer_t* layer)
     free(layer->name);
 }
 
-layer_stack_t layer_stack_init(size_t size)
+void layer_stack_init(layer_stack_t* stack, size_t size)
 {
-    layer_stack_t stack;
-    stack.size = size;
-    stack.add_index = 0;
-    stack.layers = (layer_t*)malloc(sizeof(layer_t) * size);
-    return stack;
+    stack->size = size;
+    stack->add_index = 0;
+    stack->layers = (layer_t*)malloc(sizeof(layer_t) * size);
 }
 
 void layer_stack_free(layer_stack_t* stack)

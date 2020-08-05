@@ -20,7 +20,7 @@ application_t application_create(platform_t platform)
     application_t app;
     app.window = window;
     app.platform = platform;
-    app.layer_stack = layer_stack_init(4);
+    layer_stack_init(&app.layer_stack, 4);
     app.exiting = false;
 
     layer_t nuklear_layer = nuklear_layer_init(app.window);
