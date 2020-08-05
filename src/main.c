@@ -17,6 +17,7 @@ unsigned int init_shader()
                                        "layout (location = 1) in vec4 a_Color;\n"
                                        "\n"
                                        "uniform mat4 u_ViewProjectionMatrix;"
+                                       "uniform mat4 u_Transform;"
                                        "\n"
                                        "out vec3 v_Position;\n"
                                        "out vec4 v_Color;\n"
@@ -25,7 +26,7 @@ unsigned int init_shader()
                                        "{\n"
                                        "    v_Position = a_Position;\n"
                                        "    v_Color = a_Color;\n"
-                                       "    gl_Position = u_ViewProjectionMatrix * vec4(a_Position, 1.0);\n"
+                                       "    gl_Position = u_ViewProjectionMatrix * u_Transform * vec4(a_Position, 1.0);\n"
                                        "}\0";
 
 
@@ -139,7 +140,10 @@ void user_layer_on_update(float delta_time)
     renderer_begin_scene(&s_camera.view_projection_matrix);
 
     renderer_submit(&s_square);
-    renderer_submit(&s_triangle);
+    mat4 transform = GLM_MAT4_IDENTITY_INIT;
+    vec3 asd = {1.0f, 0.5f, 0.0f};
+    glm_translate(transform, asd);
+    renderer_submit_with_transform(&s_triangle, transform);
 
     renderer_end_scene();
 }
