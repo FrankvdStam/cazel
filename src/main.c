@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "../lib/cazel/src/cazel.h"
 #include "../lib/cazel/src/cazel/renderer/renderer.h"
+#include "../lib/cazel/src/cazel/renderer/orthographic_camera.h"
 
 vertex_array_t s_triangle;
 vertex_array_t s_square;
+orthographic_camera_t s_camera;
 
 unsigned int init_shader()
 {
@@ -12,6 +14,8 @@ unsigned int init_shader()
                                        "layout (location = 0) in vec3 a_Position;\n"
                                        "layout (location = 1) in vec4 a_Color;\n"
                                        "\n"
+                                       "uniform mat4 u_ViewProjectionMatrix;"
+                                       "\n"
                                        "out vec3 v_Position;\n"
                                        "out vec4 v_Color;\n"
                                        "\n"
@@ -19,7 +23,7 @@ unsigned int init_shader()
                                        "{\n"
                                        "    v_Position = a_Position;\n"
                                        "    v_Color = a_Color;\n"
-                                       "    gl_Position = vec4(a_Position, 1.0);\n"
+                                       "    gl_Position = u_ViewProjectionMatrix * vec4(a_Position, 1.0);\n"
                                        "}\0";
 
 
@@ -98,17 +102,25 @@ void user_layer_on_attach()
 
     uint32_t square_indices[6] = {0, 1, 2, 2, 0, 3};
     context_create_index_buffer(&s_square, square_indices, 6);
+
+
+    //========================================================================================================================================================================================================================
+    orthographic_camera_init(&s_camera, -1.6f, 1.6f, -0.9f, 0.9f);
+    //s_camera.position[0] = 0.5f;
+    //s_camera.position[1] = 0.5f;
+    orthographic_camera_recalculate_view_projection_matrix(&s_camera);
 }
 
 
 void user_layer_on_update()
 {
-    renderer_begin_scene();
+    renderer_begin_scene(&s_camera.view_projection_matrix);
+
     renderer_submit(&s_square);
     renderer_submit(&s_triangle);
+
     renderer_end_scene();
 }
-
 
 
 void user_layer_on_detach()

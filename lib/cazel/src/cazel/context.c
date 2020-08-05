@@ -82,6 +82,12 @@ void(*context_clear)();
 void(*context_set_clear_color)(float r, float g, float b, float a);
 void(*context_clear)();
 
+//========================================================================================================================================================================================================================
+//Uniforms
+
+//Upload a mat4 uniform to the given shader and the given uniform name
+void (*context_upload_uniform_mat4)(unsigned int shader, const char* name, mat4 matrix);
+
 
 void context_platform_init(platform_t platform)
 {
@@ -112,6 +118,9 @@ void context_platform_init(platform_t platform)
     //Clear color
     context_set_clear_color             = &opengl_context_set_clear_color;
     context_clear                       = &opengl_context_clear;
+
+    //Uniforms
+    context_upload_uniform_mat4         = &opengl_context_upload_uniform_mat4;
 }
 
 

@@ -13,8 +13,8 @@ void application_create(platform_t platform)
 {
     window_t window;
     window.title = "cavel";
-    window.width = 800;
-    window.height = 600;
+    window.width = 1280;
+    window.height = 720;
     window.vsync_enabled = true;
     window.handle = NULL;
 

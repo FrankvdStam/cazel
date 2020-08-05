@@ -221,3 +221,17 @@ void opengl_context_clear()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
+
+
+//========================================================================================================================================================================================================================
+//Uniforms
+
+void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, mat4 matrix)
+{
+    int uniform_location = glGetUniformLocation(shader, name);
+    if(uniform_location == -1)
+    {
+        EXIT_ERROR("Invalid uniform: %s\n", name);
+    }
+    glUniformMatrix4fv(uniform_location, 1, GL_FALSE, matrix[0]);
+}

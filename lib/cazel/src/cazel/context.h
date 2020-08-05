@@ -8,6 +8,7 @@
 #include "core.h"
 #include "window.h"
 #include "renderer/buffers/buffers.h"
+#include <cglm/cglm.h>
 
 //typedef unsigned int vertex_buffer_t;
 //typedef unsigned int shader_t;
@@ -102,5 +103,11 @@ extern void(*context_set_clear_color)(float r, float g, float b, float a);
 //Clear the screen to the clear color set by context_set_clear_color
 extern void(*context_clear)();
 
+
+//========================================================================================================================================================================================================================
+//Uniforms
+
+//Upload a mat4 uniform to the given shader and the given uniform name
+extern void (*context_upload_uniform_mat4)(unsigned int shader, const char* name, mat4 matrix);
 
 #endif //SANDBOX_CONTEXT_H

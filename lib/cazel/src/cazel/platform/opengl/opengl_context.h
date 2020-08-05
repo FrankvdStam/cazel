@@ -7,7 +7,7 @@
 
 #include "../../window.h"
 #include "../../context.h"
-
+#include <cglm/cglm.h>
 
 
 void opengl_context_init(window_t* window);
@@ -43,5 +43,9 @@ void opengl_context_free_shader(unsigned int shader);
 //Clear color
 void opengl_context_set_clear_color(float r, float g, float b, float a);
 void opengl_context_clear();
+
+//========================================================================================================================================================================================================================
+//Uniforms
+void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, mat4 matrix);
 
 #endif //SANDBOX_OPENGL_CONTEXT_H
