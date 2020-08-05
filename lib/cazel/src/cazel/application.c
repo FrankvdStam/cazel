@@ -23,7 +23,8 @@ application_t application_create(platform_t platform)
     layer_stack_init(&app.layer_stack, 4);
     app.exiting = false;
 
-    layer_t nuklear_layer = nuklear_layer_init(app.window);
+    layer_t nuklear_layer;
+    nuklear_layer_init(&nuklear_layer, app.window);
     application_add_layer(&app, nuklear_layer);
 
     layer_stack_print_names(&app.layer_stack);

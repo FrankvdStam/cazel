@@ -8,6 +8,6 @@
 #include "../layers/layer.h"
 #include "../window.h"
 
-layer_t nuklear_layer_init(window_t window);
+void nuklear_layer_init(layer_t* layer, window_t window);
 
 #endif //SANDBOX_NUKLEAR_LAYER_H

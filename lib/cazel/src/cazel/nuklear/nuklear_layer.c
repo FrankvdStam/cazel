@@ -110,17 +110,14 @@ void nuklear_layer_on_dispatch_event(event_t event)
 
 }
 
-layer_t nuklear_layer_init(window_t window)
+void nuklear_layer_init(layer_t* layer, window_t window)
 {
     s_window = window;
-
-    layer_t layer;
-    layer_init(&layer, "Nuklear");
-    layer.attach = &nuklear_layer_on_attach;
-    layer.detach = &nuklear_layer_on_detach;
-    layer.update = &nuklear_layer_on_update;
-    layer.event = &nuklear_layer_on_dispatch_event;
-    return layer;
+    layer_init(layer, "Nuklear");
+    layer->attach = &nuklear_layer_on_attach;
+    layer->detach = &nuklear_layer_on_detach;
+    layer->update = &nuklear_layer_on_update;
+    layer->event = &nuklear_layer_on_dispatch_event;
 }
 
 
