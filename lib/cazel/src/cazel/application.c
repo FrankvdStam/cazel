@@ -24,6 +24,7 @@ void application_create(platform_t platform)
     s_application.platform = platform;
     layer_stack_init(&s_application.layer_stack, 4);
     s_application.exiting = false;
+    s_application.last_frame_time = 0.0f;
 
     layer_t user_layer;
     layer_init(&user_layer, "user layer");
@@ -39,9 +40,15 @@ void application_create(platform_t platform)
 
 void application_update()
 {
+    //calculate the delta time and update the last frame time
+    float time = context_get_time();
+    float delta_time = time - s_application.last_frame_time;
+    s_application.last_frame_time = time;
+    //printf("delta time: %f, last frame time: %f\n", delta_time, time);
+
     for(size_t i = 0; i < s_application.layer_stack.add_index; i++)
     {
-        s_application.layer_stack.layers[i].update();
+        s_application.layer_stack.layers[i].update(delta_time);
     }
 }
 

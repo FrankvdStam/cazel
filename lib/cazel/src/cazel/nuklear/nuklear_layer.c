@@ -53,7 +53,7 @@ void nuklear_layer_on_detach()
     nk_glfw3_shutdown(&glfw);
 }
 
-void nuklear_layer_on_update()
+void nuklear_layer_on_update(float delta_time)
 {
     glfwPollEvents();
 

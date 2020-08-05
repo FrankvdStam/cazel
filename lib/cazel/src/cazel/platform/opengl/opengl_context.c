@@ -294,3 +294,10 @@ void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, m
     glUniformMatrix4fv(uniform_location, 1, GL_FALSE, matrix[0]);
 }
 
+//========================================================================================================================================================================================================================
+//Time
+
+float opengl_context_get_time()
+{
+    return glfwGetTime();
+}

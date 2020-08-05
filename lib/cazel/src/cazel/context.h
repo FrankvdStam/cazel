@@ -110,4 +110,9 @@ extern void(*context_clear)();
 //Upload a mat4 uniform to the given shader and the given uniform name
 extern void (*context_upload_uniform_mat4)(unsigned int shader, const char* name, mat4 matrix);
 
+
+//========================================================================================================================================================================================================================
+//Time
+extern float (*context_get_time)();
+
 #endif //SANDBOX_CONTEXT_H

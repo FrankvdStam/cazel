@@ -7,7 +7,7 @@ vertex_array_t s_triangle;
 vertex_array_t s_square;
 orthographic_camera_t s_camera;
 
-float s_camera_speed = 0.05f;
+float s_camera_speed = 1.0f;
 
 unsigned int init_shader()
 {
@@ -112,27 +112,27 @@ void user_layer_on_attach()
 }
 
 
-void user_layer_on_update()
+void user_layer_on_update(float delta_time)
 {
     if(input_key_pressed(&s_application.window, key_a))
     {
-        s_camera.position[0] += s_camera_speed;
+        s_camera.position[0] += s_camera_speed * delta_time;
         orthographic_camera_recalculate_view_projection_matrix(&s_camera);
     }
     else if(input_key_pressed(&s_application.window, key_d))
     {
-        s_camera.position[0] -= s_camera_speed;
-        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-    }
-    else if(input_key_pressed(&s_application.window, key_s))
-    {
-        s_camera.position[1] += s_camera_speed;
+        s_camera.position[0] -= s_camera_speed * delta_time;
         orthographic_camera_recalculate_view_projection_matrix(&s_camera);
     }
 
+    if(input_key_pressed(&s_application.window, key_s))
+    {
+        s_camera.position[1] += s_camera_speed * delta_time;
+        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+    }
     else if(input_key_pressed(&s_application.window, key_w))
     {
-        s_camera.position[1] -= s_camera_speed;
+        s_camera.position[1] -= s_camera_speed * delta_time;
         orthographic_camera_recalculate_view_projection_matrix(&s_camera);
     }
 

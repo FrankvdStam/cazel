@@ -48,4 +48,8 @@ void opengl_context_clear();
 //Uniforms
 void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, mat4 matrix);
 
+//========================================================================================================================================================================================================================
+//Time
+float opengl_context_get_time();
+
 #endif //SANDBOX_OPENGL_CONTEXT_H

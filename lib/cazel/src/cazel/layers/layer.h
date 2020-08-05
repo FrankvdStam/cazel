@@ -12,7 +12,7 @@
 typedef void(*on_event)(event_t event);
 typedef void(*on_attach)();
 typedef void(*on_detach)();
-typedef void(*on_update)();
+typedef void(*on_update)(float delta_time);
 
 typedef struct
 {

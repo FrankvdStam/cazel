@@ -88,6 +88,10 @@ void(*context_clear)();
 //Upload a mat4 uniform to the given shader and the given uniform name
 void (*context_upload_uniform_mat4)(unsigned int shader, const char* name, mat4 matrix);
 
+//========================================================================================================================================================================================================================
+//Time
+float (*context_get_time)();
+
 
 void context_platform_init(platform_t platform)
 {
@@ -121,6 +125,9 @@ void context_platform_init(platform_t platform)
 
     //Uniforms
     context_upload_uniform_mat4         = &opengl_context_upload_uniform_mat4;
+
+    //time
+    context_get_time                    = &opengl_context_get_time;
 }
 
 

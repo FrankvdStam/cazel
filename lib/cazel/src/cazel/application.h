@@ -18,6 +18,8 @@ typedef struct
     window_t window;
 
     bool exiting;
+
+    float last_frame_time;
 } application_t;
 
 extern application_t s_application;
