@@ -86,10 +86,10 @@ void user_layer_on_attach()
     context_bind_shader(s_square.shader_id);
 
     float square_vertices[] = {
-            -0.75f, -0.75f, 1.0f,       1.0f, 1.0f, 1.1f, 1.1f,
-             0.75f, -0.75f, 1.0f,       1.0f, 1.0f, 1.1f, 1.1f,
-             0.75f,  0.75f, 1.0f,       1.0f, 1.0f, 1.1f, 1.1f,
-            -0.75f,  0.75f, 1.0f,       1.0f, 1.0f, 1.1f, 1.1f,
+            -0.75f, -0.75f, 1.0f,       0.8f, 0.2f, 0.5f, 1.1f,
+             0.75f, -0.75f, 1.0f,       0.5f, 0.3f, 0.1f, 1.1f,
+             0.75f,  0.75f, 1.0f,       0.1f, 0.4f, 0.8f, 1.1f,
+            -0.75f,  0.75f, 1.0f,       0.7f, 0.8f, 0.9f, 1.1f,
     };
     context_create_vertex_buffer(&s_square, square_vertices, 4, 28);
     context_bind_vertex_buffer(&s_square);
@@ -97,15 +97,15 @@ void user_layer_on_attach()
     context_set_vertex_buffer_layout(&s_square);
 
     uint32_t square_indices[6] = {0, 1, 2, 2, 0, 3};
-    context_create_index_buffer(&s_triangle, square_indices, 6);
+    context_create_index_buffer(&s_square, square_indices, 6);
 }
 
 
 void user_layer_on_update()
 {
     renderer_begin_scene();
-    renderer_submit(&s_triangle);
     renderer_submit(&s_square);
+    renderer_submit(&s_triangle);
     renderer_end_scene();
 }
 

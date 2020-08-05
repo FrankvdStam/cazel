@@ -25,14 +25,16 @@ void application_create(platform_t platform)
     layer_stack_init(&s_application.layer_stack, 4);
     s_application.exiting = false;
 
-    layer_t nuklear_layer;
-    nuklear_layer_init(&nuklear_layer, s_application.window);
-    application_add_layer(nuklear_layer);
-
     layer_t user_layer;
     layer_init(&user_layer, "user layer");
     init_user_layer(&user_layer);
     application_add_layer(user_layer);
+
+    layer_t nuklear_layer;
+    nuklear_layer_init(&nuklear_layer, s_application.window);
+    application_add_layer(nuklear_layer);
+
+
 }
 
 void application_update()
