@@ -1,8 +1,38 @@
 #include <stdio.h>
 #include "../lib/cazel/src/cazel.h"
 
-application_t create_application()
+
+void user_layer_on_attach()
 {
-    application_t application = application_create(platform_windows);
-    return application;
+
+}
+
+
+void user_layer_on_update()
+{
+
+}
+
+
+
+void user_layer_on_detach()
+{
+
+}
+
+void user_layer_on_event(event_t event)
+{
+
+}
+
+
+
+
+
+void init_user_layer(layer_t* layer)
+{
+    layer->event = user_layer_on_event;
+    layer->update = user_layer_on_update;
+    layer->attach = user_layer_on_attach;
+    layer->detach = user_layer_on_detach;
 }

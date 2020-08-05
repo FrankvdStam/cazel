@@ -20,8 +20,9 @@ typedef struct
     bool exiting;
 } application_t;
 
+extern void init_user_layer(layer_t* layer);
 
-application_t application_create();
+application_t application_create(platform_t platform);
 void application_run(application_t* application);
 void application_add_layer(application_t* application, layer_t layer);
 

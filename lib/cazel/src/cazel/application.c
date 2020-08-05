@@ -27,6 +27,11 @@ application_t application_create(platform_t platform)
     nuklear_layer_init(&nuklear_layer, app.window);
     application_add_layer(&app, nuklear_layer);
 
+    layer_t user_layer;
+    layer_init(&user_layer, "user layer");
+    init_user_layer(&user_layer);
+    application_add_layer(&app, user_layer);
+
     layer_stack_print_names(&app.layer_stack);
 
     return app;

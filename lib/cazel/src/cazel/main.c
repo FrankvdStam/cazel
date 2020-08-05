@@ -7,8 +7,6 @@
 #include "input.h"
 #include "context.h"
 
-extern application_t application_create();
-
 
 //Resolves platform specific api's
 void initialize_platform(platform_t platform)
@@ -22,7 +20,7 @@ void initialize_platform(platform_t platform)
 int main()
 {
     initialize_platform(platform_windows);
-    application_t application = application_create();
+    application_t application = application_create(platform_windows);
     application_run(&application);
     return 0;
 }
