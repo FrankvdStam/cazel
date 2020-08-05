@@ -7,6 +7,8 @@ vertex_array_t s_triangle;
 vertex_array_t s_square;
 orthographic_camera_t s_camera;
 
+float s_camera_speed = 0.05f;
+
 unsigned int init_shader()
 {
     const char* vertex_shader_source = "#version 330 core\n"
@@ -133,7 +135,30 @@ void user_layer_on_detach()
 
 void user_layer_on_event(event_t event)
 {
-
+    if(event.type == event_key_pressed || event.type == event_key_repeated)
+    {
+        switch (event.key)
+        {
+            case key_a:
+                s_camera.position[0] += s_camera_speed;
+                orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+                break;
+            case key_d:
+                s_camera.position[0] -= s_camera_speed;
+                orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+                break;
+            case key_s:
+                s_camera.position[1] += s_camera_speed;
+                orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+                break;
+            case key_w:
+                s_camera.position[1] -= s_camera_speed;
+                orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 void init_user_layer(layer_t* layer)

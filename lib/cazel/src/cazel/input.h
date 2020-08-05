@@ -23,6 +23,8 @@ typedef enum
 
 typedef enum
 {
+    key_none,
+
     key_a,
     key_b,
     key_c,
@@ -91,8 +93,12 @@ typedef enum
     key_end,
     key_delete,
     key_pageup,
-    key_pagedown
+    key_pagedown,
 
+    key_left,
+    key_right,
+    key_up,
+    key_down,
 } key_t;
 
 extern bool(*input_mouse_button_pressed)(window_t* window, mouse_button_t button);

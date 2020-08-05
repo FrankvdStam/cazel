@@ -6,6 +6,7 @@
 #define SANDBOX_EVENT_H
 
 #include "../core.h"
+#include "../input.h"
 
 //Enum containing all types of events
 //TODO: add controller events
@@ -22,8 +23,9 @@ typedef enum
     //event_app_update,
     //event_app_render,
 
-    //event_key_pressed,
-    //event_key_released,
+    event_key_pressed,
+    event_key_released,
+    event_key_repeated,
     //event_key_typed,
 
     //event_mouse_button_pressed,
@@ -35,9 +37,14 @@ typedef enum
 typedef struct
 {
     event_type_t type;
+    bool handled;
+
+    //for resizing
     uint32_t x;
     uint32_t y;
-    bool handled;
+
+    //for key events
+    key_t key;
 } event_t;
 
 event_t event_create_empty();
