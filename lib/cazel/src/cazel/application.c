@@ -5,6 +5,7 @@
 #include "application.h"
 #include "nuklear/nuklear_layer.h"
 #include "input.h"
+#include "context.h"
 
 application_t application_create(platform_t platform)
 {
@@ -50,11 +51,15 @@ void application_run(application_t* application)
 {
     while (!application->exiting)
     {
+        context_clear();
+
         if(input_mouse_button_pressed(&application->window, mouse_button_left))
         {
             printf("left button pressed\n");
         }
         application_update(application);
+
+        context_swap_buffers(&application->window);
     }
 }
 

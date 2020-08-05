@@ -6,29 +6,76 @@
 #include "core.h"
 #include "platform/opengl/opengl_context.h"
 
-void(*context_init)(window_t* window);
+
+//Initialize the context
+void(*context_init)(window_t*window);
+
+//Swap buffers
 void(*context_swap_buffers)(window_t* window);
 
-//Vertex buffers
-vertex_buffer_t(*context_create_vertex_buffer)(float* vertices, size_t count);
-void(*context_bind_vertex_buffer)(vertex_buffer_t vertex_buffer);
-void(*context_free_vertex_buffer)(vertex_buffer_t vertex_buffer);
-void(*context_set_vertex_buffer_layout)(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout);
 
-//Index buffers
-index_buffer_t(*context_create_index_buffer)(uint32_t* indices, size_t count);
-void(*context_bind_index_buffer)(index_buffer_t index_buffer);
-void(*context_free_index_buffer)(index_buffer_t index_buffer);
-
-//shaders
-shader_t(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
-void(*context_bind_shader)(shader_t shader);
-void(*context_free_shader)(shader_t shader);
-
+//========================================================================================================================================================================================================================
 //Vertex array
-vertex_array_t(*context_create_vertex_array)();
-void(*context_bind_vertex_array)(vertex_array_t vertex_array);
-void(*context_free_vertex_array)(vertex_array_t vertex_array);
+
+//Generate a vertex array
+void(*context_create_vertex_array)(vertex_array_t* vertex_array);
+
+//Bind a given vertex array
+void(*context_bind_vertex_array)(vertex_array_t* vertex_array);
+
+//Free a given vertex array - if the vertex array was malloc'ed, it must be free'd by the user as well - this function only takes care of the data on the graphics card
+void(*context_free_vertex_array)(vertex_array_t* vertex_array);
+
+
+
+//========================================================================================================================================================================================================================
+//Vertex buffers
+
+//Creates a vertex buffer on the graphics card, fills it with data and returns a handle to it
+void(*context_create_vertex_buffer)(vertex_array_t* vertex_array, float* vertices, size_t count, size_t total_floats);
+
+//Binds a vertex buffer
+void(*context_bind_vertex_buffer)(vertex_array_t* vertex_array);
+
+//Frees a given vertex buffer from the graphics card
+void(*context_free_vertex_buffer)(vertex_array_t* vertex_array);
+
+//Sets the layout for the a given vertex buffer to the provided buffer layout
+void(*context_set_vertex_buffer_layout)(vertex_array_t* vertex_array);
+
+
+//========================================================================================================================================================================================================================
+//index buffers
+
+//Creates an index buffer on the graphics card, fills it with data and returns a handle to it
+void(*context_create_index_buffer)(vertex_array_t* vertex_array, uint32_t* indices, size_t count);
+
+//Binds an index buffer
+void(*context_bind_index_buffer)(vertex_array_t* vertex_array);
+
+//Frees a given index buffer from the graphics card
+void(*context_free_index_buffer)(vertex_array_t* vertex_array);
+
+//========================================================================================================================================================================================================================
+//Shaders
+
+//Creates a shader from the given source
+unsigned int(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
+
+//Bind the given shader
+void(*context_bind_shader)(unsigned int shader);
+
+//Free the given shader
+void(*context_free_shader)(unsigned int shader);
+
+//========================================================================================================================================================================================================================
+//Clear color
+
+//Set the color the screen should clear to
+void(*context_set_clear_color)(float r, float g, float b, float a);
+
+//Clear the screen to the clear color set by context_set_clear_color
+void(*context_clear)();
 
 //========================================================================================================================================================================================================================
 //Clear color

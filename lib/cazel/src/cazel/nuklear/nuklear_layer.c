@@ -97,12 +97,12 @@ void nuklear_layer_on_update()
     glViewport(0, 0, s_window.width, s_window.height);
 
     context_set_clear_color(bg.r, bg.g, bg.b, bg.a);
-    context_clear();
+    //context_clear();
     //glClear(GL_COLOR_BUFFER_BIT);
     //glClearColor(bg.r, bg.g, bg.b, bg.a);
 
     nk_glfw3_render(&glfw, NK_ANTI_ALIASING_ON, MAX_VERTEX_BUFFER, MAX_ELEMENT_BUFFER);
-    context_swap_buffers(&s_window);
+    //context_swap_buffers(&s_window);
     //glfwSwapBuffers(s_window.handle);
 
 }

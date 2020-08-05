@@ -5,10 +5,6 @@
 #ifndef SANDBOX_OPENGL_CONTEXT_H
 #define SANDBOX_OPENGL_CONTEXT_H
 
-//#define GLFW_INCLUDE_NONE
-//#include "GLFW/glfw3.h"
-//#include "../../../../lib/glad/include/glad/glad.h"
-
 #include "../../window.h"
 #include "../../context.h"
 
@@ -19,29 +15,29 @@ void opengl_context_swap_buffers(window_t* window);
 
 
 //========================================================================================================================================================================================================================
+//Vertex array
+void opengl_context_create_vertex_array(vertex_array_t* vertex_array);
+void opengl_context_bind_vertex_array(vertex_array_t* vertex_array);
+void opengl_context_free_vertex_array(vertex_array_t* vertex_array);
+
+//========================================================================================================================================================================================================================
 //Vertex buffers
-vertex_buffer_t opengl_context_create_vertex_buffer(float* vertices, size_t count);
-void opengl_context_bind_vertex_buffer(vertex_buffer_t vertex_buffer);
-void opengl_context_free_vertex_buffer(vertex_buffer_t vertex_buffer);
-void opengl_context_set_vertex_buffer_layout(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout);
+void opengl_context_create_vertex_buffer(vertex_array_t* vertex_array, float* vertices, size_t count, size_t total_floats);
+void opengl_context_bind_vertex_buffer(vertex_array_t* vertex_array);
+void opengl_context_free_vertex_buffer(vertex_array_t* vertex_array);
+void opengl_context_set_vertex_buffer_layout(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //index buffers
-index_buffer_t opengl_context_create_index_buffer(uint32_t* indices, size_t count);
-void opengl_context_bind_index_buffer(index_buffer_t index_buffer);
-void opengl_context_free_index_buffer(index_buffer_t index_buffer);
+void opengl_context_create_index_buffer(vertex_array_t* vertex_array, uint32_t* indices, size_t count);
+void opengl_context_bind_index_buffer(vertex_array_t* vertex_array);
+void opengl_context_free_index_buffer(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //Shaders
-shader_t opengl_context_create_shader(const char* vertex_shader_source, const char* fragment_shader_source);
-void opengl_context_bind_shader(shader_t shader);
-void opengl_context_free_shader(shader_t shader);
-
-//========================================================================================================================================================================================================================
-//Vertex array
-vertex_array_t opengl_context_create_vertex_array();
-void opengl_context_bind_vertex_array(vertex_array_t vertex_array);
-void opengl_context_free_vertex_array(vertex_array_t vertex_array);
+unsigned int opengl_context_create_shader(const char* vertex_shader_source, const char* fragment_shader_source);
+void opengl_context_bind_shader(unsigned int shader);
+void opengl_context_free_shader(unsigned int shader);
 
 //========================================================================================================================================================================================================================
 //Clear color

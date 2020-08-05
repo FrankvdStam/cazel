@@ -9,22 +9,25 @@
 #include "window.h"
 #include "renderer/buffers/buffers.h"
 
-typedef unsigned int vertex_buffer_t;
-typedef unsigned int shader_t;
-typedef unsigned int index_buffer_t;
-typedef unsigned int vertex_array_t;
+//typedef unsigned int vertex_buffer_t;
+//typedef unsigned int shader_t;
+//typedef unsigned int index_buffer_t;
 
-//Abstraction idea:
-//typedef struct
-//{
-//    vertex_buffer_t vertex_buffer;
-//    buffer_layout_t buffer_layout;
-//    index_buffer_t index_buffer;
-//    shader_t shader;
-//}
-//vertex_array_struct_t;
+typedef struct
+{
+    unsigned int vertex_buffer_id;
+    unsigned int vertex_count;
+    unsigned int vertex_total_floats;
 
+    buffer_layout_t vertex_layout;
 
+    unsigned int index_buffer_id;
+    unsigned int index_count;
+
+    unsigned int shader_id;
+
+    unsigned int vertex_array_id;
+} vertex_array_t;
 
 //Resolve platform specific functions
 void context_platform_init(platform_t platform);
@@ -36,59 +39,59 @@ extern void(*context_init)(window_t*window);
 extern void(*context_swap_buffers)(window_t* window);
 
 
+//========================================================================================================================================================================================================================
+//Vertex array
+
+//Generate a vertex array
+extern void(*context_create_vertex_array)(vertex_array_t* vertex_array);
+
+//Bind a given vertex array
+extern void(*context_bind_vertex_array)(vertex_array_t* vertex_array);
+
+//Free a given vertex array - if the vertex array was malloc'ed, it must be free'd by the user as well - this function only takes care of the data on the graphics card
+extern void(*context_free_vertex_array)(vertex_array_t* vertex_array);
+
+
 
 //========================================================================================================================================================================================================================
 //Vertex buffers
 
 //Creates a vertex buffer on the graphics card, fills it with data and returns a handle to it
-extern vertex_buffer_t(*context_create_vertex_buffer)(float* vertices, size_t count);
+extern void(*context_create_vertex_buffer)(vertex_array_t* vertex_array, float* vertices, size_t count, size_t total_floats);
 
 //Binds a vertex buffer
-extern void(*context_bind_vertex_buffer)(vertex_buffer_t vertex_buffer);
+extern void(*context_bind_vertex_buffer)(vertex_array_t* vertex_array);
 
 //Frees a given vertex buffer from the graphics card
-extern void(*context_free_vertex_buffer)(vertex_buffer_t vertex_buffer);
+extern void(*context_free_vertex_buffer)(vertex_array_t* vertex_array);
 
 //Sets the layout for the a given vertex buffer to the provided buffer layout
-extern void(*context_set_vertex_buffer_layout)(vertex_buffer_t vertex_buffer, buffer_layout_t* buffer_layout);
+extern void(*context_set_vertex_buffer_layout)(vertex_array_t* vertex_array);
 
 
 //========================================================================================================================================================================================================================
 //index buffers
 
 //Creates an index buffer on the graphics card, fills it with data and returns a handle to it
-extern index_buffer_t(*context_create_index_buffer)(uint32_t* indices, size_t count);
+extern void(*context_create_index_buffer)(vertex_array_t* vertex_array, uint32_t* indices, size_t count);
 
 //Binds an index buffer
-extern void(*context_bind_index_buffer)(index_buffer_t index_buffer);
+extern void(*context_bind_index_buffer)(vertex_array_t* vertex_array);
 
 //Frees a given index buffer from the graphics card
-extern void(*context_free_index_buffer)(index_buffer_t index_buffer);
+extern void(*context_free_index_buffer)(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //Shaders
 
 //Creates a shader from the given source
-extern shader_t(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
+extern unsigned int(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
 
 //Bind the given shader
-extern void(*context_bind_shader)(shader_t shader);
+extern void(*context_bind_shader)(unsigned int shader);
 
 //Free the given shader
-extern void(*context_free_shader)(shader_t shader);
-
-
-//========================================================================================================================================================================================================================
-//Vertex array
-
-//Generate a vertex array
-extern vertex_array_t(*context_create_vertex_array)();
-
-//Bind a given vertex array
-extern void(*context_bind_vertex_array)(vertex_array_t vertex_array);
-
-//Free a given vertex array
-extern void(*context_free_vertex_array)(vertex_array_t vertex_array);
+extern void(*context_free_shader)(unsigned int shader);
 
 //========================================================================================================================================================================================================================
 //Clear color
