@@ -294,6 +294,16 @@ void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, m
     glUniformMatrix4fv(uniform_location, 1, GL_FALSE, matrix[0]);
 }
 
+void opengl_context_upload_uniform_vec4(unsigned int shader, const char* name, vec4 vec)
+{
+    int uniform_location = glGetUniformLocation(shader, name);
+    if(uniform_location == -1)
+    {
+        EXIT_ERROR("Invalid uniform: %s\n", name);
+    }
+    glUniform4f(uniform_location, vec[0], vec[1], vec[2], vec[3]);
+}
+
 //========================================================================================================================================================================================================================
 //Time
 

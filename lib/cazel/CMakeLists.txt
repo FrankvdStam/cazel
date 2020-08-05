@@ -69,7 +69,9 @@ target_compile_options(cazel PUBLIC
 add_subdirectory (lib/glfw)
 add_subdirectory (lib/glad)
 add_subdirectory (lib/cglm/)
+add_subdirectory (lib/flecs/)
 
 target_link_libraries (cazel LINK_PUBLIC glfw)
 target_link_libraries (cazel LINK_PUBLIC glad)
 target_link_libraries (cazel LINK_PUBLIC cglm)
+target_link_libraries (cazel LINK_PUBLIC flecs)

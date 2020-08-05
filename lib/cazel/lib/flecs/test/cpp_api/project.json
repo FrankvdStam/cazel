@@ -1,0 +1,123 @@
+{
+    "id": "cpp_api",
+    "type": "application",
+    "value": {
+        "author": "Sander Mertens",
+        "description": "Test project for flecs",
+        "public": false,
+        "coverage": false,
+        "language": "c++",
+        "use": [
+            "flecs"
+        ]
+    },
+    "test": {
+        "testsuites": [{
+            "id": "Entity",
+            "testcases": [
+                "new",
+                "new_named",
+                "new_add",
+                "new_add_2",
+                "new_set",
+                "new_set_2",
+                "add",
+                "add_2",
+                "add_entity",
+                "add_childof",
+                "add_instanceof",
+                "remove",
+                "remove_2",
+                "remove_entity",
+                "remove_childof",
+                "remove_instanceof",
+                "set",
+                "set_2",
+                "replace"
+            ]
+        }, {
+            "id": "Paths",
+            "testcases": [
+                "name",
+                "path_depth_1",
+                "path_depth_2",
+                "entity_lookup_name",
+                "entity_lookup_depth_1",
+                "entity_lookup_depth_2"
+            ]
+        }, {
+            "id": "Type",
+            "testcases": [
+                "add_2",
+                "add_instanceof",
+                "add_childof",
+                "1_component",
+                "2_component",
+                "1_component_signature",
+                "2_component_signature"
+            ]
+        }, {
+            "id": "System",
+            "testcases": [
+                "action",
+                "action_const",
+                "action_shared",
+                "action_optional",
+                "each",
+                "each_const",
+                "each_shared",
+                "each_optional",
+                "signature",
+                "signature_const",
+                "signature_shared",
+                "signature_optional"
+            ]
+        }, {
+            "id": "Query",
+            "testcases": [
+                "action",
+                "action_const",
+                "action_shared",
+                "action_optional",
+                "each",
+                "each_const",
+                "each_shared",
+                "each_optional",
+                "signature",
+                "signature_const",
+                "signature_shared",
+                "signature_optional"
+            ]
+        }, {
+            "id": "ComponentLifecycle",
+            "testcases": [
+                "ctor_on_add",
+                "dtor_on_remove",
+                "copy_on_set",
+                "copy_on_override",
+                "move_on_merge",
+                "non_pod_add",
+                "non_pod_remove",
+                "non_pod_set",
+                "non_pod_override",
+                "get_mut_new",
+                "get_mut_existing"
+            ]
+        }, {
+            "id": "Refs",
+            "testcases": [
+                "get_ref",
+                "ref_after_add",
+                "ref_after_remove",
+                "ref_after_set",
+                "ref_before_set"
+            ]
+        }, {
+            "id": "Module",
+            "testcases": [
+                "import",
+                "lookup_from_scope"
+            ]
+        }]
+    }
+}

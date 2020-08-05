@@ -109,7 +109,7 @@ extern void(*context_clear)();
 
 //Upload a mat4 uniform to the given shader and the given uniform name
 extern void (*context_upload_uniform_mat4)(unsigned int shader, const char* name, mat4 matrix);
-
+extern void (*context_upload_uniform_vec4)(unsigned int shader, const char* name, vec4 vec);
 
 //========================================================================================================================================================================================================================
 //Time
