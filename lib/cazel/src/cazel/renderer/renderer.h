@@ -9,7 +9,7 @@
 
 void renderer_begin_scene();
 
-void renderer_submit(vertex_array_t vertex_array);
+void renderer_submit(vertex_array_t* vertex_array);
 
 void renderer_end_scene();
 
