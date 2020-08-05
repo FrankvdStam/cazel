@@ -37,8 +37,9 @@ typedef struct
     event_type_t type;
     uint32_t x;
     uint32_t y;
+    bool handled;
 } event_t;
 
-
+event_t event_create_empty();
 
 #endif //SANDBOX_EVENT_H

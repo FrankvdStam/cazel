@@ -9,7 +9,7 @@
 #include "layers/layer.h"
 #include "window.h"
 
-
+typedef void(*event_callback)(event_t event);
 
 typedef struct
 {
@@ -22,8 +22,9 @@ typedef struct
 
 extern void init_user_layer(layer_t* layer);
 
-application_t application_create(platform_t platform);
-void application_run(application_t* application);
-void application_add_layer(application_t* application, layer_t layer);
+void application_create(platform_t platform);
+void application_run();
+void application_add_layer(layer_t layer);
+void application_on_event();
 
 #endif //SANDBOX_APPLICATION_H

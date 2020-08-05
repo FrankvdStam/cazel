@@ -77,17 +77,16 @@ void user_layer_on_update()
 
 void user_layer_on_detach()
 {
-
+    context_free_shader(s_vertex_array.shader_id);
+    context_free_index_buffer(&s_vertex_array);
+    context_free_vertex_buffer(&s_vertex_array);
+    context_free_vertex_array(&s_vertex_array);
 }
 
 void user_layer_on_event(event_t event)
 {
 
 }
-
-
-
-
 
 void init_user_layer(layer_t* layer)
 {

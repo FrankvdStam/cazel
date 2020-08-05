@@ -7,7 +7,9 @@
 #include "input.h"
 #include "context.h"
 
-application_t application_create(platform_t platform)
+application_t s_application;
+
+void application_create(platform_t platform)
 {
     window_t window;
     window.title = "cavel";
@@ -18,55 +20,66 @@ application_t application_create(platform_t platform)
 
     window_init(&window);
 
-    application_t app;
-    app.window = window;
-    app.platform = platform;
-    layer_stack_init(&app.layer_stack, 4);
-    app.exiting = false;
+    s_application.window = window;
+    s_application.platform = platform;
+    layer_stack_init(&s_application.layer_stack, 4);
+    s_application.exiting = false;
 
     layer_t nuklear_layer;
-    nuklear_layer_init(&nuklear_layer, app.window);
-    application_add_layer(&app, nuklear_layer);
+    nuklear_layer_init(&nuklear_layer, s_application.window);
+    application_add_layer(nuklear_layer);
 
     layer_t user_layer;
     layer_init(&user_layer, "user layer");
     init_user_layer(&user_layer);
-    application_add_layer(&app, user_layer);
+    application_add_layer(user_layer);
 
-    layer_stack_print_names(&app.layer_stack);
-
-    return app;
+    layer_stack_print_names(&s_application.layer_stack);
 }
 
-void application_update(application_t* application)
+void application_update()
 {
-    for(size_t i = 0; i < application->layer_stack.add_index; i++)
+    for(size_t i = 0; i < s_application.layer_stack.add_index; i++)
     {
-        application->layer_stack.layers[i].update();
+        s_application.layer_stack.layers[i].update();
+    }
+}
+
+void application_on_event(event_t event)
+{
+    if(event.type == event_window_close)
+    {
+        s_application.exiting = true;
+        event.handled = true;
+    }
+
+    for(size_t i = 0; i < s_application.layer_stack.add_index; i++)
+    {
+        s_application.layer_stack.layers[i].event(event);
     }
 }
 
 
-void application_run(application_t* application)
+void application_run()
 {
-    while (!application->exiting)
+    while (!s_application.exiting)
     {
         context_clear();
 
-        if(input_mouse_button_pressed(&application->window, mouse_button_left))
+        if(input_mouse_button_pressed(&s_application.window, mouse_button_left))
         {
             printf("left button pressed\n");
         }
-        application_update(application);
+        application_update();
 
-        context_swap_buffers(&application->window);
+        context_swap_buffers(&s_application.window);
     }
 }
 
 
-void application_add_layer(application_t* application, layer_t layer)
+void application_add_layer(layer_t layer)
 {
     printf("Add layer name: %s\n", layer.name);
-    layer_stack_add(&application->layer_stack, layer);
+    layer_stack_add(&s_application.layer_stack, layer);
     layer.attach();
 }

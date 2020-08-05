@@ -7,6 +7,9 @@
 #define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
 #include "../../../../lib/glad/include/glad/glad.h"
+#include "../../application.h"
+
+
 
 GLenum shader_data_type_to_gl_enum(shader_data_type_t type)
 {
@@ -39,6 +42,13 @@ void glDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLs
     printf("%s\n", message);
 }
 
+void glfwCloseWindowEventCallback(GLFWwindow* window)
+{
+    event_t event = event_create_empty();
+    event.type = event_window_close;
+    application_on_event(event);
+}
+
 void opengl_context_init(window_t* window)
 {
     glfwMakeContextCurrent(window->handle);
@@ -49,6 +59,7 @@ void opengl_context_init(window_t* window)
     glEnable(GL_DEBUG_OUTPUT);
     GLDEBUGPROC proc = glDebugCallback;
     glDebugMessageCallback(proc, NULL);
+    glfwSetWindowCloseCallback(window->handle, glfwCloseWindowEventCallback);
 }
 
 void opengl_context_swap_buffers(window_t* window)

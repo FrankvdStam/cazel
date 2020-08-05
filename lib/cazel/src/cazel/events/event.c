@@ -3,3 +3,13 @@
 //
 
 #include "event.h"
+
+event_t event_create_empty()
+{
+    event_t event;
+    event.type = event_none;
+    event.x = 0;
+    event.y = 0;
+    event.handled = false;
+    return event;
+}

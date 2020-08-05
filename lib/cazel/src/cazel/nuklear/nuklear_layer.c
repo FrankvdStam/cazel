@@ -108,9 +108,12 @@ void nuklear_layer_on_update()
 }
 
 
-void nuklear_layer_on_dispatch_event(event_t event)
+void nuklear_layer_on_event(event_t event)
 {
-
+    if(event.type == event_window_close)
+    {
+        printf("Received window close event in nuklear layer.\n");
+    }
 }
 
 void nuklear_layer_init(layer_t* layer, window_t window)
@@ -120,7 +123,7 @@ void nuklear_layer_init(layer_t* layer, window_t window)
     layer->attach = &nuklear_layer_on_attach;
     layer->detach = &nuklear_layer_on_detach;
     layer->update = &nuklear_layer_on_update;
-    layer->event = &nuklear_layer_on_dispatch_event;
+    layer->event = &nuklear_layer_on_event;
 }
 
 
