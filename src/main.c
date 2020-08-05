@@ -108,14 +108,34 @@ void user_layer_on_attach()
 
     //========================================================================================================================================================================================================================
     orthographic_camera_init(&s_camera, -1.6f, 1.6f, -0.9f, 0.9f);
-    //s_camera.position[0] = 0.5f;
-    //s_camera.position[1] = 0.5f;
     orthographic_camera_recalculate_view_projection_matrix(&s_camera);
 }
 
 
 void user_layer_on_update()
 {
+    if(input_key_pressed(&s_application.window, key_a))
+    {
+        s_camera.position[0] += s_camera_speed;
+        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+    }
+    else if(input_key_pressed(&s_application.window, key_d))
+    {
+        s_camera.position[0] -= s_camera_speed;
+        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+    }
+    else if(input_key_pressed(&s_application.window, key_s))
+    {
+        s_camera.position[1] += s_camera_speed;
+        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+    }
+
+    else if(input_key_pressed(&s_application.window, key_w))
+    {
+        s_camera.position[1] -= s_camera_speed;
+        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+    }
+
     renderer_begin_scene(&s_camera.view_projection_matrix);
 
     renderer_submit(&s_square);
@@ -135,30 +155,7 @@ void user_layer_on_detach()
 
 void user_layer_on_event(event_t event)
 {
-    if(event.type == event_key_pressed || event.type == event_key_repeated)
-    {
-        switch (event.key)
-        {
-            case key_a:
-                s_camera.position[0] += s_camera_speed;
-                orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-                break;
-            case key_d:
-                s_camera.position[0] -= s_camera_speed;
-                orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-                break;
-            case key_s:
-                s_camera.position[1] += s_camera_speed;
-                orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-                break;
-            case key_w:
-                s_camera.position[1] -= s_camera_speed;
-                orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-                break;
-            default:
-                break;
-        }
-    }
+
 }
 
 void init_user_layer(layer_t* layer)
