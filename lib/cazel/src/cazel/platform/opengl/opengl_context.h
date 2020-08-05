@@ -43,5 +43,9 @@ vertex_array_t opengl_context_create_vertex_array();
 void opengl_context_bind_vertex_array(vertex_array_t vertex_array);
 void opengl_context_free_vertex_array(vertex_array_t vertex_array);
 
+//========================================================================================================================================================================================================================
+//Clear color
+void opengl_context_set_clear_color(float r, float g, float b, float a);
+void opengl_context_clear();
 
 #endif //SANDBOX_OPENGL_CONTEXT_H

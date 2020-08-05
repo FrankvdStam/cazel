@@ -90,5 +90,14 @@ extern void(*context_bind_vertex_array)(vertex_array_t vertex_array);
 //Free a given vertex array
 extern void(*context_free_vertex_array)(vertex_array_t vertex_array);
 
+//========================================================================================================================================================================================================================
+//Clear color
+
+//Set the color the screen should clear to
+extern void(*context_set_clear_color)(float r, float g, float b, float a);
+
+//Clear the screen to the clear color set by context_set_clear_color
+extern void(*context_clear)();
+
 
 #endif //SANDBOX_CONTEXT_H

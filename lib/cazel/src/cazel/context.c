@@ -30,9 +30,14 @@ vertex_array_t(*context_create_vertex_array)();
 void(*context_bind_vertex_array)(vertex_array_t vertex_array);
 void(*context_free_vertex_array)(vertex_array_t vertex_array);
 
+//========================================================================================================================================================================================================================
+//Clear color
+void(*context_set_clear_color)(float r, float g, float b, float a);
+void(*context_clear)();
+
+
 void context_platform_init(platform_t platform)
 {
-#ifdef CAZEL_WINDOWS
     context_init                        = &opengl_context_init;
     context_swap_buffers                = &opengl_context_swap_buffers;
 
@@ -57,21 +62,9 @@ void context_platform_init(platform_t platform)
     context_bind_vertex_array           = &opengl_context_bind_vertex_array;
     context_free_vertex_array           = &opengl_context_free_vertex_array;
 
-#elif CAZEL_LINUX
-    context_init = &opengl_context_init;
-    context_swap_buffers = &opengl_context_swap_buffers;
-
-    context_create_vertex_buffer = opengl_context_create_vertex_buffer;
-    context_create_index_buffer = opengl_context_create_index_buffer;
-
-    context_bind_vertex_buffer = opengl_context_bind_vertex_buffer;
-    context_bind_index_buffer = opengl_context_bind_index_buffer;
-
-    context_free_vertex_buffer = opengl_context_free_vertex_buffer;
-    context_free_index_buffer = opengl_context_free_index_buffer;
-
-    context_set_vertex_buffer_layout = opengl_context_set_vertex_buffer_layout;
-#endif
+    //Clear color
+    context_set_clear_color             = &opengl_context_set_clear_color;
+    context_clear                       = &opengl_context_clear;
 }
 
 

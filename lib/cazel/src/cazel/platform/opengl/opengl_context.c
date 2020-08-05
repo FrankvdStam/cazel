@@ -265,3 +265,20 @@ void opengl_context_free_shader(shader_t shader)
 {
     glDeleteProgram(shader);
 }
+
+
+
+//========================================================================================================================================================================================================================
+//Clear color
+
+//Set the color the screen should clear to
+void opengl_context_set_clear_color(float r, float g, float b, float a)
+{
+    glClearColor(r, g, b, a);
+}
+
+//Clear the screen to the clear color set by context_set_clear_color
+void opengl_context_clear()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+}

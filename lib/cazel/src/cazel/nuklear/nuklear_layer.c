@@ -95,8 +95,11 @@ void nuklear_layer_on_update()
     nk_end(nuklear_context);
 
     glViewport(0, 0, s_window.width, s_window.height);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glClearColor(bg.r, bg.g, bg.b, bg.a);
+
+    context_set_clear_color(bg.r, bg.g, bg.b, bg.a);
+    context_clear();
+    //glClear(GL_COLOR_BUFFER_BIT);
+    //glClearColor(bg.r, bg.g, bg.b, bg.a);
 
     nk_glfw3_render(&glfw, NK_ANTI_ALIASING_ON, MAX_VERTEX_BUFFER, MAX_ELEMENT_BUFFER);
     context_swap_buffers(&s_window);
