@@ -1,5 +1,6 @@
 #define CGLM_DEFINE_PRINTS
 
+#define __USE_MINGW_ANSI_STDIO
 #include <stdio.h>
 
 
@@ -11,24 +12,34 @@
 
 #include "../lib/cazel/src/cazel/platform/opengl/opengl_context.h"
 #include <time.h>
+#include <inttypes.h>
 
+struct timespec diff(struct timespec start, struct timespec end);
 
-
-// call this function to start a nanosecond-resolution timer
-struct timespec timer_start(){
-    struct timespec start_time;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start_time);
-    return start_time;
+int sta()
+{
+    struct timespec time1, time2;
+    int temp = 0;
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &time1);
+    for (int i = 0; i< 242000000; i++)
+        temp+=temp;
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &time2);
+    printf("s: %lld, n: %ld \n", diff(time1,time2).tv_sec, diff(time1,time2).tv_nsec);
+    return 0;
 }
 
-// call this function to end a timer, returning nanoseconds elapsed as a long
-long timer_end(struct timespec start_time){
-    struct timespec end_time;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end_time);
-    long diffInNanos = (end_time.tv_sec - start_time.tv_sec) * (long)1e9 + (end_time.tv_nsec - start_time.tv_nsec);
-    return diffInNanos;
+struct timespec diff(struct timespec start, struct timespec end)
+{
+    struct timespec temp;
+    if ((end.tv_nsec-start.tv_nsec)<0) {
+        temp.tv_sec = end.tv_sec-start.tv_sec-1;
+        temp.tv_nsec = 1000000000+end.tv_nsec-start.tv_nsec;
+    } else {
+        temp.tv_sec = end.tv_sec-start.tv_sec;
+        temp.tv_nsec = end.tv_nsec-start.tv_nsec;
+    }
+    return temp;
 }
-
 
 
 
@@ -169,6 +180,8 @@ void setup_triangle()
 //squares
 void setup_squares()
 {
+    sta();
+
     context_create_vertex_array(&s_square);
     context_bind_vertex_array(&s_square);
 
