@@ -297,23 +297,23 @@ void user_layer_on_update(float delta_time)
 {
     if(input_key_pressed(&s_application.window, key_a))
     {
-        s_camera.position[0] += s_camera_speed * delta_time;
+        s_camera.position[0] -= s_camera_speed * delta_time;
         orthographic_camera_recalculate_view_projection_matrix(&s_camera);
     }
     else if(input_key_pressed(&s_application.window, key_d))
     {
-        s_camera.position[0] -= s_camera_speed * delta_time;
+        s_camera.position[0] += s_camera_speed * delta_time;
         orthographic_camera_recalculate_view_projection_matrix(&s_camera);
     }
 
     if(input_key_pressed(&s_application.window, key_s))
     {
-        s_camera.position[1] += s_camera_speed * delta_time;
+        s_camera.position[1] -= s_camera_speed * delta_time;
         orthographic_camera_recalculate_view_projection_matrix(&s_camera);
     }
     else if(input_key_pressed(&s_application.window, key_w))
     {
-        s_camera.position[1] -= s_camera_speed * delta_time;
+        s_camera.position[1] += s_camera_speed * delta_time;
         orthographic_camera_recalculate_view_projection_matrix(&s_camera);
     }
 
