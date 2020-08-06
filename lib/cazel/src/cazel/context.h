@@ -130,6 +130,8 @@ extern unsigned int (*context_load_texture)(const char* filepath);
 
 
 
-
+//========================================================================================================================================================================================================================
+//viewport
+extern void(*context_set_viewport)(uint32_t x, uint32_t y);
 
 #endif //SANDBOX_CONTEXT_H

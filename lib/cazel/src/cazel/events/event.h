@@ -15,8 +15,10 @@ typedef enum
     event_none,
     event_window_close,
     event_window_resize,
-    event_window_focus,
-    event_window_lost_focus,
+    event_window_minimize,
+    event_window_maximize,
+    //event_window_focus,
+    //event_window_lost_focus,
     event_window_moved,
 
     //event_app_tick,

@@ -18,6 +18,7 @@ typedef struct
     window_t window;
 
     bool exiting;
+    bool minimized;
 
     float last_frame_time;
 } application_t;

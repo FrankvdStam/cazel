@@ -101,6 +101,11 @@ float (*context_get_time)();
 //Loads a given texture into graphics memory
 unsigned int (*context_load_texture)(const char* filepath);
 
+//========================================================================================================================================================================================================================
+//viewport
+void(*context_set_viewport)(uint32_t x, uint32_t y);
+
+
 void context_platform_init(platform_t platform)
 {
     context_init                        = &opengl_context_init;
@@ -139,6 +144,7 @@ void context_platform_init(platform_t platform)
     context_upload_uniform_vec4         = &opengl_context_upload_uniform_vec4;
     context_load_texture                = &opengl_context_load_texture;
     context_create_shader_from_file     = &opengl_context_create_shader_from_file;
+    context_set_viewport                = &opengl_context_set_viewport;
 }
 
 

@@ -39,6 +39,10 @@ GLenum shader_data_type_to_gl_enum(shader_data_type_t type)
     }
 }
 
+
+//========================================================================================================================================================================================================================
+//Events
+
 void gl_debug_callback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
 {
     if(severity == GL_DEBUG_SEVERITY_NOTIFICATION)
@@ -46,6 +50,29 @@ void gl_debug_callback(GLenum source, GLenum type, GLuint id, GLenum severity, G
         return;
     }
     printf("%s\n", message);
+}
+
+void glfw_window_resize_callback(GLFWwindow* window, int width, int height)
+{
+    event_t event = event_create_empty();
+    event.type = event_window_resize;
+    event.x = width;
+    event.y = height;
+    application_on_event(event);
+}
+
+void glfw_window_maximize_callback(GLFWwindow* window, int maximized)
+{
+    event_t event = event_create_empty();
+    if(maximized == GLFW_TRUE)
+    {
+        event.type = event_window_maximize;
+    }
+    else
+    {
+        event.type = event_window_minimize;
+    }
+    application_on_event(event);
 }
 
 void glfw_close_window_event_callback(GLFWwindow* window) {
@@ -91,6 +118,9 @@ void print_opengl_info()
     printf("version: %s\n", version);
 }
 
+//========================================================================================================================================================================================================================
+//Initialization
+
 void opengl_context_init(window_t* window)
 {
     glfwMakeContextCurrent(window->handle);
@@ -102,6 +132,8 @@ void opengl_context_init(window_t* window)
     GLDEBUGPROC proc = gl_debug_callback;
     glDebugMessageCallback(proc, NULL);
     glfwSetWindowCloseCallback(window->handle, glfw_close_window_event_callback);
+    glfwSetWindowSizeCallback(window->handle, glfw_window_resize_callback);
+    glfwSetWindowMaximizeCallback(window->handle, glfw_window_maximize_callback);
     glfwSetKeyCallback(window->handle, glfw_key_callback);
 
     glEnable(GL_BLEND);
@@ -411,6 +443,10 @@ void opengl_context_delete_texture(unsigned int texture_id)
 
 
 
+void opengl_context_set_viewport(uint32_t x, uint32_t y)
+{
+    glViewport(0, 0, x, y);
+}
 
 
 

@@ -69,4 +69,7 @@ void opengl_context_bind_texture(uint32_t slot, unsigned int texture_id);
 
 void opengl_context_enable_blending();
 
+
+void opengl_context_set_viewport(uint32_t x, uint32_t y);
+
 #endif //SANDBOX_OPENGL_CONTEXT_H

@@ -25,6 +25,7 @@ void application_create(platform_t platform)
     layer_stack_init(&s_application.layer_stack, 4);
     s_application.exiting = false;
     s_application.last_frame_time = 0.0f;
+    s_application.minimized = false;
 
     layer_t user_layer;
     layer_init(&user_layer, "user layer");
@@ -54,11 +55,38 @@ void application_update()
 
 void application_on_event(event_t event)
 {
+    switch (event.type)
+    {
+        default:
+            break;
+
+        case event_window_close:
+            s_application.exiting = true;
+            event.handled = true;
+            break;
+
+        case event_window_minimize:
+            s_application.minimized = true;
+            break;
+
+        case event_window_maximize:
+            s_application.minimized = false;
+            break;
+
+        case event_window_resize:
+            //printf("Window resize: (%u, %u)\n", event.x, event.y);
+            context_set_viewport(event.x, event.y);
+            break;
+
+    }
+
     if(event.type == event_window_close)
     {
         s_application.exiting = true;
         event.handled = true;
     }
+
+    if(event.type)
 
     for(size_t i = 0; i < s_application.layer_stack.add_index; i++)
     {
