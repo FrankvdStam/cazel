@@ -10,20 +10,24 @@
 #include "../lib/cazel/src/cazel/renderer/orthographic_camera.h"
 
 #include "../lib/cazel/src/cazel/platform/opengl/opengl_context.h"
+#include <time.h>
 
-#include <unistd.h>
-#include <stdio.h>
-#include <limits.h>
-void print_dir()
-{
-    char cwd[PATH_MAX];
-    if (getcwd(cwd, sizeof(cwd)) != NULL) {
-        printf("Current working dir: %s\n", cwd);
-    } else {
-        perror("getcwd() error");
-    }
+
+
+// call this function to start a nanosecond-resolution timer
+struct timespec timer_start(){
+    struct timespec start_time;
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start_time);
+    return start_time;
 }
 
+// call this function to end a timer, returning nanoseconds elapsed as a long
+long timer_end(struct timespec start_time){
+    struct timespec end_time;
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end_time);
+    long diffInNanos = (end_time.tv_sec - start_time.tv_sec) * (long)1e9 + (end_time.tv_nsec - start_time.tv_nsec);
+    return diffInNanos;
+}
 
 
 
@@ -197,8 +201,6 @@ void setup_squares()
 unsigned int texture_id;
 void setup_textured_square()
 {
-    print_dir();
-
     texture_id = context_load_texture("assets/textures/test_texture.png");
     opengl_context_bind_texture(0, texture_id);
     printf("tex: %u\n", texture_id);
@@ -321,6 +323,8 @@ void user_layer_on_update(float delta_time)
     //========================================================================================================================================================================================================================
     //rendering
 
+    //struct timespec vartime = timer_start();  // begin a timer called 'vartime'
+
     opengl_context_enable_blending();
 
     renderer_begin_scene(&s_camera.view_projection_matrix);
@@ -378,8 +382,11 @@ void user_layer_on_update(float delta_time)
 
     opengl_context_bind_texture(0, transparent_texture_id);
     renderer_submit_with_transform(&s_transparent_textured_square, transparent_textured_square_transform);
-
     renderer_end_scene();
+
+
+    //long time_elapsed_nanos = timer_end(vartime);
+    //printf("Render took (nanoseconds): %ld\n", time_elapsed_nanos);
 }
 
 
