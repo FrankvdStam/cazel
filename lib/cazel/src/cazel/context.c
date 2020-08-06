@@ -93,6 +93,11 @@ void (*context_upload_uniform_vec4)(unsigned int shader, const char* name, vec4 
 //Time
 float (*context_get_time)();
 
+//========================================================================================================================================================================================================================
+//Textures
+
+//Loads a given texture into graphics memory
+unsigned int (*context_load_texture)(const char* filepath);
 
 void context_platform_init(platform_t platform)
 {
@@ -130,6 +135,7 @@ void context_platform_init(platform_t platform)
     //time
     context_get_time                    = &opengl_context_get_time;
     context_upload_uniform_vec4         = &opengl_context_upload_uniform_vec4;
+    context_load_texture                = &opengl_context_load_texture;
 }
 
 

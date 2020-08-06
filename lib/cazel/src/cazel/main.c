@@ -7,6 +7,8 @@
 #include "input.h"
 #include "context.h"
 
+//#define STB_DEFINE
+//#include "../../lib/stb/stb.h"
 
 //Resolves platform specific api's
 void initialize_platform(platform_t platform)

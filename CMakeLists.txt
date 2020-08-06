@@ -10,7 +10,7 @@ add_executable(Sandbox src/main.c)
 
 target_link_libraries (Sandbox LINK_PUBLIC cazel)
 
-#file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY src/assets DESTINATION ${CMAKE_BINARY_DIR})
 
 target_compile_options(Sandbox PUBLIC
         -pedantic-errors

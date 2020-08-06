@@ -108,11 +108,25 @@ extern void(*context_clear)();
 //Uniforms
 
 //Upload a mat4 uniform to the given shader and the given uniform name
-extern void (*context_upload_uniform_mat4)(unsigned int shader, const char* name, mat4 matrix);
-extern void (*context_upload_uniform_vec4)(unsigned int shader, const char* name, vec4 vec);
+//extern void (*context_upload_uniform_mat4)(unsigned int shader, const char* name, mat4 matrix);
+//extern void (*context_upload_uniform_vec4)(unsigned int shader, const char* name, vec4 vec);
 
 //========================================================================================================================================================================================================================
 //Time
 extern float (*context_get_time)();
+
+
+//========================================================================================================================================================================================================================
+//Textures
+
+//Loads a given texture into graphics memory
+extern unsigned int (*context_load_texture)(const char* filepath);
+
+
+
+
+
+
+
 
 #endif //SANDBOX_CONTEXT_H

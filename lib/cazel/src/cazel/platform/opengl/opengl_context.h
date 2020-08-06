@@ -46,11 +46,23 @@ void opengl_context_clear();
 
 //========================================================================================================================================================================================================================
 //Uniforms
-void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, mat4 matrix);
+void opengl_context_upload_uniform_int(unsigned int shader, const char* name, int vec);
+
+void opengl_context_upload_uniform_float(unsigned int shader, const char* name, float vec);
+void opengl_context_upload_uniform_vec2(unsigned int shader, const char* name, vec2 vec);
+void opengl_context_upload_uniform_vec3(unsigned int shader, const char* name, vec3 vec);
 void opengl_context_upload_uniform_vec4(unsigned int shader, const char* name, vec4 vec);
+
+void opengl_context_upload_uniform_mat3(unsigned int shader, const char* name, mat3 matrix);
+void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, mat4 matrix);
 
 //========================================================================================================================================================================================================================
 //Time
 float opengl_context_get_time();
+
+//========================================================================================================================================================================================================================
+//Textures
+unsigned int opengl_context_load_texture(const char* filepath);
+void opengl_context_bind_texture(uint32_t slot, unsigned int texture_id);
 
 #endif //SANDBOX_OPENGL_CONTEXT_H

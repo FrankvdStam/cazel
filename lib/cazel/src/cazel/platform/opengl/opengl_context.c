@@ -11,6 +11,8 @@
 #include "../../input.h"
 #include "../glfw/glfw_input.h"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "../../../lib/stb/stb_image.h"
 
 
 
@@ -284,24 +286,46 @@ void opengl_context_clear()
 //========================================================================================================================================================================================================================
 //Uniforms
 
-void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, mat4 matrix)
+void opengl_context_upload_uniform_int(unsigned int shader, const char* name, int i)
 {
     int uniform_location = glGetUniformLocation(shader, name);
-    if(uniform_location == -1)
-    {
-        EXIT_ERROR("Invalid uniform: %s\n", name);
-    }
-    glUniformMatrix4fv(uniform_location, 1, GL_FALSE, matrix[0]);
+    glUniform1i(uniform_location, i);
+}
+
+void opengl_context_upload_uniform_float(unsigned int shader, const char* name, float f)
+{
+    int uniform_location = glGetUniformLocation(shader, name);
+    glUniform1f(uniform_location, f);
+}
+
+void opengl_context_upload_uniform_vec2(unsigned int shader, const char* name, vec2 vec)
+{
+    int uniform_location = glGetUniformLocation(shader, name);
+    glUniform2f(uniform_location, vec[0], vec[1]);
+}
+
+void opengl_context_upload_uniform_vec3(unsigned int shader, const char* name, vec3 vec)
+{
+    int uniform_location = glGetUniformLocation(shader, name);
+    glUniform3f(uniform_location, vec[0], vec[1], vec[2]);
 }
 
 void opengl_context_upload_uniform_vec4(unsigned int shader, const char* name, vec4 vec)
 {
     int uniform_location = glGetUniformLocation(shader, name);
-    if(uniform_location == -1)
-    {
-        EXIT_ERROR("Invalid uniform: %s\n", name);
-    }
     glUniform4f(uniform_location, vec[0], vec[1], vec[2], vec[3]);
+}
+
+void opengl_context_upload_uniform_mat3(unsigned int shader, const char* name, mat3 matrix)
+{
+    int uniform_location = glGetUniformLocation(shader, name);
+    glUniformMatrix4fv(uniform_location, 1, GL_FALSE, matrix[0]);
+}
+
+void opengl_context_upload_uniform_mat4(unsigned int shader, const char* name, mat4 matrix)
+{
+    int uniform_location = glGetUniformLocation(shader, name);
+    glUniformMatrix4fv(uniform_location, 1, GL_FALSE, matrix[0]);
 }
 
 //========================================================================================================================================================================================================================
@@ -311,3 +335,68 @@ float opengl_context_get_time()
 {
     return glfwGetTime();
 }
+
+//========================================================================================================================================================================================================================
+//Textures
+
+unsigned int opengl_context_load_texture(const char* filepath)
+{
+    unsigned int texture_id;
+    int width, height, channels;
+    stbi_set_flip_vertically_on_load(1);
+    stbi_uc* texture = stbi_load(filepath, &width, &height, &channels, 0);
+
+    if(!texture)
+    {
+        EXIT_ERROR("Texture not found: %s\n", filepath);
+    }
+
+    glCreateTextures(GL_TEXTURE_2D, 1, &texture_id);
+    glTextureStorage2D(texture_id, 1, GL_RGB8, width, height);
+
+    glTextureParameteri(texture_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTextureParameteri(texture_id, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    glTextureSubImage2D(texture_id, 0, 0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, texture);
+
+    stbi_image_free(texture);
+
+    return texture_id;
+}
+
+void opengl_context_bind_texture(uint32_t slot, unsigned int texture_id)
+{
+    glBindTextureUnit(slot, texture_id);
+}
+
+void opengl_context_delete_texture(unsigned int texture_id)
+{
+    glDeleteTextures(1, &texture_id);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
