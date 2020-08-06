@@ -78,6 +78,18 @@ void glfw_key_callback(GLFWwindow* window, int key, int scancode, int action, in
     //printf("key: %i, scancode: %i, action: %i, mods: %i\n", key, scancode, action, mods);
 }
 
+void print_opengl_info()
+{
+    const unsigned char* vendor = glGetString(GL_VENDOR);
+    const unsigned char* renderer = glGetString(GL_RENDERER);
+    const unsigned char* version = glGetString(GL_VERSION);
+
+    printf("OpenGL info\n");
+    printf("Vendor: %s\n", vendor);
+    printf("renderer: %s\n", renderer);
+    printf("version: %s\n", version);
+}
+
 void opengl_context_init(window_t* window)
 {
     glfwMakeContextCurrent(window->handle);
@@ -91,34 +103,19 @@ void opengl_context_init(window_t* window)
     glfwSetWindowCloseCallback(window->handle, glfw_close_window_event_callback);
     glfwSetKeyCallback(window->handle, glfw_key_callback);
 
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_DEPTH_TEST);
 
-    //glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
-    //{
-    //    WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-//
-    //    switch (action)
-    //    {
-    //        case GLFW_PRESS:
-    //        {
-    //            KeyPressedEvent event(static_cast<KeyCode>(key), 0);
-    //            data.EventCallback(event);
-    //            break;
-    //        }
-    //        case GLFW_RELEASE:
-    //        {
-    //            KeyReleasedEvent event(static_cast<KeyCode>(key));
-    //            data.EventCallback(event);
-    //            break;
-    //        }
-    //        case GLFW_REPEAT:
-    //        {
-    //            KeyPressedEvent event(static_cast<KeyCode>(key), 1);
-    //            data.EventCallback(event);
-    //            break;
-    //        }
-    //    }
-    //});
+    print_opengl_info();
 }
+
+void opengl_context_enable_blending()
+{
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+
 
 void opengl_context_swap_buffers(window_t* window)
 {
@@ -351,13 +348,31 @@ unsigned int opengl_context_load_texture(const char* filepath)
         EXIT_ERROR("Texture not found: %s\n", filepath);
     }
 
+    GLenum internal_format = 0;
+    GLenum format = 0;
+    if(channels == 3)
+    {
+        internal_format = GL_RGB8;
+        format = GL_RGB;
+    }
+    else if (channels == 4)
+    {
+        internal_format = GL_RGBA8;
+        format = GL_RGBA;
+    }
+
+    if(internal_format == 0 || format == 0)
+    {
+        EXIT_ERROR("Can't determine format for %s\n", filepath);
+    }
+
     glCreateTextures(GL_TEXTURE_2D, 1, &texture_id);
-    glTextureStorage2D(texture_id, 1, GL_RGB8, width, height);
+    glTextureStorage2D(texture_id, 1, internal_format, width, height);
 
     glTextureParameteri(texture_id, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTextureParameteri(texture_id, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    glTextureSubImage2D(texture_id, 0, 0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, texture);
+    glTextureSubImage2D(texture_id, 0, 0, 0, width, height, format, GL_UNSIGNED_BYTE, texture);
 
     stbi_image_free(texture);
 

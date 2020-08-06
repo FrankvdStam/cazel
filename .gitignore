@@ -54,3 +54,6 @@ dkms.conf
 #build files
 cmake-build-debug
 obj
+
+#assets (possbily copyright protected
+src/assets

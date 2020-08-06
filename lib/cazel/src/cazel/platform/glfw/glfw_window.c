@@ -16,6 +16,10 @@ void glfw_window_init(window_t* window)
     {
         EXIT_ERROR("Failed to initialize glfw\n");
     }
+
+#ifdef CAZEL_DEBUG
+    glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
+#endif
     window->handle = glfwCreateWindow(window->width, window->height, window->title, NULL, NULL);
 
     //Questionable to init the context in the window. Not sure what a better way might be.

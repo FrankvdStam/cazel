@@ -3,7 +3,7 @@ project(cazel C)
 
 set(CMAKE_C_STANDARD 11)
 
-
+add_compile_definitions(CAZEL_DEBUG)
 if (WIN32)
     add_compile_definitions(CAZEL_WINDOWS)
 endif (WIN32)

@@ -65,4 +65,7 @@ float opengl_context_get_time();
 unsigned int opengl_context_load_texture(const char* filepath);
 void opengl_context_bind_texture(uint32_t slot, unsigned int texture_id);
 
+
+void opengl_context_enable_blending();
+
 #endif //SANDBOX_OPENGL_CONTEXT_H

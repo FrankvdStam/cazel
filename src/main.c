@@ -31,6 +31,7 @@ void print_dir()
 vertex_array_t s_triangle;
 vertex_array_t s_square;
 vertex_array_t s_textured_square;
+vertex_array_t s_transparent_textured_square;
 orthographic_camera_t s_camera;
 
 float s_camera_speed = 1.0f;
@@ -136,7 +137,7 @@ void setup_triangle()
     s_triangle.shader_id = context_create_shader(color_vertex_shader_source, color_fragment_shader_source);
     context_bind_shader(s_triangle.shader_id);
 
-    opengl_context_upload_uniform_int(s_triangle.shader_id, "u_Texture", 0);
+
 
 
     float triangle_vertices[] = {
@@ -198,7 +199,7 @@ void setup_textured_square()
 {
     print_dir();
 
-    texture_id = context_load_texture("assets/textures/wallpaper.jpg");
+    texture_id = context_load_texture("assets/textures/test_texture.png");
     opengl_context_bind_texture(0, texture_id);
     printf("tex: %u\n", texture_id);
 
@@ -207,6 +208,8 @@ void setup_textured_square()
 
     s_textured_square.shader_id = context_create_shader(texture_vertex_shader_source, texture_fragment_shader_source);
     context_bind_shader(s_textured_square.shader_id);
+
+    opengl_context_upload_uniform_int(s_textured_square.shader_id, "u_Texture", 0);
 
     float square_vertices[] = {
             -0.5f, -0.5f, 0.0f,     0.0f, 0.0f,
@@ -232,12 +235,53 @@ void setup_textured_square()
 
 
 
+//========================================================================================================================================================================================================================
+//textured square
+unsigned int transparent_texture_id;
+void setup_transparent_textured_square()
+{
+    transparent_texture_id = context_load_texture("assets/textures/test_transparent_texture.png");
+    opengl_context_bind_texture(0, transparent_texture_id);
+    printf("tex: %u\n", transparent_texture_id);
+
+    context_create_vertex_array(&s_transparent_textured_square);
+    context_bind_vertex_array(&s_transparent_textured_square);
+
+    s_transparent_textured_square.shader_id = context_create_shader(texture_vertex_shader_source, texture_fragment_shader_source);
+    context_bind_shader(s_transparent_textured_square.shader_id);
+
+    opengl_context_upload_uniform_int(s_transparent_textured_square.shader_id, "u_Texture", 0);
+
+    float square_vertices[] = {
+            -0.5f, -0.5f, 0.0f,     0.0f, 0.0f,
+             0.5f, -0.5f, 0.0f,     1.0f, 0.0f,
+             0.5f,  0.5f, 0.0f,     1.0f, 1.0f,
+            -0.5f,  0.5f, 0.0f,     0.0f, 1.0f,
+    };
+
+    context_create_vertex_buffer(&s_transparent_textured_square, square_vertices, 4, 20);
+    context_bind_vertex_buffer(&s_transparent_textured_square);
+
+    buffer_element_t buffer_elements[] =
+            {
+                    buffers_create_buffer_element(shader_data_type_float3),
+                    buffers_create_buffer_element(shader_data_type_float2),
+            };
+    buffers_create_buffer_layout(&s_transparent_textured_square.vertex_layout, buffer_elements, 2);
+    context_set_vertex_buffer_layout(&s_transparent_textured_square);
+
+    uint32_t square_indices[6] = {0, 1, 2, 2, 3, 0};
+    context_create_index_buffer(&s_transparent_textured_square, square_indices, 6);
+}
+
+
+
 void user_layer_on_attach()
 {
     setup_triangle();
     setup_squares();
     setup_textured_square();
-
+    setup_transparent_textured_square();
 
 
 
@@ -276,6 +320,8 @@ void user_layer_on_update(float delta_time)
 
     //========================================================================================================================================================================================================================
     //rendering
+
+    opengl_context_enable_blending();
 
     renderer_begin_scene(&s_camera.view_projection_matrix);
 
@@ -321,6 +367,17 @@ void user_layer_on_update(float delta_time)
 
     opengl_context_bind_texture(0, texture_id);
     renderer_submit_with_transform(&s_textured_square, textured_square_transform);
+
+
+
+
+    vec3 position2 = {0.75f, 0.75f, 0.0f};
+    mat4 transparent_textured_square_transform = GLM_MAT4_IDENTITY_INIT;
+    glm_translate(transparent_textured_square_transform, position2);
+
+
+    opengl_context_bind_texture(0, transparent_texture_id);
+    renderer_submit_with_transform(&s_transparent_textured_square, transparent_textured_square_transform);
 
     renderer_end_scene();
 }
