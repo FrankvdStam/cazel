@@ -35,6 +35,7 @@ void opengl_context_free_index_buffer(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //Shaders
+unsigned int opengl_context_create_shader_from_file(const char* filepath);
 unsigned int opengl_context_create_shader(const char* vertex_shader_source, const char* fragment_shader_source);
 void opengl_context_bind_shader(unsigned int shader);
 void opengl_context_free_shader(unsigned int shader);

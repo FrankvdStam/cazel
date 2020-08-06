@@ -10,6 +10,7 @@
 #include "../../application.h"
 #include "../../input.h"
 #include "../glfw/glfw_input.h"
+#include "../../renderer/shaders.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "../../../lib/stb/stb_image.h"
@@ -205,6 +206,25 @@ void opengl_context_free_index_buffer(vertex_array_t* vertex_array)
 
 //========================================================================================================================================================================================================================
 //Shaders
+
+unsigned int opengl_context_create_shader_from_file(const char* filepath)
+{
+    char* vertex_shader_source;
+    char* fragment_shader_source;
+
+    shaders_load_from_file(filepath, &vertex_shader_source, &fragment_shader_source);
+
+    //printf("vertex shader: \n%s\n", vertex_shader_source);
+    //printf("fragment: \n%s\n", fragment_shader_source);
+
+    unsigned int shader = opengl_context_create_shader(vertex_shader_source, fragment_shader_source);
+
+    free(vertex_shader_source);
+    free(fragment_shader_source);
+
+    return shader;
+}
+
 
 unsigned int opengl_context_create_shader(const char* vertex_shader_source, const char* fragment_shader_source)
 {

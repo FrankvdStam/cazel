@@ -16,4 +16,5 @@ target_compile_options(Sandbox PUBLIC
         -pedantic-errors
         -ansi
         -pedantic
+        -Wno-unused-but-set-variable
         )

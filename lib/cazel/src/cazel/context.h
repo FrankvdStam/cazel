@@ -85,6 +85,9 @@ extern void(*context_free_index_buffer)(vertex_array_t* vertex_array);
 //========================================================================================================================================================================================================================
 //Shaders
 
+//Create a shader from a given file
+extern unsigned int(*context_create_shader_from_file)(const char* filepath);
+
 //Creates a shader from the given source
 extern unsigned int(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
 

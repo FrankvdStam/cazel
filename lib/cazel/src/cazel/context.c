@@ -59,6 +59,8 @@ void(*context_free_index_buffer)(vertex_array_t* vertex_array);
 //========================================================================================================================================================================================================================
 //Shaders
 
+unsigned int(*context_create_shader_from_file)(const char* filepath);
+
 //Creates a shader from the given source
 unsigned int(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
 
@@ -136,6 +138,7 @@ void context_platform_init(platform_t platform)
     context_get_time                    = &opengl_context_get_time;
     context_upload_uniform_vec4         = &opengl_context_upload_uniform_vec4;
     context_load_texture                = &opengl_context_load_texture;
+    context_create_shader_from_file     = &opengl_context_create_shader_from_file;
 }
 
 

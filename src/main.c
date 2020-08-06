@@ -11,6 +11,7 @@
 #include "../lib/cazel/src/cazel/renderer/orthographic_camera.h"
 
 #include "../lib/cazel/src/cazel/platform/opengl/opengl_context.h"
+#include "../lib/cazel/src/cazel/renderer/shaders.h"
 #include <time.h>
 #include <inttypes.h>
 
@@ -51,94 +52,9 @@ orthographic_camera_t s_camera;
 
 float s_camera_speed = 1.0f;
 
-const char* texture_vertex_shader_source =      "#version 330 core\n"
-                                                "\n"
-                                                "layout (location = 0) in vec3 a_Position;\n"
-                                                "layout (location = 1) in vec2 a_TextureCoordinate;\n"
-                                                "\n"
-                                                "uniform mat4 u_ViewProjectionMatrix;"
-                                                "uniform mat4 u_Transform;"
-                                                "\n"
-                                                "out vec2 v_TextureCoordinate;"
-                                                "\n"
-                                                "void main()\n"
-                                                "{\n"
-                                                "    v_TextureCoordinate = a_TextureCoordinate;\n"
-                                                "    gl_Position = u_ViewProjectionMatrix * u_Transform * vec4(a_Position, 1.0);\n"
-                                                "}\0";
-
-const char* texture_fragment_shader_source =    "#version 330 core\n"
-                                                "\n"
-                                                "layout (location = 0) out vec4 color;\n"
-                                                "\n"
-                                                "in vec2 v_TextureCoordinate;\n"
-                                                "uniform sampler2D u_Texture;\n"
-                                                "\n"
-                                                "void main()\n"
-                                                "{\n"
-                                                "    color = texture(u_Texture, v_TextureCoordinate);\n"
-                                                "}\0";
 
 
 
-const char* flat_color_vertex_shader_source =   "#version 330 core\n"
-                                                "\n"
-                                                "layout (location = 0) in vec3 a_Position;\n"
-                                                "\n"
-                                                "uniform mat4 u_ViewProjectionMatrix;"
-                                                "uniform mat4 u_Transform;"
-                                                "\n"
-                                                "out vec3 v_Position;\n"
-                                                "\n"
-                                                "void main()\n"
-                                                "{\n"
-                                                "    v_Position = a_Position;\n"
-                                                "    gl_Position = u_ViewProjectionMatrix * u_Transform * vec4(a_Position, 1.0);\n"
-                                                "}\0";
-
-const char* flat_color_fragment_shader_source = "#version 330 core\n"
-                                                "\n"
-                                                "layout (location = 0) out vec4 color;\n"
-                                                "\n"
-                                                "in vec3 v_Position;\n"
-                                                "uniform vec4 u_Color;"
-                                                "\n"
-                                                "void main()\n"
-                                                "{\n"
-                                                "    color = u_Color;\n"
-                                                "}\0";
-
-
-const char* color_vertex_shader_source = "#version 330 core\n"
-                                   "\n"
-                                   "layout (location = 0) in vec3 a_Position;\n"
-                                   "layout (location = 1) in vec4 a_Color;\n"
-                                   "\n"
-                                   "uniform mat4 u_ViewProjectionMatrix;"
-                                   "uniform mat4 u_Transform;"
-                                   "\n"
-                                   "out vec3 v_Position;\n"
-                                   "out vec4 v_Color;\n"
-                                   "\n"
-                                   "void main()\n"
-                                   "{\n"
-                                   "    v_Position = a_Position;\n"
-                                   "    v_Color = a_Color;\n"
-                                   "    gl_Position = u_ViewProjectionMatrix * u_Transform * vec4(a_Position, 1.0);\n"
-                                   "}\0";
-
-
-const char* color_fragment_shader_source = "#version 330 core\n"
-                                     "\n"
-                                     "layout (location = 0) out vec4 color;\n"
-                                     "\n"
-                                     "in vec3 v_Position;\n"
-                                     "in vec4 v_Color;\n"
-                                     "\n"
-                                     "void main()\n"
-                                     "{\n"
-                                     "    color = v_Color;\n"
-                                     "}\0";
 
 
 //========================================================================================================================================================================================================================
@@ -149,7 +65,7 @@ void setup_triangle()
     context_create_vertex_array(&s_triangle);
     context_bind_vertex_array(&s_triangle);
 
-    s_triangle.shader_id = context_create_shader(color_vertex_shader_source, color_fragment_shader_source);
+    s_triangle.shader_id = context_create_shader_from_file("assets/shaders/vertex_color.glsl");
     context_bind_shader(s_triangle.shader_id);
 
 
@@ -180,12 +96,10 @@ void setup_triangle()
 //squares
 void setup_squares()
 {
-    sta();
-
     context_create_vertex_array(&s_square);
     context_bind_vertex_array(&s_square);
 
-    s_square.shader_id = context_create_shader(flat_color_vertex_shader_source, flat_color_fragment_shader_source);
+    s_square.shader_id = context_create_shader_from_file("assets/shaders/flat_color.glsl");
     context_bind_shader(s_square.shader_id);
 
     float square_vertices[] = {
@@ -221,7 +135,7 @@ void setup_textured_square()
     context_create_vertex_array(&s_textured_square);
     context_bind_vertex_array(&s_textured_square);
 
-    s_textured_square.shader_id = context_create_shader(texture_vertex_shader_source, texture_fragment_shader_source);
+    s_textured_square.shader_id = context_create_shader_from_file("assets/shaders/texture.glsl");
     context_bind_shader(s_textured_square.shader_id);
 
     opengl_context_upload_uniform_int(s_textured_square.shader_id, "u_Texture", 0);
@@ -257,12 +171,11 @@ void setup_transparent_textured_square()
 {
     transparent_texture_id = context_load_texture("assets/textures/test_transparent_texture.png");
     opengl_context_bind_texture(0, transparent_texture_id);
-    printf("tex: %u\n", transparent_texture_id);
 
     context_create_vertex_array(&s_transparent_textured_square);
     context_bind_vertex_array(&s_transparent_textured_square);
 
-    s_transparent_textured_square.shader_id = context_create_shader(texture_vertex_shader_source, texture_fragment_shader_source);
+    s_transparent_textured_square.shader_id = context_create_shader_from_file("assets/shaders/texture.glsl");
     context_bind_shader(s_transparent_textured_square.shader_id);
 
     opengl_context_upload_uniform_int(s_transparent_textured_square.shader_id, "u_Texture", 0);
@@ -293,6 +206,8 @@ void setup_transparent_textured_square()
 
 void user_layer_on_attach()
 {
+
+
     setup_triangle();
     setup_squares();
     setup_textured_square();
