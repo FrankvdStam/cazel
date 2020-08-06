@@ -19,7 +19,7 @@ typedef enum
     event_window_maximize,
     //event_window_focus,
     //event_window_lost_focus,
-    event_window_moved,
+    //event_window_moved,
 
     //event_app_tick,
     //event_app_update,
@@ -33,7 +33,7 @@ typedef enum
     //event_mouse_button_pressed,
     //event_mouse_button_released,
     //event_mouse_moved,
-    //event_mouse_scolled
+    event_mouse_scrolled
 } event_type_t;
 
 typedef struct
@@ -44,6 +44,10 @@ typedef struct
     //for resizing
     uint32_t x;
     uint32_t y;
+
+    //for mouse scrolling or movements
+    double mouse_x;
+    double mouse_y;
 
     //for key events
     key_t key;

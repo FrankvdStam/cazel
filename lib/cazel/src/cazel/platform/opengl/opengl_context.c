@@ -106,6 +106,17 @@ void glfw_key_callback(GLFWwindow* window, int key, int scancode, int action, in
     //printf("key: %i, scancode: %i, action: %i, mods: %i\n", key, scancode, action, mods);
 }
 
+void glfw_mouse_scrolled_callback(GLFWwindow* window, double x, double y)
+{
+    printf("scroll %f\n", y);
+
+    event_t event = event_create_empty();
+    event.type = event_mouse_scrolled;
+    event.mouse_x = x;
+    event.mouse_y = y;
+    application_on_event(event);
+}
+
 void print_opengl_info()
 {
     const unsigned char* vendor = glGetString(GL_VENDOR);
@@ -135,6 +146,7 @@ void opengl_context_init(window_t* window)
     glfwSetWindowSizeCallback(window->handle, glfw_window_resize_callback);
     glfwSetWindowMaximizeCallback(window->handle, glfw_window_maximize_callback);
     glfwSetKeyCallback(window->handle, glfw_key_callback);
+    glfwSetScrollCallback(window->handle, glfw_mouse_scrolled_callback);
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

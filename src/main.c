@@ -204,9 +204,13 @@ void user_layer_on_attach()
     setup_textured_square();
     setup_transparent_textured_square();
 
-    orthographic_camera_init(&s_camera, -1.6f, 1.6f, -0.9f, 0.9f);
-    orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+    //orthographic_camera_init(&s_camera, -1.6f, 1.6f, -0.9f, 0.9f);
+    //orthographic_camera_recalculate_view_projection_matrix(&s_camera);
+
+    orthographic_camera_controller_init((float)s_application.window.width/s_application.window.height, true);
+
 }
+
 
 
 void user_layer_on_update(float delta_time)
@@ -293,7 +297,7 @@ void user_layer_on_detach()
 
 void user_layer_on_event(event_t event)
 {
-
+    orthographic_camera_controller_on_event(event);
 }
 
 void init_user_layer(layer_t* layer)
