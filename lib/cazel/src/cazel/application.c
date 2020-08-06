@@ -72,13 +72,7 @@ void application_run()
     while (!s_application.exiting)
     {
         context_clear();
-
-        if(input_mouse_button_pressed(&s_application.window, mouse_button_left))
-        {
-            printf("left button pressed\n");
-        }
         application_update();
-
         context_swap_buffers(&s_application.window);
     }
 }

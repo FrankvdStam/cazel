@@ -48,7 +48,7 @@ add_library(cazel
 
         src/cazel/renderer/buffers/buffers.c
         src/cazel/renderer/buffers/buffers.h
-        src/cazel/renderer/renderer.c src/cazel/renderer/renderer.h src/cazel/renderer/orthographic_camera.c src/cazel/renderer/orthographic_camera.h src/cazel/renderer/shaders.c src/cazel/renderer/shaders.h)
+        src/cazel/renderer/renderer.c src/cazel/renderer/renderer.h src/cazel/renderer/orthographic_camera.c src/cazel/renderer/orthographic_camera.h src/cazel/renderer/shaders.c src/cazel/renderer/shaders.h src/cazel/renderer/orthographic_camera_controller.c src/cazel/renderer/orthographic_camera_controller.h)
 
 target_compile_options(cazel PUBLIC
 

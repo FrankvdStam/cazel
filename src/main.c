@@ -9,6 +9,7 @@
 #include "../lib/cazel/src/cazel.h"
 #include "../lib/cazel/src/cazel/renderer/renderer.h"
 #include "../lib/cazel/src/cazel/renderer/orthographic_camera.h"
+#include "../lib/cazel/src/cazel/renderer/orthographic_camera_controller.h"
 
 #include "../lib/cazel/src/cazel/platform/opengl/opengl_context.h"
 #include "../lib/cazel/src/cazel/renderer/shaders.h"
@@ -48,14 +49,6 @@ vertex_array_t s_triangle;
 vertex_array_t s_square;
 vertex_array_t s_textured_square;
 vertex_array_t s_transparent_textured_square;
-orthographic_camera_t s_camera;
-
-float s_camera_speed = 1.0f;
-
-
-
-
-
 
 //========================================================================================================================================================================================================================
 //triangle
@@ -206,18 +199,11 @@ void setup_transparent_textured_square()
 
 void user_layer_on_attach()
 {
-
-
     setup_triangle();
     setup_squares();
     setup_textured_square();
     setup_transparent_textured_square();
 
-
-
-
-
-    //========================================================================================================================================================================================================================
     orthographic_camera_init(&s_camera, -1.6f, 1.6f, -0.9f, 0.9f);
     orthographic_camera_recalculate_view_projection_matrix(&s_camera);
 }
@@ -225,28 +211,7 @@ void user_layer_on_attach()
 
 void user_layer_on_update(float delta_time)
 {
-    if(input_key_pressed(&s_application.window, key_a))
-    {
-        s_camera.position[0] -= s_camera_speed * delta_time;
-        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-    }
-    else if(input_key_pressed(&s_application.window, key_d))
-    {
-        s_camera.position[0] += s_camera_speed * delta_time;
-        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-    }
-
-    if(input_key_pressed(&s_application.window, key_s))
-    {
-        s_camera.position[1] -= s_camera_speed * delta_time;
-        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-    }
-    else if(input_key_pressed(&s_application.window, key_w))
-    {
-        s_camera.position[1] += s_camera_speed * delta_time;
-        orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-    }
-
+    orthographic_camera_controller_update(delta_time);
 
     //========================================================================================================================================================================================================================
     //rendering
