@@ -74,14 +74,12 @@ void orthographic_camera_controller_update(float delta_time)
             s_camera.rotation -= s_camera_rotation_speed * delta_time;
             s_camera.rotation = resolve_rotation(s_camera.rotation);
             orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-            printf("Rotation: %f\n", s_camera.rotation);
         }
         else if(input_key_pressed(&s_application.window, key_e))
         {
             s_camera.rotation += s_camera_rotation_speed * delta_time;
             s_camera.rotation = resolve_rotation(s_camera.rotation);
             orthographic_camera_recalculate_view_projection_matrix(&s_camera);
-            printf("Rotation: %f\n", s_camera.rotation);
         }
     }
 
@@ -94,8 +92,6 @@ void orthographic_camera_controller_on_event(event_t event)
 {
     if(event.type == event_mouse_scrolled)
     {
-        printf("scroll %f\n", event.mouse_y);
-
         //scroll
         s_zoom_level -= (float)event.mouse_y * 0.25f;
         s_zoom_level = glm_max(s_zoom_level, 0.25f);

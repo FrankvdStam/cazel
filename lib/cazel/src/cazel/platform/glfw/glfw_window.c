@@ -68,8 +68,6 @@ void glfw_key_callback(GLFWwindow* window, int key, int scancode, int action, in
 
 void glfw_mouse_scrolled_callback(GLFWwindow* window, double x, double y)
 {
-    printf("scroll %f\n", y);
-
     event_t event = event_create_empty();
     event.type = event_mouse_scrolled;
     event.mouse_x = x;
@@ -95,7 +93,7 @@ void glfw_window_init(window_t* window)
     glfwSetWindowMaximizeCallback(window->handle, glfw_window_maximize_callback);
     glfwSetKeyCallback(window->handle, glfw_key_callback);
     glfwSetScrollCallback(window->handle, glfw_mouse_scrolled_callback);
-    
+
     //Questionable to init the context in the window. Not sure what a better way might be.
     context_init(window);
 }
