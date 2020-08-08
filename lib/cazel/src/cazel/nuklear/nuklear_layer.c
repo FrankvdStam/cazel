@@ -37,7 +37,7 @@ static struct nk_colorf bg;
 
 void nuklear_layer_on_attach()
 {
-    nuklear_context = nk_glfw3_init(&glfw, s_window.handle, NK_GLFW3_INSTALL_CALLBACKS);
+    nuklear_context = nk_glfw3_init(&glfw, s_window.handle, NK_GLFW3_DEFAULT);
     struct nk_font_atlas *atlas;
     nk_glfw3_font_stash_begin(&glfw, &atlas);
     nk_glfw3_font_stash_end(&glfw);
@@ -55,6 +55,8 @@ void nuklear_layer_on_detach()
 
 void nuklear_layer_on_update(float delta_time)
 {
+
+
     glfwPollEvents();
 
     nk_glfw3_new_frame(&glfw);
