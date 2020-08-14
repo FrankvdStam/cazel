@@ -5,7 +5,7 @@
 #ifndef SANDBOX_SHADERS_H
 #define SANDBOX_SHADERS_H
 
-void shaders_load_from_file(const char* path, char** vertex_shader_src, char** fragment_shader_src);
+void shaders_load_from_file(const char* path, char *vertex_shader_src[], char *fragment_shader_src[]);
 
 
 

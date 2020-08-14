@@ -9,7 +9,7 @@
 #include <stdint.h>
 
 
-void read_file(const char* file_path, char** buffer, size_t* file_size)
+void read_file(const char* file_path, char *buffer[], size_t* file_size)
 {
     FILE* file;
     //char* buffer;
@@ -42,8 +42,9 @@ void read_file(const char* file_path, char** buffer, size_t* file_size)
     fclose(file);
 }
 
+
 //TODO: error handling
-void shaders_load_from_file(const char* path, char** vertex_shader_src, char** fragment_shader_src)
+void shaders_load_from_file(const char* path, char *vertex_shader_src[], char *fragment_shader_src[])
 {
     //Read the file into a malloc'ed buffer
     char* buffer;

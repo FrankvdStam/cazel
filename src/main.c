@@ -65,9 +65,9 @@ void setup_triangle()
 
 
     float triangle_vertices[] = {
-            -0.5f, -0.5f, 0.0f, 0.5f, 1.0f, 1.1f, 1.1f,
-             0.5f, -0.5f, 0.0f, 0.5f, 0.0f, 1.1f, 1.1f,
-             0.0f,  0.5f, 0.0f, 1.0f, 1.0f, 0.1f, 1.1f,
+            -0.5f, -0.5f, 0.0f, 0.8f, 0.1f, 0.1f, 1.0f,
+             0.5f, -0.5f, 0.0f, 0.1f, 0.8f, 0.1f, 1.0f,
+             0.0f,  0.5f, 0.0f, 0.1f, 0.1f, 0.8f, 1.0f,
     };
 
     context_create_vertex_buffer(&s_triangle, triangle_vertices, 3, 21);

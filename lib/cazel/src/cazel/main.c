@@ -18,7 +18,6 @@ void initialize_platform(platform_t platform)
     context_platform_init(platform);
 }
 
-
 int main()
 {
     initialize_platform(platform_windows);
