@@ -2,6 +2,8 @@
   <dictionary name="Frank">
     <words>
       <w>cazel</w>
+      <w>cglm</w>
+      <w>flecs</w>
       <w>glfw</w>
       <w>nuklear</w>
       <w>scolled</w>

@@ -288,7 +288,7 @@ void user_layer_on_update(float delta_time)
     //long time_elapsed_nanos = timer_end(vartime);
     //printf("Render took (nanoseconds): %ld\n", time_elapsed_nanos);
 
-    opengl_renderer_2d_init();
+
 }
 
 
@@ -305,10 +305,101 @@ void user_layer_on_event(event_t event)
     orthographic_camera_controller_on_event(event);
 }
 
+
+
+
+
+
+
+
+void new_renderer_layer_on_attach()
+{
+    opengl_renderer_2d_init();
+
+    orthographic_camera_controller_init((float)s_application.window.width/s_application.window.height, true);
+}
+
+void new_renderer_layer_on_update(float delta_time)
+{
+    orthographic_camera_controller_update(delta_time);
+
+    opengl_renderer_2d_begin_scene(&s_camera);
+    const vec2 position = {0.0f, 0.0f};
+    const vec2 size = {1.0f, 1.0f};
+    vec4 color = {1.0f, 1.0f, 1.0f, 1.0f};
+    opengl_renderer_2d_draw_colored_quad(&position, &size, &color);
+    opengl_renderer_2d_draw_simple_quad();
+    opengl_renderer_2d_EndScene();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 void init_user_layer(layer_t* layer)
 {
     layer->event = user_layer_on_event;
-    layer->update = user_layer_on_update;
-    layer->attach = user_layer_on_attach;
+    //layer->update = user_layer_on_update;
+    //layer->attach = user_layer_on_attach;
     layer->detach = user_layer_on_detach;
+
+
+    layer->attach = new_renderer_layer_on_attach;
+    layer->update = new_renderer_layer_on_update;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
