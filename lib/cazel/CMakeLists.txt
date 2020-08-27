@@ -58,7 +58,11 @@ add_library(cazel
         src/cazel/renderer/shaders.h
 
         src/cazel/renderer/orthographic_camera_controller.c
-        src/cazel/renderer/orthographic_camera_controller.h)
+        src/cazel/renderer/orthographic_camera_controller.h
+
+        src/cazel/platform/opengl/opengl_renderer_2d.c
+        src/cazel/platform/opengl/opengl_renderer_2d.h
+        )
 
 target_compile_options(cazel PUBLIC
 

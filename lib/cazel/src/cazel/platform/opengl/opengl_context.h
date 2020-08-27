@@ -47,6 +47,7 @@ void opengl_context_clear();
 
 //========================================================================================================================================================================================================================
 //Uniforms
+void opengl_context_upload_uniform_int_array(unsigned int shader, const char* name, int* values, uint32_t count);
 void opengl_context_upload_uniform_int(unsigned int shader, const char* name, int vec);
 
 void opengl_context_upload_uniform_float(unsigned int shader, const char* name, float vec);

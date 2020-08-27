@@ -1,1 +1,0 @@
- lib/cazel/libcazel.a lib/cazel/lib/glfw/src/libglfw3.a lib/cazel/lib/glad/libglad.a lib/cazel/lib/cglm/libcglm.dll.a lib/cazel/lib/flecs/libflecs.dll.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

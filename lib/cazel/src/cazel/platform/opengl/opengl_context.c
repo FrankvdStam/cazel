@@ -276,6 +276,13 @@ void opengl_context_clear()
 //========================================================================================================================================================================================================================
 //Uniforms
 
+void opengl_context_upload_uniform_int_array(unsigned int shader, const char* name, int* values, uint32_t count)
+{
+    GLint location = glGetUniformLocation(shader, name);
+    glUniform1iv(location, count, values);
+}
+
+
 void opengl_context_upload_uniform_int(unsigned int shader, const char* name, int i)
 {
     int uniform_location = glGetUniformLocation(shader, name);

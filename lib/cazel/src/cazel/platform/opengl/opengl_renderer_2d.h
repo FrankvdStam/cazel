@@ -6,7 +6,7 @@
 #define SANDBOX_OPENGL_RENDERER_2D_H
 
 #include <cglm/cglm.h>
-#include <glad/glad.h>
+#include "../../../../lib/glad/include/glad/glad.h"
 
 typedef void (quad_func)(int x, int y);
 
@@ -39,6 +39,8 @@ static const uint32_t max_indices = max_quads * 6;
 static const uint32_t max_texture_slots = 32; // TODO: RenderCaps
 
 
+
+void opengl_renderer_2d_init();
 
 
 

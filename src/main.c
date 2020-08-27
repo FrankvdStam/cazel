@@ -16,6 +16,9 @@
 #include <time.h>
 #include <inttypes.h>
 
+
+#include "../lib/cazel/src/cazel/platform/opengl/opengl_renderer_2d.h"
+
 struct timespec diff(struct timespec start, struct timespec end);
 
 int sta()
@@ -284,6 +287,8 @@ void user_layer_on_update(float delta_time)
 
     //long time_elapsed_nanos = timer_end(vartime);
     //printf("Render took (nanoseconds): %ld\n", time_elapsed_nanos);
+
+    opengl_renderer_2d_init();
 }
 
 

@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Sandbox.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\Sandbox.dir/objects.a @CMakeFiles\Sandbox.dir\objects1.rsp
-C:\msys64\mingw64\bin\gcc.exe -O3 -DNDEBUG   -Wl,--whole-archive CMakeFiles\Sandbox.dir/objects.a -Wl,--no-whole-archive  -o Sandbox.exe -Wl,--out-implib,libSandbox.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Sandbox.dir\linklibs.rsp
