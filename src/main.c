@@ -58,8 +58,8 @@ void setup_triangle()
     context_create_vertex_array(&s_triangle);
     context_bind_vertex_array(&s_triangle);
 
-    s_triangle.shader_id = context_create_shader_from_file("assets/shaders/vertex_color.glsl");
-    context_bind_shader(s_triangle.shader_id);
+    context_create_shader_from_file(&s_triangle, "assets/shaders/vertex_color.glsl");
+    context_bind_shader(&s_triangle);
 
 
 
@@ -92,8 +92,8 @@ void setup_squares()
     context_create_vertex_array(&s_square);
     context_bind_vertex_array(&s_square);
 
-    s_square.shader_id = context_create_shader_from_file("assets/shaders/flat_color.glsl");
-    context_bind_shader(s_square.shader_id);
+    context_create_shader_from_file(&s_square, "assets/shaders/flat_color.glsl");
+    context_bind_shader(&s_square);
 
     float square_vertices[] = {
             -0.75f, -0.75f, 0.0f,//       0.8f, 0.2f, 0.5f, 1.1f,
@@ -128,8 +128,8 @@ void setup_textured_square()
     context_create_vertex_array(&s_textured_square);
     context_bind_vertex_array(&s_textured_square);
 
-    s_textured_square.shader_id = context_create_shader_from_file("assets/shaders/texture.glsl");
-    context_bind_shader(s_textured_square.shader_id);
+    context_create_shader_from_file(&s_textured_square, "assets/shaders/texture.glsl");
+    context_bind_shader(&s_textured_square);
 
     opengl_context_upload_uniform_int(s_textured_square.shader_id, "u_Texture", 0);
 
@@ -168,8 +168,8 @@ void setup_transparent_textured_square()
     context_create_vertex_array(&s_transparent_textured_square);
     context_bind_vertex_array(&s_transparent_textured_square);
 
-    s_transparent_textured_square.shader_id = context_create_shader_from_file("assets/shaders/texture.glsl");
-    context_bind_shader(s_transparent_textured_square.shader_id);
+    context_create_shader_from_file(&s_transparent_textured_square, "assets/shaders/texture.glsl");
+    context_bind_shader(&s_transparent_textured_square);
 
     opengl_context_upload_uniform_int(s_transparent_textured_square.shader_id, "u_Texture", 0);
 
@@ -244,7 +244,7 @@ void user_layer_on_update(float delta_time)
             glm_translate(transform, position);
             glm_mat4_mul(transform, scale, transform);
 
-            context_bind_shader(s_square.shader_id);
+            context_bind_shader(&s_square);
             if(x % 2 == 0)
             {
                 opengl_context_upload_uniform_vec4(s_square.shader_id, "u_Color", blue);
@@ -289,7 +289,7 @@ void user_layer_on_update(float delta_time)
 
 void user_layer_on_detach()
 {
-    context_free_shader(s_triangle.shader_id);
+    context_free_shader(&s_triangle);
     context_free_index_buffer(&s_triangle);
     context_free_vertex_buffer(&s_triangle);
     context_free_vertex_array(&s_triangle);

@@ -22,7 +22,7 @@ void opengl_context_free_vertex_array(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //Vertex buffers
-void opengl_context_create_vertex_buffer(vertex_array_t* vertex_array, float* vertices, size_t count, size_t total_floats);
+void opengl_context_create_vertex_buffer(vertex_array_t* vertex_array, void* vertices, size_t count, size_t total_floats);
 void opengl_context_bind_vertex_buffer(vertex_array_t* vertex_array);
 void opengl_context_free_vertex_buffer(vertex_array_t* vertex_array);
 void opengl_context_set_vertex_buffer_layout(vertex_array_t* vertex_array);
@@ -35,10 +35,10 @@ void opengl_context_free_index_buffer(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //Shaders
-unsigned int opengl_context_create_shader_from_file(const char* filepath);
-unsigned int opengl_context_create_shader(const char* vertex_shader_source, const char* fragment_shader_source);
-void opengl_context_bind_shader(unsigned int shader);
-void opengl_context_free_shader(unsigned int shader);
+void opengl_context_create_shader_from_file(vertex_array_t* vertex_array, const char* filepath);
+void opengl_context_create_shader(vertex_array_t* vertex_array, const char* vertex_shader_source, const char* fragment_shader_source);
+void opengl_context_bind_shader(vertex_array_t* vertex_array);
+void opengl_context_free_shader(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //Clear color

@@ -58,7 +58,7 @@ extern void(*context_free_vertex_array)(vertex_array_t* vertex_array);
 //Vertex buffers
 
 //Creates a vertex buffer on the graphics card, fills it with data and returns a handle to it
-extern void(*context_create_vertex_buffer)(vertex_array_t* vertex_array, float* vertices, size_t count, size_t total_floats);
+extern void(*context_create_vertex_buffer)(vertex_array_t* vertex_array, void* vertices, size_t count, size_t total_floats);
 
 //Binds a vertex buffer
 extern void(*context_bind_vertex_buffer)(vertex_array_t* vertex_array);
@@ -86,16 +86,16 @@ extern void(*context_free_index_buffer)(vertex_array_t* vertex_array);
 //Shaders
 
 //Create a shader from a given file
-extern unsigned int(*context_create_shader_from_file)(const char* filepath);
+extern void(*context_create_shader_from_file)(vertex_array_t* vertex_array, const char* filepath);
 
 //Creates a shader from the given source
-extern unsigned int(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
+extern void(*context_create_shader)(vertex_array_t* vertex_array, const char* vertex_shader_source, const char* fragment_shader_source);
 
 //Bind the given shader
-extern void(*context_bind_shader)(unsigned int shader);
+extern void(*context_bind_shader)(vertex_array_t* vertex_array);
 
 //Free the given shader
-extern void(*context_free_shader)(unsigned int shader);
+extern void(*context_free_shader)(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //Clear color

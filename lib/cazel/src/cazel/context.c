@@ -32,7 +32,7 @@ void(*context_free_vertex_array)(vertex_array_t* vertex_array);
 //Vertex buffers
 
 //Creates a vertex buffer on the graphics card, fills it with data and returns a handle to it
-void(*context_create_vertex_buffer)(vertex_array_t* vertex_array, float* vertices, size_t count, size_t total_floats);
+void(*context_create_vertex_buffer)(vertex_array_t* vertex_array, void* vertices, size_t count, size_t total_floats);
 
 //Binds a vertex buffer
 void(*context_bind_vertex_buffer)(vertex_array_t* vertex_array);
@@ -59,16 +59,17 @@ void(*context_free_index_buffer)(vertex_array_t* vertex_array);
 //========================================================================================================================================================================================================================
 //Shaders
 
-unsigned int(*context_create_shader_from_file)(const char* filepath);
+//Create a shader from a given file
+void(*context_create_shader_from_file)(vertex_array_t* vertex_array, const char* filepath);
 
 //Creates a shader from the given source
-unsigned int(*context_create_shader)(const char* vertex_shader_source, const char* fragment_shader_source);
+void(*context_create_shader)(vertex_array_t* vertex_array, const char* vertex_shader_source, const char* fragment_shader_source);
 
 //Bind the given shader
-void(*context_bind_shader)(unsigned int shader);
+void(*context_bind_shader)(vertex_array_t* vertex_array);
 
 //Free the given shader
-void(*context_free_shader)(unsigned int shader);
+void(*context_free_shader)(vertex_array_t* vertex_array);
 
 //========================================================================================================================================================================================================================
 //Clear color
@@ -123,6 +124,7 @@ void context_platform_init(platform_t platform)
     context_free_index_buffer           = &opengl_context_free_index_buffer;
 
     //shaders
+    context_create_shader_from_file     = &opengl_context_create_shader_from_file;
     context_create_shader               = &opengl_context_create_shader;
     context_bind_shader                 = &opengl_context_bind_shader;
     context_free_shader                 = &opengl_context_free_shader;
@@ -143,7 +145,6 @@ void context_platform_init(platform_t platform)
     context_get_time                    = &opengl_context_get_time;
     context_upload_uniform_vec4         = &opengl_context_upload_uniform_vec4;
     context_load_texture                = &opengl_context_load_texture;
-    context_create_shader_from_file     = &opengl_context_create_shader_from_file;
     context_set_viewport                = &opengl_context_set_viewport;
 }
 

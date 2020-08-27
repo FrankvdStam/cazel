@@ -123,7 +123,7 @@ void opengl_context_free_vertex_array(vertex_array_t* vertex_array)
 //========================================================================================================================================================================================================================
 //Vertex buffers
 
-void opengl_context_create_vertex_buffer(vertex_array_t* vertex_array, float* vertices, size_t count, size_t total_floats)
+void opengl_context_create_vertex_buffer(vertex_array_t* vertex_array, void* vertices, size_t count, size_t total_floats)
 {
     vertex_array->vertex_total_floats = total_floats;
     vertex_array->vertex_count = count;
@@ -182,7 +182,7 @@ void opengl_context_free_index_buffer(vertex_array_t* vertex_array)
 //========================================================================================================================================================================================================================
 //Shaders
 
-unsigned int opengl_context_create_shader_from_file(const char* filepath)
+void opengl_context_create_shader_from_file(vertex_array_t* vertex_array, const char* filepath)
 {
     char* vertex_shader_source;
     char* fragment_shader_source;
@@ -192,16 +192,14 @@ unsigned int opengl_context_create_shader_from_file(const char* filepath)
     //printf("vertex shader: \n%s\n", vertex_shader_source);
     //printf("fragment: \n%s\n", fragment_shader_source);
 
-    unsigned int shader = opengl_context_create_shader(vertex_shader_source, fragment_shader_source);
+    opengl_context_create_shader(vertex_array, vertex_shader_source, fragment_shader_source);
 
     free(vertex_shader_source);
     free(fragment_shader_source);
-
-    return shader;
 }
 
 
-unsigned int opengl_context_create_shader(const char* vertex_shader_source, const char* fragment_shader_source)
+void opengl_context_create_shader(vertex_array_t* vertex_array, const char* vertex_shader_source, const char* fragment_shader_source)
 {
     int  success;
     char buffer[512];
@@ -243,18 +241,18 @@ unsigned int opengl_context_create_shader(const char* vertex_shader_source, cons
     glDeleteShader(vertex_shader);
     glDeleteShader(fragment_shader);
 
-    return shader;
+    vertex_array->shader_id = shader;
 }
 
 
-void opengl_context_bind_shader(unsigned int shader)
+void opengl_context_bind_shader(vertex_array_t* vertex_array)
 {
-    glUseProgram(shader);
+    glUseProgram(vertex_array->shader_id);
 }
 
-void opengl_context_free_shader(unsigned int shader)
+void opengl_context_free_shader(vertex_array_t* vertex_array)
 {
-    glDeleteProgram(shader);
+    glDeleteProgram(vertex_array->shader_id);
 }
 
 

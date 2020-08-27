@@ -1,0 +1,1836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="cazel"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\cazel\;CMake Files\lib\cazel\lib\;CMake Files\lib\cazel\lib\glfw\;CMake Files\lib\cazel\lib\glfw\src\;CMake Files\lib\cazel\lib\glfw\tests\;CMake Files\lib\cazel\lib\glad\;CMake Files\lib\cazel\lib\cglm\;CMake Files\lib\cazel\lib\flecs\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cazel">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/libcazel.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 cazel"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cazel/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/libcazel.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 cazel/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-DWINVER=0x0501"/>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src"/>
+					<Add directory="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add option="-DUNICODE"/>
+					<Add option="-DWINVER=0x0501"/>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src"/>
+					<Add directory="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clipboard">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/clipboard.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clipboard"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clipboard/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/clipboard.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clipboard/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="events">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/events.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 events"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="events/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/events.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 events/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="msaa">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/msaa.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 msaa"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="msaa/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/msaa.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 msaa/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfwinfo">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/glfwinfo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 glfwinfo"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfwinfo/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/glfwinfo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 glfwinfo/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="iconify">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/iconify.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 iconify"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="iconify/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/iconify.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 iconify/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="monitors">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/monitors.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 monitors"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="monitors/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/monitors.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 monitors/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reopen">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/reopen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 reopen"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="reopen/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/reopen.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 reopen/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cursor">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/cursor.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 cursor"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cursor/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/cursor.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 cursor/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="empty">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/empty.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 empty"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="empty/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/empty.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 empty/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gamma">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/gamma.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 gamma"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gamma/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/gamma.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 gamma/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="icon">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/icon.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 icon"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="icon/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/icon.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 icon/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="inputlag">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/inputlag.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 inputlag"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="inputlag/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/inputlag.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 inputlag/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="joysticks">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/joysticks.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 joysticks"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="joysticks/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/joysticks.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 joysticks/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="threads">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/threads.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 threads"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="threads/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/threads.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 threads/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="opacity">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/opacity.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 opacity"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="opacity/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/opacity.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 opacity/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tearing">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/tearing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 tearing"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tearing/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/tearing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 tearing/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timeout">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/timeout.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 timeout"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timeout/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/timeout.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 timeout/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="title">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/title.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 title"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="title/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/title.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 title/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vulkan">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/vulkan.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 vulkan"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vulkan/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/vulkan.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 vulkan/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="windows">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/windows.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 windows"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="windows/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/windows.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 windows/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/Makefile&quot;  VERBOSE=1 glad"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/Makefile&quot;  VERBOSE=1 glad/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cglm">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/libcglm.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/Makefile&quot;  VERBOSE=1 cglm"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cglm/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/libcglm.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/Makefile&quot;  VERBOSE=1 cglm/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/cglm/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="flecs">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/libflecs.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 flecs"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="flecs/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/libflecs.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 flecs/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="flecs_static">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/libflecs_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 flecs_static"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="flecs_static/fast">
+				<Option output="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/libflecs_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCAZEL_DEBUG"/>
+					<Add option="-DCAZEL_WINDOWS"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/glad/include"/>
+					<Add directory="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 flecs_static/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/flecs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/projects/graphics/Cazel/cmake-build-release/lib/cazel/lib/glfw/src/glfw_config.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/affine.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/bezier.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/box.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/cam.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/curve.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/ease.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/euler.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/frustum.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/io.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/mat2.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/mat3.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/mat4.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/plane.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/project.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/quat.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/ray.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/sphere.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/vec2.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/vec3.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/src/vec4.c">
+			<Option target="cglm"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/addons/bulk.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/addons/dbg.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/addons/module.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/addons/os_api_impl.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/addons/queue.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/addons/reader.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/addons/snapshot.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/addons/writer.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/api_support.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/bootstrap.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/entity.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/entity_index.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/filter.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/hierarchy.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/iter.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/log.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/map.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/misc.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/modules/pipeline/pipeline.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/modules/pipeline/pipeline.h">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/modules/pipeline/worker.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/modules/stats.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/modules/system/system.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/modules/system/system.h">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/modules/system/system_dbg.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/modules/timer.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/os_api.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/query.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/signature.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/sparse.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/stage.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/strbuf.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/table.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/table_graph.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/type.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/vector.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/src/world.c">
+			<Option target="flecs"/>
+			<Option target="flecs_static"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glad/src/glad.c">
+			<Option target="glad"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps/getopt.c">
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="inputlag"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps/getopt.h">
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="inputlag"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps/glad/gl.h">
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="reopen"/>
+			<Option target="cursor"/>
+			<Option target="empty"/>
+			<Option target="gamma"/>
+			<Option target="icon"/>
+			<Option target="inputlag"/>
+			<Option target="joysticks"/>
+			<Option target="threads"/>
+			<Option target="opacity"/>
+			<Option target="tearing"/>
+			<Option target="timeout"/>
+			<Option target="title"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps/glad/vulkan.h">
+			<Option target="glfwinfo"/>
+			<Option target="vulkan"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps/glad_gl.c">
+			<Option target="clipboard"/>
+			<Option target="events"/>
+			<Option target="msaa"/>
+			<Option target="glfwinfo"/>
+			<Option target="iconify"/>
+			<Option target="monitors"/>
+			<Option target="reopen"/>
+			<Option target="cursor"/>
+			<Option target="empty"/>
+			<Option target="gamma"/>
+			<Option target="icon"/>
+			<Option target="inputlag"/>
+			<Option target="joysticks"/>
+			<Option target="threads"/>
+			<Option target="opacity"/>
+			<Option target="tearing"/>
+			<Option target="timeout"/>
+			<Option target="title"/>
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps/glad_vulkan.c">
+			<Option target="glfwinfo"/>
+			<Option target="vulkan"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps/tinycthread.c">
+			<Option target="empty"/>
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/deps/tinycthread.h">
+			<Option target="empty"/>
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include/GLFW/glfw3.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/include/GLFW/glfw3native.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/egl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/egl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/input.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/internal.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/mappings.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/osmesa_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/osmesa_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/vulkan.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/wgl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/wgl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/win32_init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/win32_joystick.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/win32_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/win32_monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/win32_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/win32_thread.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/win32_time.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/win32_window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/clipboard.c">
+			<Option target="clipboard"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/cursor.c">
+			<Option target="cursor"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/empty.c">
+			<Option target="empty"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/events.c">
+			<Option target="events"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/gamma.c">
+			<Option target="gamma"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/glfwinfo.c">
+			<Option target="glfwinfo"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/icon.c">
+			<Option target="icon"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/iconify.c">
+			<Option target="iconify"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/inputlag.c">
+			<Option target="inputlag"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/joysticks.c">
+			<Option target="joysticks"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/monitors.c">
+			<Option target="monitors"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/msaa.c">
+			<Option target="msaa"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/opacity.c">
+			<Option target="opacity"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/reopen.c">
+			<Option target="reopen"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/tearing.c">
+			<Option target="tearing"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/threads.c">
+			<Option target="threads"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/timeout.c">
+			<Option target="timeout"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/title.c">
+			<Option target="title"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/vulkan.c">
+			<Option target="vulkan"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/windows.c">
+			<Option target="windows"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/application.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/application.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/context.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/context.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/core.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/events/event.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/events/event.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/input.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/input.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/layers/layer.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/layers/layer.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/main.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/nuklear/nuklear_layer.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/nuklear/nuklear_layer.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/platform/glfw/glfw_input.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/platform/glfw/glfw_input.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/platform/glfw/glfw_window.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/platform/glfw/glfw_window.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/platform/opengl/opengl_context.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/platform/opengl/opengl_context.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/buffers/buffers.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/buffers/buffers.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/orthographic_camera.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/orthographic_camera.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/orthographic_camera_controller.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/orthographic_camera_controller.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/renderer.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/renderer.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/shaders.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/renderer/shaders.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/window.c">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/src/cazel/window.h">
+			<Option target="cazel"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\cazel\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\glfw\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\glfw\src\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glfw/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\glfw\tests\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\glad\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/cglm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\cglm\"/>
+		</Unit>
+		<Unit filename="C:/projects/graphics/Cazel/lib/cazel/lib/flecs/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\cazel\lib\flecs\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
